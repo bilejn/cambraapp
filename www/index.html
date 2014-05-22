@@ -9,6 +9,27 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+
+<script type"text/javascript">
+	
+	function submitForm() {
+		var uname = $('[name="username"]').val();
+		var _email = $('[name="email"]').val();
+		
+		window.localStorage.setItem("username", uname);		
+		window.localStorage.setItem("email", _email);
+		
+		$.mobile.changePage ( "#output", {reverse: false, transition: slide} )	
+		$('#output').html("Username: " + window.localStorage.getItem("username")
+		+"br /"+ "Email: "+ window.localStorage.getItem("email"));
+		
+		return false;
+	}
+	
+	
+	
+</script>
+
 </head>
 
   <body>
@@ -29,10 +50,19 @@
 		
 		<header data-role="header"><h1>FORM</h1></header>
 		<div data-role="content">
-			<form method="POST" onSubmit="return submitForm()">
+			<form method="POST" onSubmit="return submitForm()" data-ajax="false">
 				<label>Username</label><input name="username" type="text">
 				<label>Email</label><input name="email" type="text">
 				<input type="submit" value="submit">
+		</div>
+
+	</section>
+
+	<section id="output" data-role="page">
+		
+		<header data-role="header"><h1>OUTPUT</h1></header>
+		<div data-role="output">
+
 		</div>
 
 	</section>
