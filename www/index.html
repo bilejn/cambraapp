@@ -10,49 +10,51 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 
-	<script type="text/javascript" charset="utf-8">
-		function onBodyLoad() {
-		document.addEventListener("deviceready",onDeviceReady,
-		false);
-		}
-		function onDeviceReady() {
-				window.localStorage.setItem("username", "Sasa");		
-				window.localStorage.setItem("email", "sasa.jugurdzija76@gmail.com");
-				$('#izlaz').html("Username: " + window.localStorage.getItem("username")
-				+"br /"+ "Email: "+ window.localStorage.getItem("email"));
-		}
-	</script>
 
 
 
-<!--
+
+
 <script type"text/javascript">
+	$("document").ready(function() {
 	
-	function submitForm() {
+		window.localStorage.setItem("username", "SASA JUGURDZIJA");
+		var name = window.localStorage.getItem("username");
+		$("#change").text(name);
+
+	
+	
+	
+	
+	
+/*	function submitForm() {
 		var uname = $('[name="username"]').val();
 		var _email = $('[name="email"]').val();
 		
 		window.localStorage.setItem("username", uname);		
 		window.localStorage.setItem("email", _email);
 		
-		$.mobile.changePage ( "#output", {reverse: false, transition: slide} )	
+		$.mobile.changePage ("#output", {reverse: false, transition: slide} );
 		$('#output').html("Username: " + window.localStorage.getItem("username")
-		+"br /"+ "Email: "+ window.localStorage.getItem("email"));
+		+"<br />"+ "Email: "+ window.localStorage.getItem("email"));
 		
 		return false;
-	}
+	}	*/
+
+	});
+
+	
 </script>
--->
 
 </head>
 
-  <body onload="onBodyLoad()>
+  <body>
 
 	<section id="first" data-role="page">
 		
 		<header data-role="header">External Linking</header>
 		<div data-role="content">
-			<p id="izlaz">this is content</p>
+			<p>this is content</p>
 			<p><a href="#second" data-transition="fade">Form</a></p>			
 			<p>this is content</p>
 		</div>
@@ -64,12 +66,14 @@
 		
 		<header data-role="header"><h1>FORM</h1></header>
 		<div data-role="content">
-			<form method="POST" onSubmit="return submitForm()" data-ajax="false">
+		
+		<h1 id="change"> John Doe</h1>
+<!--			<form method="POST" onSubmit="return submitForm()" data-ajax="false">
 				<label>Username</label><input name="username" type="text">
 				<label>Email</label><input name="email" type="text">
-				<input type="submit" value="submit">
+				<input type="submit" value="submit"> -->
 		</div>
-
+			<p><a href="#first" data-transition="flip">Content</a></p>
 	</section>
 
 	<section id="output" data-role="page">
