@@ -65,7 +65,8 @@ $(function() {
 			
 				<div class="ui-block-a" data-role="controlgroup">
 				<a href="#dental_visit"  data-role="button" style="font-size:15px;" data-theme="b">Dental Visit</a>
-				<a href="#oral_hygiene"  data-role="button" style="font-size:15px;" data-theme="b">Oral Hygiene</a>	<a href="#anylink"  data-role="button" style="font-size:15px;" data-theme="b">Xylitol</a>				
+				<a href="#oral_hygiene"  data-role="button" style="font-size:15px;" data-theme="b">Oral Hygiene</a>
+				<a href="#anylink"  data-role="button" style="font-size:15px;" data-theme="b">Xylitol</a>				
 				</div>
 
 				<div class="ui-block-b" data-role="controlgroup">
@@ -180,8 +181,9 @@ $(function() {
 		
 		
 		<div data-role="content">
-		
-		<h1>DENTAL VISIT</h1>
+				<a href="#general_data"  data-role="button" style="font-size:15px;" data-theme="b">General Data</a>		
+				<a href="#current_status"  data-role="button" style="font-size:15px;" data-theme="b">Current Status</a>
+				<a href="#recommendations"  data-role="button" style="font-size:15px;" data-theme="b">Recommendations</a>
 		
 		</div>
 		
@@ -344,6 +346,73 @@ $(function() {
 	
 	
 	
+	<!-- =============================== 	GENERAL DATA   ======================================= -->
+
+	
+	<section id="general_data" data-role="page">
+		<div data-role="header">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">
+		
+			<form method="get" action="">
+				<fieldset data-role="controlgroup">
+				<legend>General data about patient:</legend>
+				<div data-role="fieldcontain">
+				<label for="first_name" class="ui-hidden-accessible">First name:</label>
+				<input type="text" name="first_name" id="first_name" value="" placeholder="First name" />
+				
+
+				<label for="last_name" class="ui-hidden-accessible">Last name:</label>
+				<input type="text" name="last_name" id="last_name" value="" placeholder="Last name" />
+
+				<div data-role="controlgroup" data-type="vertical">
+				<label>Gender:</label>
+					<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
+					<label for="radio-choice-1">Male</label>
+
+					<input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
+					<label for="radio-choice-2">Female</label>
+				</div>
+				
+				<label>Age:</label>	
+				 <label for="age" class="select">Year of birth:</label>
+					<select name="age" id="age">
+					   <option value="2000">2000</option>
+					   <option value="2001">2001</option>
+					   <option value="2002">2002</option>
+					   <option value="2003">2003</option>
+					</select>
+
+				</div>
+				</fieldset>
+
+			</form>
+
+		<a href="#dental_visit"  data-role="button" style="font-size:15px;" data-theme="b">Back</a>	
+		
+		</div>
+		
+		
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>	
 	
 	
 	
