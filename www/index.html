@@ -16,62 +16,348 @@
 
 
 <script type"text/javascript">
-	$("document").ready(function() {
-	
-		window.localStorage.setItem("username", "SASA JUGURDZIJA");
+
+	function submitForm() {
+		var uname = $("#basicfield").val();
+		window.localStorage.setItem("username", uname);
+		location.reload();
+
+		return false;
+	}
+</script>
+
+<script type"text/javascript">
+
+$(function() {
+		var visibility = window.localStorage.getItem("username");
+		
 		var name = window.localStorage.getItem("username");
 		$("#change").text(name);
-
-	
-	
-	
-	
-	
-/*	function submitForm() {
-		var uname = $('[name="username"]').val();
-		var _email = $('[name="email"]').val();
-		
-		window.localStorage.setItem("username", uname);		
-		window.localStorage.setItem("email", _email);
-		
-		$.mobile.changePage ("#output", {reverse: false, transition: slide} );
-		$('#output').html("Username: " + window.localStorage.getItem("username")
-		+"<br />"+ "Email: "+ window.localStorage.getItem("email"));
-		
-		return false;
-	}	*/
-
-	});
-
-	
+});
 </script>
+
 
 </head>
 
   <body>
+  
+  
+<!-- =============================== H O M E ======================================= -->
 
-	<section id="first" data-role="page">
-		
-		<header data-role="header">External Linking</header>
-		<div data-role="content">
-			<p>this is content</p>
-			<p><a href="#second" data-transition="fade">Form</a></p>			
-			<p>this is content</p>
+
+	<section id="home" data-role="page">
+	
+		<div data-role="header">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				</ul>
+			</div>
 		</div>
-		<footer data-role="footer">footer</footer>	
+		
+		
+		<div data-role="content">
+		
+		<h1>Your current caries risk level is HIGH</h1>
+		
+			<div class="ui-grid-a">
+			
+				<div class="ui-block-a" data-role="controlgroup">
+				<a href="#dental_visit"  data-role="button" style="font-size:15px;" data-theme="b">Dental Visit</a>
+				<a href="#oral_hygiene"  data-role="button" style="font-size:15px;" data-theme="b">Oral Hygiene</a>	<a href="#anylink"  data-role="button" style="font-size:15px;" data-theme="b">Xylitol</a>				
+				</div>
+
+				<div class="ui-block-b" data-role="controlgroup">
+				<a href="#anylink"  data-role="button" style="font-size:15px;" data-theme="e">Snack</a>
+				
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+		
 	</section>
 
+	
+	
+	
+	
+<!-- =============================== A C H I E V E M E N T S  ======================================= -->
 
+	
+	<section id="achievements" data-role="page">
+		<div data-role="header">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">
+		
+		<h1>ACHIEVEMENTS</h1>
+		
+		</div>
+		
+		
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>
+	
+	
+	
+<!-- =============================== W A R N I N G S   ======================================= -->
+
+	
+	<section id="warnings" data-role="page">
+		<div data-role="header">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">
+		
+		<h1>WARNINGS</h1>
+		
+		</div>
+		
+		
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>	
+	
+	
+<!-- =============================== 	DENTAL VISIT   ======================================= -->
+
+	
+	<section id="dental_visit" data-role="page">
+		<div data-role="header">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">
+		
+		<h1>DENTAL VISIT</h1>
+		
+		</div>
+		
+		
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>		
+	
+	
+<!-- =============================== 	ORAL HYGIENE   ======================================= -->
+
+	
+	<section id="oral hygiene" data-role="page">
+		<div data-role="header">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">
+		
+		<h1>ORAL HYGIENE</h1>
+		
+		</div>
+		
+		
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>		
+	
+	
+	
+<!-- =============================== 	PROFILE   ======================================= -->
+
+	
+	<section id="profile" data-role="page">
+		<div data-role="header">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">
+		
+		<h1>PROFILE</h1>
+		
+		</div>
+		
+		
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>			
+	
+	
+	
+<!-- =============================== 	INFO  ======================================= -->
+
+	
+	<section id="info" data-role="page">
+		<div data-role="header">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">
+		
+		<h1>INFO</h1>
+		
+		</div>
+		
+		
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>		
+	
+	
+	
+<!-- =============================== 	SETTINGS  ======================================= -->
+
+	
+	<section id="settings" data-role="page">
+		<div data-role="header">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">
+		
+		<h1>SETTINGS</h1>
+		
+		</div>
+		
+		
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>		
+	
+	
+	
+	
+	
+	
 	<section id="second" data-role="page">
 		
 		<header data-role="header"><h1>FORM</h1></header>
 		<div data-role="content">
 		
 		<h1 id="change"> John Doe</h1>
-<!--			<form method="POST" onSubmit="return submitForm()" data-ajax="false">
-				<label>Username</label><input name="username" type="text">
-				<label>Email</label><input name="email" type="text">
-				<input type="submit" value="submit"> -->
+	<form name="myForm" action="" onsubmit="return submitForm();"  data-ajax="false">
+				<label for="basicfield">Basic text field:</label>
+				<input type="text" name="basicfield" id="basicfield" value="" placeholder="placeholder text"/>
+				<input type="submit" value="Submit">
+			</form>
 		</div>
 			<p><a href="#first" data-transition="flip">Content</a></p>
 	</section>
