@@ -16,16 +16,24 @@
 <script type"text/javascript">
 
 	function submitForm() {
-		var fname = $("#first_name").val();
-		var lname = $("#last_name").val();
-		var _gender = $('input[name="genderS"]:checked').val();
-		var _age = $("#yearpicker").val();
+		if ($("#first_name").val() != null && $("#first_name").val() != ""){
+			var fname = $("#first_name").val();
+			window.localStorage.setItem("firstname", fname);
+		}
 		
+		if ($("#last_name").val() != null && $("#last_name").val() != ""){
+			var lname = $("#last_name").val();
+			window.localStorage.setItem("lastname", lname);		
+		}	
 
-		window.localStorage.setItem("firstname", fname);
-		window.localStorage.setItem("lastname", lname);
+		if 	( $("#yearpicker").val() != "Please Choose"){
+				var _age = $("#yearpicker").val();
+				window.localStorage.setItem("age", _age);			
+		}
+	
+		var _gender = $('input[name="genderS"]:checked').val();
 		window.localStorage.setItem("gender", _gender);
-		window.localStorage.setItem("age", _age);
+
 		location.reload();
 
 		return false;
@@ -42,6 +50,10 @@ $(function() {
 		
 		var name = window.localStorage.getItem("username");
 		$("#change").text("Your name is: "+ime+" "+prezime+". You are "+pol+", and you are born "+godiste+".");
+		
+		$("#first_name").val( window.localStorage.getItem("firstname"));
+		$("#last_name").val( window.localStorage.getItem("lastname"));
+		$("#yearpicker").val(window.localStorage.getItem("age"));
 });
 </script>
 
@@ -377,27 +389,26 @@ $(function() {
 			<form name="myForm" action="" onsubmit="return submitForm();"  data-ajax="false" >
 				<fieldset data-role="controlgroup" data-mini="true">
 				<legend>General data about patient:</legend>
-				<div data-role="fieldcontain"  >
-				<label for="first_name" class="ui-hidden-accessible">First name:</label>
-				<input type="text" name="first_name" id="first_name" value="" placeholder="First name"/>
-				
-
-				<label for="last_name" class="ui-hidden-accessible">Last name:</label>
-				<input type="text" name="last_name" id="last_name" value="" placeholder="Last name" />
-
+					<div data-role="fieldcontain"  >
+						<label for="first_name" class="ui-hidden-accessible">First name:</label>
+						<input type="text" name="first_name" id="first_name" value="" placeholder="First name"/>
+						<label for="last_name" class="ui-hidden-accessible">Last name:</label>
+						<input type="text" name="last_name" id="last_name" value="" placeholder="Last name" />
+					</div>
 				<div data-role="controlgroup" data-type="vertical"  data-mini="true" >
-				<label>Gender:</label>
-					<input type="radio" name="genderS" id="male" value="male"/>
-					<label for="male">Male</label>
-					<input type="radio" name="genderS" id="female" value="female"/>
-					<label for="female">Female</label>
+					<label>Gender:</label>
+						<input type="radio" name="genderS" id="male" value="male"/>
+						<label for="male">Male</label>
+						<input type="radio" name="genderS" id="female" value="female"/>
+						<label for="female">Female</label>
 				</div>
 				
 				<div data-role="controlgroup" data-type="vertical" data-mini="true">
-				<label>Age:</label>	
-				 <label for="yearpicker"class="select">Year of birth:</label>
-					<select name="yearpicker" id="yearpicker">
-					</select>
+					<label>Age:</label>	
+					<label for="yearpicker"class="select">Year of birth:</label>
+						<select name="yearpicker" id="yearpicker">
+						<option>Please Choose</option>
+						</select>
 				</div>
 
 				</fieldset>
@@ -414,7 +425,7 @@ $(function() {
 
 		</div>
 		
-		
+		</div>
 		
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
