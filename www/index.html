@@ -52,11 +52,11 @@ $(function() {
 		var godiste = window.localStorage.getItem("age");
 		
 		var name = window.localStorage.getItem("username");
-		$("#change").text("Your name is: "+ime+" "+prezime+". You are "+pol+", and you are born "+godiste+".");
+		$("#change").text("Your name is "+ime+" "+prezime+". You are "+pol+", and you are born "+godiste+".");
 		
-		$("#first_name").val( window.localStorage.getItem("firstname"));
+		/*$("#first_name").val( window.localStorage.getItem("firstname"));
 		$("#last_name").val( window.localStorage.getItem("lastname"));
-		$("#yearpicker").val(window.localStorage.getItem("age"));
+		$("#yearpicker").val(window.localStorage.getItem("age"));*/
 });
 </script>
 
@@ -72,13 +72,13 @@ $(function() {
 <!-- =============================== H O M E ======================================= -->
 
 
-	<section id="home" data-role="page">
+	<section id="home" data-role="page" data-theme="a">
 	
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -125,12 +125,12 @@ $(function() {
 <!-- =============================== A C H I E V E M E N T S  ======================================= -->
 
 	
-	<section id="achievements" data-role="page">
+	<section id="achievements" data-role="page" data-theme="a">
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -161,12 +161,12 @@ $(function() {
 <!-- =============================== W A R N I N G S   ======================================= -->
 
 	
-	<section id="warnings" data-role="page">
+	<section id="warnings" data-role="page" data-theme="a">
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -196,12 +196,12 @@ $(function() {
 <!-- =============================== 	DENTAL VISIT   ======================================= -->
 
 	
-	<section id="dental_visit" data-role="page">
+	<section id="dental_visit" data-role="page" data-theme="a">
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -232,12 +232,12 @@ $(function() {
 <!-- =============================== 	ORAL HYGIENE   ======================================= -->
 
 	
-	<section id="oral_hygiene" data-role="page">
+	<section id="oral_hygiene" data-role="page" data-theme="a">
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -250,6 +250,9 @@ $(function() {
 		<h4> 1. Teeth Brushing </h4>
 			<input type="button" value="Start teeth brushing" id="timer-button" onclick="timer()">
 			<p id="timer"></p>
+			<progress value="22" max="100">
+			</progress>
+			<meter value="0.6">60%</meter>
 		<h4> 2. Flossing </h4>
 		<h4> 3. Rinsing</h4>
 		
@@ -274,12 +277,12 @@ $(function() {
 <!-- =============================== 	PROFILE   ======================================= -->
 
 	
-	<section id="profile" data-role="page">
+	<section id="profile" data-role="page" data-theme="a">
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -310,12 +313,12 @@ $(function() {
 <!-- =============================== 	INFO  ======================================= -->
 
 	
-	<section id="info" data-role="page">
+	<section id="info" data-role="page"  data-theme="a">
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -346,12 +349,12 @@ $(function() {
 <!-- =============================== 	SETTINGS  ======================================= -->
 
 	
-	<section id="settings" data-role="page">
+	<section id="settings" data-role="page" data-theme="a">
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -382,12 +385,12 @@ $(function() {
 	<!-- =============================== 	GENERAL DATA   ======================================= -->
 
 	
-	<section id="general_data" data-role="page">
+	<section id="general_data" data-role="page" data-theme="a">
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="b">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="e">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
