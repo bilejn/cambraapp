@@ -8,8 +8,8 @@
 
 	<link rel="stylesheet" href="css/jquery.mobile-1.0.css" />
 	<link rel="stylesheet" href="css/mycss.css" />
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0.min.js"></script>
 	<script type="text/javascript" src="js/timer.js"></script>
 
 
@@ -77,8 +77,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-transition="fade" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-transition="fade" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -91,8 +91,8 @@ $(function() {
 			<div class="ui-grid-a">
 			
 				<div class="ui-block-a" data-role="controlgroup">
-				<a href="#dental_visit"  data-role="button" style="font-size:15px;" data-theme="b">Dental Visit</a>
-				<a href="#oral_hygiene"  data-role="button" style="font-size:15px;" data-theme="b">Oral Hygiene</a>
+				<a href="#dental_visit"  data-role="button" style="font-size:15px;" data-transition="fade" data-theme="b">Dental Visit</a>
+				<a href="#oral_hygiene"  data-role="button" style="font-size:15px;" data-transition="fade"  data-theme="b">Oral Hygiene</a>
 				<a href="#anylink"  data-role="button" style="font-size:15px;" data-theme="b">Xylitol</a>				
 				</div>
 
@@ -108,10 +108,10 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
-					  <li><a href="#profile"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" data-transition="fade"  class="ui-btn-active ui-state-persist">Home</a></li>
+					  <li><a href="#profile"  data-transition="fade"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="fade"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="fade"  data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -126,11 +126,13 @@ $(function() {
 
 	
 	<section id="achievements" data-role="page" data-theme="a">
-		<div data-role="header">
+
+	
+			<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="a" class="ui-btn-active ui-state-persist">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" class="ui-btn-active ui-state-persist" data-transition="fade" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-transition="fade" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -147,10 +149,10 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home">Home</a></li>
-					  <li><a href="#profile"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" data-transition="fade" >Home</a></li>
+					  <li><a href="#profile"  data-transition="fade"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="fade"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="fade"  data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -165,8 +167,8 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="a"class="ui-btn-active ui-state-persist">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="fade" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="fade" data-theme="a" class="ui-btn-active ui-state-persist" >Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -183,10 +185,10 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home">Home</a></li>
-					  <li><a href="#profile"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" data-transition="fade" >Home</a></li>
+					  <li><a href="#profile"  data-transition="fade"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="fade"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="fade"  data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -200,17 +202,17 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="fade" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="fade" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
 		
 		
 		<div data-role="content">
-				<a href="#general_data"  data-role="button" style="font-size:15px;" data-theme="b">General Data</a>		
-				<a href="#current_status"  data-role="button" style="font-size:15px;" data-theme="b">Current Status</a>
-				<a href="#recommendations"  data-role="button" style="font-size:15px;" data-theme="b">Recommendations</a>
+				<a href="#general_data"  data-role="button" style="font-size:15px;"  data-transition="fade" data-theme="b">General Data</a>		
+				<a href="#current_status"  data-role="button" style="font-size:15px;"  data-transition="fade" data-theme="b">Current Status</a>
+				<a href="#recommendations"  data-role="button" style="font-size:15px;"  data-transition="fade" data-theme="b">Recommendations</a>
 		
 		</div>
 		
@@ -219,13 +221,13 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home">Home</a></li>
-					  <li><a href="#profile"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" data-transition="fade" >Home</a></li>
+					  <li><a href="#profile"  data-transition="fade"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="fade"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="fade"  data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
-        </div>	
+        </div>
 	</section>		
 	
 	
@@ -236,8 +238,8 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-transition="fade"  data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="fade" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -260,10 +262,10 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home">Home</a></li>
-					  <li><a href="#profile"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" data-transition="fade" >Home</a></li>
+					  <li><a href="#profile"  data-transition="fade"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="fade"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="fade"  data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -278,8 +280,8 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-transition="fade"  data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-transition="fade"  data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -296,10 +298,10 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home">Home</a></li>
-					  <li><a href="#profile"  data-icon="user" class="ui-btn-active ui-state-persist">Profile</a></li>
-					  <li><a href="#info"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" data-transition="fade" >Home</a></li>
+					  <li><a href="#profile"  data-transition="fade"  data-icon="user" class="ui-btn-active ui-state-persist" >Profile</a></li>
+					  <li><a href="#info"  data-transition="fade"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="fade"  data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -314,8 +316,8 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-transition="fade"  data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="fade" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -332,13 +334,13 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home">Home</a></li>
-					  <li><a href="#profile"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-icon="info" class="ui-btn-active ui-state-persist">Info</a></li>
-					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" data-transition="fade" >Home</a></li>
+					  <li><a href="#profile"  data-transition="fade"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="fade"  data-icon="info"  class="ui-btn-active ui-state-persist" >Info</a></li>
+					  <li><a href="#settings"  data-transition="fade"  data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
-        </div>	
+        </div>
 	</section>		
 	
 	
@@ -350,8 +352,8 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="fade" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="fade" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -368,10 +370,10 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home">Home</a></li>
-					  <li><a href="#profile"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-icon="gear" class="ui-btn-active ui-state-persist">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" data-transition="fade" >Home</a></li>
+					  <li><a href="#profile"  data-transition="fade"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="fade"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="fade"  data-icon="gear"  class="ui-btn-active ui-state-persist" >Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -386,8 +388,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="fade" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="fade" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -425,7 +427,7 @@ $(function() {
 				
 				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
 				<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="b">
-				<a href="#dental_visit"  id="back" data-role="button" style="font-size:16px;" data-theme="b">Back</a>	
+				<a href="#dental_visit"  id="back" data-role="button" data-transition="fade" style="font-size:16px;" data-theme="b">Back</a>	
 				</fieldset>
 			</form>
 
@@ -439,10 +441,10 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home">Home</a></li>
-					  <li><a href="#profile"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" data-transition="fade" >Home</a></li>
+					  <li><a href="#profile"  data-transition="fade"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="fade"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="fade"  data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
