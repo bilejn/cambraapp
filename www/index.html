@@ -108,7 +108,7 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#home"  data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
 					  <li><a href="#profile"  data-icon="user">Profile</a></li>
 					  <li><a href="#info"  data-icon="info">Info</a></li>
 					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
@@ -129,7 +129,7 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
+				  <li><a href="#achievements" style="font-size:15px;" data-theme="a" class="ui-btn-active ui-state-persist">Achievements</a></li>
 				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
@@ -166,7 +166,7 @@ $(function() {
 			<div data-role="navbar">
 				<ul>
 				  <li><a href="#achievements" style="font-size:15px;" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-theme="a">Warnings</a></li>
+				  <li><a href="#warnings" style="font-size:15px;" data-theme="a"class="ui-btn-active ui-state-persist">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -250,9 +250,6 @@ $(function() {
 		<h4> 1. Teeth Brushing </h4>
 			<input type="button" value="Start teeth brushing" id="timer-button" onclick="timer()">
 			<p id="timer"></p>
-			<progress value="22" max="100">
-			</progress>
-			<meter value="0.6">60%</meter>
 		<h4> 2. Flossing </h4>
 		<h4> 3. Rinsing</h4>
 		
@@ -300,7 +297,7 @@ $(function() {
               	<div data-role="navbar">
 					<ul>
 					  <li><a href="#home"  data-icon="home">Home</a></li>
-					  <li><a href="#profile"  data-icon="user">Profile</a></li>
+					  <li><a href="#profile"  data-icon="user" class="ui-btn-active ui-state-persist">Profile</a></li>
 					  <li><a href="#info"  data-icon="info">Info</a></li>
 					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
 					</ul>
@@ -337,7 +334,7 @@ $(function() {
 					<ul>
 					  <li><a href="#home"  data-icon="home">Home</a></li>
 					  <li><a href="#profile"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-icon="info">Info</a></li>
+					  <li><a href="#info"  data-icon="info" class="ui-btn-active ui-state-persist">Info</a></li>
 					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
@@ -374,7 +371,7 @@ $(function() {
 					  <li><a href="#home"  data-icon="home">Home</a></li>
 					  <li><a href="#profile"  data-icon="user">Profile</a></li>
 					  <li><a href="#info"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-icon="gear">Settings</a></li>
+					  <li><a href="#settings"  data-icon="gear" class="ui-btn-active ui-state-persist">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -403,9 +400,9 @@ $(function() {
 					<legend>General data about patient:</legend>
 						<div  data-role="controlgroup" data-type="vertical" data-mini="true">
 							<label for="first_name" class="ui-hidden-accessible">First name:</label>
-							<input type="text" name="first_name" id="first_name" value="" placeholder="First name"/>
+							<input type="text" name="first_name" required id="first_name" value="" placeholder="First name"/>
 							<label for="last_name" class="ui-hidden-accessible">Last name:</label>
-							<input type="text" name="last_name" id="last_name" value="" placeholder="Last name" />
+							<input type="text" name="last_name" required id="last_name" value="" placeholder="Last name" />
 						</div>
 						
 					<div data-role="controlgroup" data-type="vertical"  data-mini="true" >
