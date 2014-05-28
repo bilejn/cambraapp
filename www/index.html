@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/mycss.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<script type="text/javascript" src="js/timer.js"></script>
 
 
 
@@ -39,6 +40,8 @@
 		return false;
 	}
 </script>
+
+
 
 <script type"text/javascript">
 
@@ -229,7 +232,7 @@ $(function() {
 <!-- =============================== 	ORAL HYGIENE   ======================================= -->
 
 	
-	<section id="oral hygiene" data-role="page">
+	<section id="oral_hygiene" data-role="page">
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
@@ -242,7 +245,13 @@ $(function() {
 		
 		<div data-role="content">
 		
-		<h1>ORAL HYGIENE</h1>
+		<h3 style="text-align: center">Oral Hygiene</h3>
+		<p></p>
+		<h4> 1. Teeth Brushing </h4>
+			<input type="button" value="Start teeth brushing" id="timer-button" onclick="timer()">
+			<p id="timer"></p>
+		<h4> 2. Flossing </h4>
+		<h4> 3. Rinsing</h4>
 		
 		</div>
 		
