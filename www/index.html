@@ -6,7 +6,8 @@
 	
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"> 
 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.0.css" />
+	<link rel="stylesheet" href="css/mycss.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 
@@ -33,8 +34,7 @@
 	
 		var _gender = $('input[name="genderS"]:checked').val();
 		window.localStorage.setItem("gender", _gender);
-
-		location.reload();
+		$('#general_data').page('refresh'); 
 
 		return false;
 	}
@@ -82,9 +82,9 @@ $(function() {
 		
 		
 		<div data-role="content">
-		
-		<h1 id="change">Your current caries risk level is HIGH</h1>
-		
+		<div id="naslov">
+		<h3 id="change">Your current caries risk level is HIGH</h3>
+		</div>
 			<div class="ui-grid-a">
 			
 				<div class="ui-block-a" data-role="controlgroup">
@@ -387,29 +387,29 @@ $(function() {
 		<div data-role="content">
 		
 			<form name="myForm" action="" onsubmit="return submitForm();"  data-ajax="false" >
-				<fieldset data-role="controlgroup" data-mini="true">
-				<legend>General data about patient:</legend>
-					<div data-role="fieldcontain"  >
-						<label for="first_name" class="ui-hidden-accessible">First name:</label>
-						<input type="text" name="first_name" id="first_name" value="" placeholder="First name"/>
-						<label for="last_name" class="ui-hidden-accessible">Last name:</label>
-						<input type="text" name="last_name" id="last_name" value="" placeholder="Last name" />
+				<fieldset>
+					<legend>General data about patient:</legend>
+						<div  data-role="controlgroup" data-type="vertical" data-mini="true">
+							<label for="first_name" class="ui-hidden-accessible">First name:</label>
+							<input type="text" name="first_name" id="first_name" value="" placeholder="First name"/>
+							<label for="last_name" class="ui-hidden-accessible">Last name:</label>
+							<input type="text" name="last_name" id="last_name" value="" placeholder="Last name" />
+						</div>
+						
+					<div data-role="controlgroup" data-type="vertical"  data-mini="true" >
+						<label>Gender:</label>
+							<input type="radio" name="genderS" id="male" value="male"/>
+							<label for="male">Male</label>
+							<input type="radio" name="genderS" id="female" value="female"/>
+							<label for="female">Female</label>
 					</div>
-				<div data-role="controlgroup" data-type="vertical"  data-mini="true" >
-					<label>Gender:</label>
-						<input type="radio" name="genderS" id="male" value="male"/>
-						<label for="male">Male</label>
-						<input type="radio" name="genderS" id="female" value="female"/>
-						<label for="female">Female</label>
-				</div>
-				
-				<div data-role="controlgroup" data-type="vertical" data-mini="true">
-					<label>Age:</label>	
-					<label for="yearpicker"class="select">Year of birth:</label>
-						<select name="yearpicker" id="yearpicker">
-						<option>Please Choose</option>
-						</select>
-				</div>
+					
+					<div data-role="controlgroup" data-type="vertical" data-mini="true">
+						<label for="yearpicker"class="select">Age:</label>
+							<select name="yearpicker" id="yearpicker">
+							<option>Please Choose</option>
+							</select>
+					</div>
 
 				</fieldset>
 				
