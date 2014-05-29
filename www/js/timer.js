@@ -1,7 +1,6 @@
 function timer (){
 	
 	i=0;
-	alert("press OK when ready.");
 	document.getElementById("timer-button").onclick="";
 	var TeethBrushingTimer = setInterval(function(){
 	

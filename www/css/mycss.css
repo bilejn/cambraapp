@@ -6,11 +6,8 @@
 }
 
 #timer {
-	background-color: red;
+	background-color: orange;
 	height: 20px;
-	text-align: center;
-	font-weight: bold;
-	color: #fff;
 	border: 1px solid blue;
 
 }
