@@ -522,8 +522,100 @@ $(function() {
 	</section>	
 	
 	
-	
+	<!-- =============================== 	CURRENT STATUS   ======================================= -->
 
+	
+	<section id="current_status" data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">	
+
+		
+				<form name="currentForm" action="" onsubmit="return submitForm();"  data-ajax="false" >
+
+					  <fieldset data-role="controlgroup">
+						<legend>Disease Indicators:</legend>
+						  <label for="visible">Visible cavities or radiographic penetration of the dentin</label>
+						  <input type="checkbox" name="disease_indicators" id="visible" value="visible">
+						  <label for="radiographical">Radiographic approximal enamel lesions (not in dentin)</label>
+						  <input type="checkbox" name="disease_indicators" id="radiographical" value="radiographical">
+						  <label for="white_spots">White spots on smooth surfaces</label>
+						  <input type="checkbox" name="disease_indicators" id="white_spots" value="white_spots"> 
+						  <label for="last_3_years">Restorations last 3 years</label>
+						  <input type="checkbox" name="disease_indicators" id="last_3_years" value="last_3_years"> 
+					  </fieldset>
+					  
+					  <fieldset data-role="controlgroup">
+						<legend>Risk Factors (Biological predisposing factors):</legend>
+						  <label for="ms_lb">MS and LB both medium or high by culture</label>
+						  <input type="checkbox" name="risk_factors" id="ms_lb" value="ms_lb">
+						  <label for="plaque">Visible heavy plaque on teeth</label>
+						  <input type="checkbox" name="risk_factors" id="plaque" value="plaque">
+						  <label for="frequent_snack">Frequent snack > 3x daily between meals</label>
+						  <input type="checkbox" name="risk_factors" id="frequent_snack" value="frequent_snack"> 
+						  <label for="pits_and_fissures">Deep pits and fissures</label>
+						  <input type="checkbox" name="risk_factors" id="pits_and_fissures" value="pits_and_fissures"> 
+						  <label for="drug_use">Recreational drug use</label>
+						  <input type="checkbox" name="risk_factors" id="drug_use" value="drug_use">
+						  <label for="saliva">Inadequate saliva flow by observation or measurement</label>
+						  <input type="checkbox" name="risk_factors" id="saliva" value="saliva"> 
+						  <label for="saliva_reducing_factors">Saliva reducing factors (medications/radiation/systemic)</label>
+						  <input type="checkbox" name="risk_factors" id="saliva_reducing_factors" value="saliva_reducing_factors">
+						  <label for="exposed_roots">Exposed roots</label>
+						  <input type="checkbox" name="risk_factors" id="exposed_roots" value="exposed_roots"> 
+						  <label for="orthodontic_appliances">Orthodontic appliances</label>
+						  <input type="checkbox" name="risk_factors" id="orthodontic_appliances" value="orthodontic_appliances"> 
+						
+					  </fieldset>
+						
+
+				</form>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		</div>
+		
+		</div>
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
+					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>		
+	
+	
+	
+	
+	
 	
 	
 	
