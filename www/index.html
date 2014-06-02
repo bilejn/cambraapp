@@ -473,22 +473,22 @@ $(function() {
 					<legend>General data about patient:</legend>
 						<div  data-role="controlgroup" data-type="vertical" data-mini="true">
 							<label for="first_name" class="ui-hidden-accessible">First name:</label>
-							<input type="text" name="first_name" required id="first_name" value="" placeholder="First name"/>
+							<input type="text" name="first_name" required id="first_name" value="" placeholder="First name" data-theme="b"/>
 							<label for="last_name" class="ui-hidden-accessible">Last name:</label>
-							<input type="text" name="last_name" required id="last_name" value="" placeholder="Last name" />
+							<input type="text" name="last_name" required id="last_name" value="" placeholder="Last name"  data-theme="b"/>
 						</div>
 						
 					<div data-role="controlgroup" data-type="vertical"  data-mini="true" >
 						<label>Gender:</label>
-							<input type="radio" name="genderS" id="male" value="male"/>
+							<input type="radio" name="genderS" id="male" value="male" data-theme="b"/>
 							<label for="male">Male</label>
-							<input type="radio" name="genderS" id="female" value="female"/>
+							<input type="radio" name="genderS" id="female" value="female" data-theme="b"/>
 							<label for="female">Female</label>
 					</div>
 					
 					<div data-role="controlgroup" data-type="vertical" data-mini="true">
 						<label for="yearpicker"class="select">Age:</label>
-							<select name="yearpicker" id="yearpicker">
+							<select name="yearpicker" id="yearpicker" data-theme="b">
 							<option>Please Choose</option>
 							</select>
 					</div>
@@ -497,8 +497,8 @@ $(function() {
 				
 				
 				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-				<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="b">
-				<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="b">Back</a>	
+				<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
+				<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
 				</fieldset>
 			</form>
 
@@ -541,64 +541,76 @@ $(function() {
 		
 				<form name="currentForm" action="" onsubmit="return submitForm();"  data-ajax="false" >
 
-					  <fieldset data-role="controlgroup">
+					  <fieldset data-role="controlgroup" data-mini="true">
 						<legend>Disease Indicators:</legend>
 						  <label for="visible">Visible cavities or radiographic penetration of the dentin</label>
-						  <input type="checkbox" name="disease_indicators" id="visible" value="visible">
+						  <input type="checkbox" name="disease_indicators" id="visible" value="visible" data-theme="b">
 						  <label for="radiographical">Radiographic approximal enamel lesions (not in dentin)</label>
-						  <input type="checkbox" name="disease_indicators" id="radiographical" value="radiographical">
+						  <input type="checkbox" name="disease_indicators" id="radiographical" value="radiographical" data-theme="b">
 						  <label for="white_spots">White spots on smooth surfaces</label>
-						  <input type="checkbox" name="disease_indicators" id="white_spots" value="white_spots"> 
+						  <input type="checkbox" name="disease_indicators" id="white_spots" value="white_spots" data-theme="b"> 
 						  <label for="last_3_years">Restorations last 3 years</label>
-						  <input type="checkbox" name="disease_indicators" id="last_3_years" value="last_3_years"> 
+						  <input type="checkbox" name="disease_indicators" id="last_3_years" value="last_3_years" data-theme="b"> 
 					  </fieldset>
 					  
-					  <fieldset data-role="controlgroup">
+					  <fieldset data-role="controlgroup" data-mini="true">
 						<legend>Risk Factors (Biological predisposing factors):</legend>
 						  <label for="ms_lb">MS and LB both medium or high by culture</label>
-						  <input type="checkbox" name="risk_factors" id="ms_lb" value="ms_lb">
+						  <input type="checkbox" name="risk_factors" id="ms_lb" data-theme="b" value="ms_lb">
 						  <label for="plaque">Visible heavy plaque on teeth</label>
-						  <input type="checkbox" name="risk_factors" id="plaque" value="plaque">
+						  <input type="checkbox" name="risk_factors" id="plaque" value="plaque" data-theme="b">
 						  <label for="frequent_snack">Frequent snack > 3x daily between meals</label>
-						  <input type="checkbox" name="risk_factors" id="frequent_snack" value="frequent_snack"> 
+						  <input type="checkbox" name="risk_factors" id="frequent_snack" value="frequent_snack" data-theme="b"> 
 						  <label for="pits_and_fissures">Deep pits and fissures</label>
-						  <input type="checkbox" name="risk_factors" id="pits_and_fissures" value="pits_and_fissures"> 
+						  <input type="checkbox" name="risk_factors" id="pits_and_fissures" value="pits_and_fissures" data-theme="b">
 						  <label for="drug_use">Recreational drug use</label>
-						  <input type="checkbox" name="risk_factors" id="drug_use" value="drug_use">
+						  <input type="checkbox" name="risk_factors" id="drug_use" value="drug_use" data-theme="b">
 						  <label for="saliva">Inadequate saliva flow by observation or measurement</label>
-						  <input type="checkbox" name="risk_factors" id="saliva" value="saliva"> 
+						  <input type="checkbox" name="risk_factors" id="saliva" value="saliva" data-theme="b">
 						  <label for="saliva_reducing_factors">Saliva reducing factors (medications/radiation/systemic)</label>
-						  <input type="checkbox" name="risk_factors" id="saliva_reducing_factors" value="saliva_reducing_factors">
+						  <input type="checkbox" name="risk_factors" id="saliva_reducing_factors" value="saliva_reducing_factors" data-theme="b">
 						  <label for="exposed_roots">Exposed roots</label>
-						  <input type="checkbox" name="risk_factors" id="exposed_roots" value="exposed_roots"> 
+						  <input type="checkbox" name="risk_factors" id="exposed_roots" value="exposed_roots" data-theme="b"> 
 						  <label for="orthodontic_appliances">Orthodontic appliances</label>
-						  <input type="checkbox" name="risk_factors" id="orthodontic_appliances" value="orthodontic_appliances"> 
-						
+						  <input type="checkbox" name="risk_factors" id="orthodontic_appliances" value="orthodontic_appliances" data-theme="b"> 
 					  </fieldset>
 						
-
+					  <fieldset data-role="controlgroup" data-mini="true">
+						<legend>Protective Factors:</legend>
+						  <label for="fluoridated_community">Lives/work/school fluoridated community</label>
+						  <input type="checkbox" name="protective_factors" id="fluoridated_community" data-theme="b" value="fluoridated_community">
+						  <label for="fluoride_paste_once">Fluoride toothpaste at least once daily</label>
+						  <input type="checkbox" name="protective_factors" id="fluoride_paste_once" value="fluoride_paste_once" data-theme="b">
+						  <label for="fluoride_paste_twice">Fluoride toothpaste at least 2x daily</label>
+						  <input type="checkbox" name="protective_factors" id="fluoride_paste_twice" value="fluoride_paste_twice" data-theme="b"> 
+						  <label for="fluoride_mouthrinse">Fluoride mouthrinse (0.05% NaF) daily</label>
+						  <input type="checkbox" name="protective_factors" id="fluoride_mouthrinse" value="fluoride_mouthrinse" data-theme="b">
+						  <label for="fluoride_5000">5,000 ppm F fluoride toothpaste daily</label>
+						  <input type="checkbox" name="protective_factors" id="fluoride_5000" value="fluoride_5000" data-theme="b">
+						  <label for="fluoride_varnish">Fluoride varnish in last 6 months</label>
+						  <input type="checkbox" name="protective_factors" id="fluoride_varnish" value="fluoride_varnish" data-theme="b">
+						  <label for="topical_fluoride">Office fluoride topical in last 6 months</label>
+						  <input type="checkbox" name="protective_factors" id="topical_fluoride" value="topical_fluoride" data-theme="b">
+						  <label for="chlorhexidine">Chlorhexidine prescribed/used one week each of last 6 months</label>
+						  <input type="checkbox" name="protective_factors" id="chlorhexidine" value="chlorhexidine" data-theme="b"> 
+						  <label for="xylitol">Xylitol gum/lozenges 4x daily last 6 months</label>
+						  <input type="checkbox" name="protective_factors" id="xylitol" value="xylitol" data-theme="b"> 
+						  <label for="tooth_mousse">Calcium and phosphate paste during last 6 months</label>
+						  <input type="checkbox" name="protective_factors" id="tooth_mousse" value="tooth_mousse" data-theme="b"> 
+						  <label for="adequate_saliva">Adequate saliva flow (> 1 ml/min stimulated)</label>
+						  <input type="checkbox" name="protective_factors" id="adequate_saliva" value="adequate_saliva" data-theme="b">
+					  </fieldset>
+					  
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
+							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
+							<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+						</fieldset>
 				</form>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 		</div>
 		
-		</div>
+
 		
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
