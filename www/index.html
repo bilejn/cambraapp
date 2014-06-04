@@ -17,28 +17,61 @@
 
 <script type"text/javascript">
 
-	function submitForm() {
-		if ($("#first_name").val() != null && $("#first_name").val() != ""){
-			var fname = $("#first_name").val();
+	function generalForm() {
+		if (document.generalData.first_name.value != null  && document.generalData.first_name.value != ""){
+			var fname = document.generalData.first_name.value;
 			window.localStorage.setItem("firstname", fname);
 		}
 		
-		if ($("#last_name").val() != null && $("#last_name").val() != ""){
-			var lname = $("#last_name").val();
+		if (document.generalData.last_name.value != null && document.generalData.last_name.value != ""){
+			var lname = document.generalData.last_name.value;
 			window.localStorage.setItem("lastname", lname);		
 		}	
 
-		if 	( $("#yearpicker").val() != "Please Choose"){
-				var _age = $("#yearpicker").val();
+		if 	( document.generalData.yearpicker.value != "Please Choose"){
+				var _age = document.generalData.yearpicker.value;
 				window.localStorage.setItem("age", _age);			
 		}
 	
-		var _gender = $('input[name="genderS"]:checked').val();
+		var _gender = document.generalData.gender.value;
 		window.localStorage.setItem("gender", _gender);
-		$('#general_data').page('refresh'); 
 
+		alert("submitted");
+		window.location.reload(true);
 		return false;
 	}
+	
+	
+	function fDiseaseIndicators() {
+	
+		if (document.diseaseIndicators.visible_cavities.checked == true){
+			window.localStorage.setItem("visibleCavities", true);
+		} else {
+			window.localStorage.setItem("visibleCavities", false);
+		}
+		
+		if (document.diseaseIndicators.radiographic.checked == true){
+			window.localStorage.setItem("radiographic", true);
+		} else {
+			window.localStorage.setItem("radiographic", false);
+		}	
+	
+		if (document.diseaseIndicators.white_spots.checked == true){
+			window.localStorage.setItem("white_spots", true);
+		} else {
+			window.localStorage.setItem("white_spots", false);
+		}
+		
+		if (document.diseaseIndicators.last_3_years.checked == true){
+			window.localStorage.setItem("last_3_years", true);
+		} else {
+			window.localStorage.setItem("last_3_years", false);
+		}
+		alert("submitted");
+		window.location.reload(true);
+		return false;
+	}
+		
 </script>
 
 
@@ -50,9 +83,11 @@ $(function() {
 		var prezime = window.localStorage.getItem("lastname");
 		var pol = window.localStorage.getItem("gender");
 		var godiste = window.localStorage.getItem("age");
-		
+
 		var name = window.localStorage.getItem("username");
-		$("#change").text("Your name is "+ime+" "+prezime+". You are "+pol+", and you are born "+godiste+".");
+		if (window.localStorage.getItem("visibleCavities") == "true") { var _visibleCavities = "you have cavities.";} else {var _visibleCavities = "";}
+		if (window.localStorage.getItem("radiographic") == "true") { var _radiographic = " you have radiographic approximal lesions";} else {var _radiographic = "";}
+		$("#change").text("Your name is "+ime+" "+prezime+". You are "+pol+", and you are born "+godiste+". " + _visibleCavities + _radiographic);
 		
 		/*$("#first_name").val( window.localStorage.getItem("firstname"));
 		$("#last_name").val( window.localStorage.getItem("lastname"));
@@ -468,21 +503,21 @@ $(function() {
 		
 		<div data-role="content">
 		
-			<form name="myForm" action="" onsubmit="return submitForm();"  data-ajax="false" >
+			<form name="generalData" action="" onsubmit="return generalForm();"  data-ajax="false" >
 				<fieldset>
 					<legend>General data about patient:</legend>
 						<div  data-role="controlgroup" data-type="vertical" data-mini="true">
 							<label for="first_name" class="ui-hidden-accessible">First name:</label>
-							<input type="text" name="first_name" required id="first_name" value="" placeholder="First name" data-theme="b"/>
+							<input type="text" name="first_name" id="first_name" value="" placeholder="First name" data-theme="b"/>
 							<label for="last_name" class="ui-hidden-accessible">Last name:</label>
-							<input type="text" name="last_name" required id="last_name" value="" placeholder="Last name"  data-theme="b"/>
+							<input type="text" name="last_name" id="last_name" value="" placeholder="Last name"  data-theme="b"/>
 						</div>
 						
 					<div data-role="controlgroup" data-type="vertical"  data-mini="true" >
 						<label>Gender:</label>
-							<input type="radio" name="genderS" id="male" value="male" data-theme="b"/>
+							<input type="radio" name="gender" id="male" value="male" data-theme="b"/>
 							<label for="male">Male</label>
-							<input type="radio" name="genderS" id="female" value="female" data-theme="b"/>
+							<input type="radio" name="gender" id="female" value="female" data-theme="b"/>
 							<label for="female">Female</label>
 					</div>
 					
@@ -522,6 +557,8 @@ $(function() {
 	</section>	
 	
 	
+	
+	
 	<!-- =============================== 	CURRENT STATUS   ======================================= -->
 
 	
@@ -539,21 +576,112 @@ $(function() {
 		<div data-role="content">	
 
 		
-				<form name="currentForm" action="" onsubmit="return submitForm();"  data-ajax="false" >
+				<h3 style="text-align: center">Current status</h3>
+				
+				<a href="#disease_indicators"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Disease indicators</a>
+					  
+				<a href="#risk_factors"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Risk factors</a>
+						
+				<a href="#protective_factors"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Protective factors</a>
+
+				<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>
+		</div>
+		
+
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
+					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>		
+	
+	
+	
+		<!-- =============================== 	Disease indicators   ======================================= -->
+
+	
+	<section id="disease_indicators" data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">	
+
+		
+				<form name="diseaseIndicators" action="" onsubmit="return fDiseaseIndicators();"  data-ajax="false" >
 
 					  <fieldset data-role="controlgroup" data-mini="true">
 						<legend>Disease Indicators:</legend>
-						  <label for="visible">Visible cavities or radiographic penetration of the dentin</label>
-						  <input type="checkbox" name="disease_indicators" id="visible" value="visible" data-theme="b">
-						  <label for="radiographical">Radiographic approximal enamel lesions (not in dentin)</label>
-						  <input type="checkbox" name="disease_indicators" id="radiographical" value="radiographical" data-theme="b">
+						  <label for="visible_cavities">Visible cavities or radiographic penetration of the dentin</label>
+						  <input type="checkbox" name="visible_cavities" id="visible_cavities" value="visible_cavities" data-theme="b">
+						  <label for="radiographic">Radiographic approximal enamel lesions (not in dentin)</label>
+						  <input type="checkbox" name="radiographic" id="radiographic" value="present" data-theme="b">
 						  <label for="white_spots">White spots on smooth surfaces</label>
-						  <input type="checkbox" name="disease_indicators" id="white_spots" value="white_spots" data-theme="b"> 
+						  <input type="checkbox" name="white_spots" id="white_spots" value="present" data-theme="b"> 
 						  <label for="last_3_years">Restorations last 3 years</label>
-						  <input type="checkbox" name="disease_indicators" id="last_3_years" value="last_3_years" data-theme="b"> 
+						  <input type="checkbox" name="last_3_years" id="last_3_years" value="present" data-theme="b"> 
 					  </fieldset>
 					  
-					  <fieldset data-role="controlgroup" data-mini="true">
+					  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
+							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
+							<a href="#current_status"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+					  </fieldset>
+					  	
+				</form>
+
+	
+		</div>
+		
+
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
+					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>	
+	
+	
+	
+	
+	
+		<!-- =============================== 	Risk factors   ======================================= -->
+
+	
+	<section id="risk_factors" data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">	
+
+		
+				<form name="riskFactors" action="" onsubmit="return submitForm();"  data-ajax="false" >
+
+					<fieldset data-role="controlgroup" data-mini="true">
 						<legend>Risk Factors (Biological predisposing factors):</legend>
 						  <label for="ms_lb">MS and LB both medium or high by culture</label>
 						  <input type="checkbox" name="risk_factors" id="ms_lb" data-theme="b" value="ms_lb">
@@ -574,7 +702,52 @@ $(function() {
 						  <label for="orthodontic_appliances">Orthodontic appliances</label>
 						  <input type="checkbox" name="risk_factors" id="orthodontic_appliances" value="orthodontic_appliances" data-theme="b"> 
 					  </fieldset>
-						
+					  
+					  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
+							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
+							<a href="#current_status"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+					  </fieldset>
+					  	
+				</form>
+
+	
+		</div>
+		
+
+		
+		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
+					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
+					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
+					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>	
+	
+	
+	
+		<!-- =============================== 	Protective factors   ======================================= -->
+
+	
+	<section id="protective_factors" data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="content">	
+
+		
+				<form name="protectiveFactors" action="" onsubmit="return submitForm();"  data-ajax="false" >
+
 					  <fieldset data-role="controlgroup" data-mini="true">
 						<legend>Protective Factors:</legend>
 						  <label for="fluoridated_community">Lives/work/school fluoridated community</label>
@@ -601,10 +774,11 @@ $(function() {
 						  <input type="checkbox" name="protective_factors" id="adequate_saliva" value="adequate_saliva" data-theme="b">
 					  </fieldset>
 					  
-						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
+					  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
 							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-							<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
-						</fieldset>
+							<a href="#current_status"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+					  </fieldset>
+					  	
 				</form>
 
 	
