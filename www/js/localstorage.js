@@ -182,16 +182,123 @@
 		} else {
 			window.localStorage.setItem("adequateSaliva", false);
 		}
+		
+		alert("submitted");
+		window.location.reload(true);
+		return false;
 	
+	}
+	
+	
+	/* ============================ THERAPY RECOMMENDATIONS FUNCTIONS ================ */
+	
+	
+	function fRecallExams () {
+	
+	var _RecallExamsFrequency = document.recallExams.recalls.value
+	window.localStorage.setItem("recallExamsFrequency", _RecallExamsFrequency);
+	
+		alert("submitted");
+		window.location.reload(true);
+		return false;
+	}
+	
+	
+	function fAntibacterials () {
+	
+		if (document.antibacterials_th.chlorhexidine_th.checked == true){
+			window.localStorage.setItem("chlorhexidine_th", true);
+		} else {
+			window.localStorage.setItem("chlorhexidine_th", false);
+		}
+		
+		if (document.antibacterials_th.xylitol_th.checked == true){
+			window.localStorage.setItem("xylitol_th", true);
+		} else {
+			window.localStorage.setItem("xylitol_th", false);
+		}
+	
+		alert("submitted");
+		window.location.reload(true);
+		return false;
+	}
+	
+	function fFluoride () {
+	
+		if (document.fluoride_th.fluoride_paste_otc_th.checked == true){
+			window.localStorage.setItem("fluoride_paste_otc_th", true);
+		} else {
+			window.localStorage.setItem("fluoride_paste_otc_th", false);
+		}
+		
+		if (document.fluoride_th.fluoride_paste_5000_th.checked == true){
+			window.localStorage.setItem("fluoride_paste_5000_th", true);
+		} else {
+			window.localStorage.setItem("fluoride_paste_5000_th", false);
+		}
+
+		if (document.fluoride_th.fluoride_mouthrinse_th.checked == true){
+			window.localStorage.setItem("fluoride_mouthrinse_th", true);
+		} else {
+			window.localStorage.setItem("fluoride_mouthrinse_th", false);
+		}
+		
+		
+		if (document.fluoride_th.fluoride_mouthrinse_extra_th.checked == true){
+			window.localStorage.setItem("fluoride_mouthrinse_extra_th", true);
+		} else {
+			window.localStorage.setItem("fluoride_mouthrinse_extra_th", false);
+		}
+		
+		if (document.fluoride_th.fluoride_mouthrinse_xerostomia_th.checked == true){
+			window.localStorage.setItem("fluoride_mouthrinse_xerostomia_th", true);
+		} else {
+			window.localStorage.setItem("fluoride_mouthrinse_xerostomia_th", false);
+		}
+	
+	
+		alert("submitted");
+		window.location.reload(true);
+		return false;
 	}
 	
 	
 	
 	
 	
+function fPhControl () {
+	
+		if (document.ph_control.ph_th.checked == true){
+			window.localStorage.setItem("ph_th", true);
+		} else {
+			window.localStorage.setItem("ph_th", false);
+		}
+		
+		if (document.ph_control.phgum_th.checked == true){
+			window.localStorage.setItem("phgum_th", true);
+		} else {
+			window.localStorage.setItem("phgum_th", false);
+		}
 	
 	
+		alert("submitted");
+		window.location.reload(true);
+		return false;
+	}
 	
+	
+	function fCaPPaste() {
+	
+		if (document.cap_paste.cap_th.checked == true){
+			window.localStorage.setItem("cap_th", true);
+		} else {
+			window.localStorage.setItem("cap_th", false);
+		}
+		
+		alert("submitted");
+		window.location.reload(true);
+		return false;
+	}
 	
 	
 	

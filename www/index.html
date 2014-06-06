@@ -813,7 +813,7 @@ $(function() {
 						<fieldset data-role="controlgroup" data-mini="true">	
 						<legend>Recall dental exams:</legend>						
 							  <label for="points">every:</label>
-							  <input type="range" name="recommendations" id="recalls" value="6" min="0" max="36">months</input>	
+							  <input type="range" name="recalls" id="recalls" value="6" min="0" max="36">months</input>	
 						</fieldset>	
 		
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
@@ -858,15 +858,15 @@ $(function() {
 		<div data-role="content">
 		
 		
-				<form name="antibacterials" action="" onsubmit="return fAntibacterials();"  data-ajax="false" >
+				<form name="antibacterials_th" action="" onsubmit="return fAntibacterials();"  data-ajax="false" >
 	
 	
 						<fieldset data-role="controlgroup" data-mini="true">
 							<legend>Antibacterials:</legend>
 							  <label for="chlorhexidine_th">Chlorhexidine gluconate 0.12% 10 ml rinse for one minute daily for one week each month.</label>
-							  <input type="checkbox" name="recommendations" id="chlorhexidine_th" data-theme="b" value="chlorhexidine_th">
+							  <input type="checkbox" name="chlorhexidine_th" id="chlorhexidine_th" data-theme="b" value="chlorhexidine_th">
 							  <label for="xylitol_th">Xylitol (6-10 grams/day) gum or candies. Two tabs of gum or two candies four times daily.</label>
-							  <input type="checkbox" name="recommendations" id="xylitol_th" value="xylitol_th" data-theme="b">
+							  <input type="checkbox" name="xylitol_th" id="xylitol_th" value="xylitol_th" data-theme="b">
 						</fieldset>
 		
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
@@ -913,21 +913,21 @@ $(function() {
 		<div data-role="content">
 		
 		
-				<form name="fluoride" action="" onsubmit="return fFluoride();"  data-ajax="false" >
+				<form name="fluoride_th" action="" onsubmit="return fFluoride();"  data-ajax="false" >
 	
 	
 						  <fieldset data-role="controlgroup" data-mini="true">
 							<legend>Fluoride:</legend>
 							  <label for="fluoride_paste_otc_th">OTC fluoride-containing toothpaste twice daily, after breakfast and at bedtime.</label>
-							  <input type="checkbox" name="recommendations" id="fluoride_paste_otc_th" data-theme="b" value="fluoride_paste_otc_th">
+							  <input type="checkbox" name="fluoride_paste_otc_th" id="fluoride_paste_otc_th" data-theme="b" value="fluoride_paste_otc_th">
 							  <label for="fluoride_paste_5000_th">1.1% NaF toothpaste instead of regular fluoride toothpaste twice daily, after breakfast and at bedtime.</label>
-							  <input type="checkbox" name="recommendations" id="fluoride_paste_5000_th" data-theme="b" value="fluoride_paste_5000_th">
+							  <input type="checkbox" name="fluoride_paste_5000_th" id="fluoride_paste_5000_th" data-theme="b" value="fluoride_paste_5000_th">
 							  <label for="fluoride_mouthrinse_th">OTC 0.05% NaF rinse daily.</label>
-							  <input type="checkbox" name="recommendations" id="fluoride_mouthrinse_th" value="fluoride_mouthrinse_th" data-theme="b">
+							  <input type="checkbox" name="fluoride_mouthrinse_th" id="fluoride_mouthrinse_th" value="fluoride_mouthrinse_th" data-theme="b">
 							  <label for="fluoride_mouthrinse_extra_th">0.2% NaF rinse daily (1 bottle) then OTC 0.05% NaF rinse 2X daily.</label>
-							  <input type="checkbox" name="recommendations" id="fluoride_mouthrinse_extra_th" value="fluoride_mouthrinse_extra_th" data-theme="b">
+							  <input type="checkbox" name="fluoride_mouthrinse_extra_th" id="fluoride_mouthrinse_extra_th" value="fluoride_mouthrinse_extra_th" data-theme="b">
 							  <label for="fluoride_mouthrinse_xerostomia_th">OTC 0.05% NaF rinse when mouth feels dry, after snacking, breakfast, and lunch.</label>
-							  <input type="checkbox" name="recommendations" id="fluoride_mouthrinse_xerostomia_th" value="fluoride_mouthrinse_xerostomia_th" data-theme="b">							  
+							  <input type="checkbox" name="fluoride_mouthrinse_xerostomia_th" id="fluoride_mouthrinse_xerostomia_th" value="fluoride_mouthrinse_xerostomia_th" data-theme="b">							  
 						  </fieldset>	
 		
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
@@ -981,9 +981,9 @@ $(function() {
 						<fieldset data-role="controlgroup" data-mini="true">
 							<legend>Ph-control:</legend>
 							  <label for="ph_th">Acid-neutralizing rinses as needed if mouth feels dry, after snacking, bedtime and after breakfast.</label>
-							  <input type="checkbox" name="recommendations" id="ph_th" data-theme="b" value="ph_th">
+							  <input type="checkbox" name="ph_th" id="ph_th" data-theme="b" value="ph_th">
 							  <label for="phgum_th"> Baking soda gum as needed.</label>
-							  <input type="checkbox" name="recommendations" id="phgum_th" value="phgum_th" data-theme="b">
+							  <input type="checkbox" name="phgum_th" id="phgum_th" value="phgum_th" data-theme="b">
 						</fieldset>	
 		
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
@@ -1034,7 +1034,7 @@ $(function() {
 						<fieldset data-role="controlgroup" data-mini="true">
 							<legend>Calcium-phosphate paste:</legend>
 							  <label for="cap_th">Apply calcium/ phosphate paste twice daily.</label>
-							  <input type="checkbox" name="recommendations" id="cap_th" data-theme="b" value="cap_th">
+							  <input type="checkbox" name="cap_th" id="cap_th" data-theme="b" value="cap_th">
 						</fieldset>
 		
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
