@@ -761,67 +761,15 @@ $(function() {
 		<div data-role="content">
 		
 		
-				<form name="currentForm" action="" onsubmit="return submitForm();"  data-ajax="false" >
+
 	
 	
-						<fieldset data-role="controlgroup" data-mini="true">	
-						<legend>Recall dental exams:</legend>						
-							  <label for="points">every:</label>
-							  <input type="range" name="recommendations" id="recalls" value="6" min="0" max="36">months</input>	
-						</fieldset>	
-	
-						<hr />
-	
-						  <fieldset data-role="controlgroup" data-mini="true">
-							<legend>Antibacterials:</legend>
-						  <label for="chlorhexidine_th">Chlorhexidine gluconate 0.12% 10 ml rinse for one minute daily for one week each month.</label>
-						  <input type="checkbox" name="recommendations" id="chlorhexidine_th" data-theme="b" value="chlorhexidine_th">
-						  <label for="xylitol_th">Xylitol (6-10 grams/day) gum or candies. Two tabs of gum or two candies four times daily.</label>
-						  <input type="checkbox" name="recommendations" id="xylitol_th" value="xylitol_th" data-theme="b">
-						</fieldset>
-						
-						<hr />
-	
-						  <fieldset data-role="controlgroup" data-mini="true">
-							<legend>Fluoride:</legend>
-							  <label for="fluoride_paste_otc_th">OTC fluoride-containing toothpaste twice daily, after breakfast and at bedtime.</label>
-							  <input type="checkbox" name="recommendations" id="fluoride_paste_otc_th" data-theme="b" value="fluoride_paste_otc_th">
-							  <label for="fluoride_paste_5000_th">1.1% NaF toothpaste instead of regular fluoride toothpaste twice daily, after breakfast and at bedtime.</label>
-							  <input type="checkbox" name="recommendations" id="fluoride_paste_5000_th" data-theme="b" value="fluoride_paste_5000_th">
-							  <label for="fluoride_mouthrinse_th">OTC 0.05% NaF rinse daily.</label>
-							  <input type="checkbox" name="recommendations" id="fluoride_mouthrinse_th" value="fluoride_mouthrinse_th" data-theme="b">
-							  <label for="fluoride_mouthrinse_extra_th">0.2% NaF rinse daily (1 bottle) then OTC 0.05% NaF rinse 2X daily.</label>
-							  <input type="checkbox" name="recommendations" id="fluoride_mouthrinse_extra_th" value="fluoride_mouthrinse_extra_th" data-theme="b">
-							  <label for="fluoride_mouthrinse_xerostomia_th">OTC 0.05% NaF rinse when mouth feels dry, after snacking, breakfast, and lunch.</label>
-							  <input type="checkbox" name="recommendations" id="fluoride_mouthrinse_xerostomia_th" value="fluoride_mouthrinse_xerostomia_th" data-theme="b">							  
-						  </fieldset>	
-	
-						<hr />
-						
-						  <fieldset data-role="controlgroup" data-mini="true">
-							<legend>Ph-control:</legend>
-						  <label for="ph_th">Acid-neutralizing rinses as needed if mouth feels dry, after snacking, bedtime and after breakfast.</label>
-						  <input type="checkbox" name="recommendations" id="ph_th" data-theme="b" value="ph_th">
-						  <label for="phgum_th"> Baking soda gum as needed.</label>
-						  <input type="checkbox" name="recommendations" id="phgum_th" value="phgum_th" data-theme="b">
-						</fieldset>
-						
-						<hr />
-						
-						  <fieldset data-role="controlgroup" data-mini="true">
-							<legend>Calcium-phosphate paste:</legend>
-						  <label for="cap_th">Apply calcium/ phosphate paste twice daily.</label>
-						  <input type="checkbox" name="recommendations" id="cap_th" data-theme="b" value="cap_th">
-						</fieldset>
-						
-						<hr />	
-											
-						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-							<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
-						</fieldset>
-						
-				</form>
+				<a href="#recall_exams"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Recall exams frequency</a>
+				<a href="#antibacterials"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Antibacterial therapy</a>	
+				<a href="#fluoride"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Fluoride therapy</a>	
+				<a href="#ph_control"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Ph-control therapy</a>	
+				<a href="#cap_paste"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Calcium phosphate paste</a>					
+				<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>
 	
 	
 		</div>
@@ -841,7 +789,282 @@ $(function() {
 	</section>	
 	
 	
+		<!-- =============================== 	Recall exams   ======================================= -->
+
 	
+	<section id="recall_exams" data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<div data-role="content">
+		
+		
+				<form name="recallExams" action="" onsubmit="return fRecallExams();"  data-ajax="false" >
+	
+	
+						<fieldset data-role="controlgroup" data-mini="true">	
+						<legend>Recall dental exams:</legend>						
+							  <label for="points">every:</label>
+							  <input type="range" name="recommendations" id="recalls" value="6" min="0" max="36">months</input>	
+						</fieldset>	
+		
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
+							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
+							<a href="#recommendations"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+						</fieldset>
+		
+				</form>
+		
+		</div>
+		
+		
+			<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
+				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
+				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
+				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				</ul>
+			</div>
+	</div>	
+</section>	
+		
+		
+		
+		<!-- =============================== 	Antibacterials   ======================================= -->
+
+	
+	<section id="antibacterials" data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<div data-role="content">
+		
+		
+				<form name="antibacterials" action="" onsubmit="return fAntibacterials();"  data-ajax="false" >
+	
+	
+						<fieldset data-role="controlgroup" data-mini="true">
+							<legend>Antibacterials:</legend>
+							  <label for="chlorhexidine_th">Chlorhexidine gluconate 0.12% 10 ml rinse for one minute daily for one week each month.</label>
+							  <input type="checkbox" name="recommendations" id="chlorhexidine_th" data-theme="b" value="chlorhexidine_th">
+							  <label for="xylitol_th">Xylitol (6-10 grams/day) gum or candies. Two tabs of gum or two candies four times daily.</label>
+							  <input type="checkbox" name="recommendations" id="xylitol_th" value="xylitol_th" data-theme="b">
+						</fieldset>
+		
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
+							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
+							<a href="#recommendations"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+						</fieldset>
+		
+				</form>
+		
+		</div>
+		
+		
+			<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
+				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
+				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
+				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				</ul>
+			</div>
+	</div>	
+</section>			
+		
+		
+		
+		
+		
+				<!-- =============================== 	Fluoride   ======================================= -->
+
+	
+	<section id="fluoride" data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<div data-role="content">
+		
+		
+				<form name="fluoride" action="" onsubmit="return fFluoride();"  data-ajax="false" >
+	
+	
+						  <fieldset data-role="controlgroup" data-mini="true">
+							<legend>Fluoride:</legend>
+							  <label for="fluoride_paste_otc_th">OTC fluoride-containing toothpaste twice daily, after breakfast and at bedtime.</label>
+							  <input type="checkbox" name="recommendations" id="fluoride_paste_otc_th" data-theme="b" value="fluoride_paste_otc_th">
+							  <label for="fluoride_paste_5000_th">1.1% NaF toothpaste instead of regular fluoride toothpaste twice daily, after breakfast and at bedtime.</label>
+							  <input type="checkbox" name="recommendations" id="fluoride_paste_5000_th" data-theme="b" value="fluoride_paste_5000_th">
+							  <label for="fluoride_mouthrinse_th">OTC 0.05% NaF rinse daily.</label>
+							  <input type="checkbox" name="recommendations" id="fluoride_mouthrinse_th" value="fluoride_mouthrinse_th" data-theme="b">
+							  <label for="fluoride_mouthrinse_extra_th">0.2% NaF rinse daily (1 bottle) then OTC 0.05% NaF rinse 2X daily.</label>
+							  <input type="checkbox" name="recommendations" id="fluoride_mouthrinse_extra_th" value="fluoride_mouthrinse_extra_th" data-theme="b">
+							  <label for="fluoride_mouthrinse_xerostomia_th">OTC 0.05% NaF rinse when mouth feels dry, after snacking, breakfast, and lunch.</label>
+							  <input type="checkbox" name="recommendations" id="fluoride_mouthrinse_xerostomia_th" value="fluoride_mouthrinse_xerostomia_th" data-theme="b">							  
+						  </fieldset>	
+		
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
+							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
+							<a href="#recommendations"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+						</fieldset>
+		
+				</form>
+		
+		</div>
+		
+		
+			<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
+				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
+				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
+				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				</ul>
+			</div>
+	</div>	
+</section>			
+		
+		
+			
+		
+		
+		
+				<!-- =============================== 	Ph-control   ======================================= -->
+
+	
+	<section id="ph_control" data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<div data-role="content">
+		
+		
+				<form name="ph_control" action="" onsubmit="return fPhControl();"  data-ajax="false" >
+	
+	
+						<fieldset data-role="controlgroup" data-mini="true">
+							<legend>Ph-control:</legend>
+							  <label for="ph_th">Acid-neutralizing rinses as needed if mouth feels dry, after snacking, bedtime and after breakfast.</label>
+							  <input type="checkbox" name="recommendations" id="ph_th" data-theme="b" value="ph_th">
+							  <label for="phgum_th"> Baking soda gum as needed.</label>
+							  <input type="checkbox" name="recommendations" id="phgum_th" value="phgum_th" data-theme="b">
+						</fieldset>	
+		
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
+							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
+							<a href="#recommendations"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+						</fieldset>
+		
+				</form>
+		
+		</div>
+		
+		
+			<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
+				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
+				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
+				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				</ul>
+			</div>
+	</div>	
+</section>	
+		
+		
+		
+				<!-- =============================== 	CaP paste   ======================================= -->
+
+	
+	<section id="cap_paste" data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<div data-role="content">
+		
+		
+				<form name="cap_paste" action="" onsubmit="return fCaPPaste();"  data-ajax="false" >
+	
+	
+						<fieldset data-role="controlgroup" data-mini="true">
+							<legend>Calcium-phosphate paste:</legend>
+							  <label for="cap_th">Apply calcium/ phosphate paste twice daily.</label>
+							  <input type="checkbox" name="recommendations" id="cap_th" data-theme="b" value="cap_th">
+						</fieldset>
+		
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
+							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
+							<a href="#recommendations"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+						</fieldset>
+		
+				</form>
+		
+		</div>
+		
+		
+			<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
+				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
+				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
+				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				</ul>
+			</div>
+	</div>	
+</section>
+		
+		
+		
+		
+		
+		
+		
 	
 <script type"text/javascript" src="js/localstorage.js"></script>	
 <script type"text/javascript">
