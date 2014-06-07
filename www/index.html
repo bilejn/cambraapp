@@ -11,14 +11,7 @@
 	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.0.min.js"></script>
 	<script type="text/javascript" src="js/timer.js"></script>
-
-
-
-
-
-
-
-
+	
 
 <script type"text/javascript">
 
@@ -56,8 +49,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -70,9 +63,10 @@ $(function() {
 			<div class="ui-grid-a">
 			
 				<div class="ui-block-a" data-role="controlgroup">
-				<a href="#dental_visit"  data-role="button" style="font-size:15px;" data-transition="none" data-theme="b">Dental Visit</a>
-				<a href="#oral_hygiene"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Oral Hygiene</a>
-				<a href="#anylink"  data-role="button" style="font-size:15px;" data-theme="b">Xylitol</a>				
+					<a href="#dental_visit"  data-role="button"  data-transition="none" data-theme="b">Dental Visit</a>
+					<a href="#oral_hygiene"  data-role="button"  data-transition="none"  data-theme="b">Oral Hygiene</a>
+					<a href="#anylink"  id="xylitol_button" data-role="button" style="display: none;" data-theme="b">Xylitol</a>	
+					<a href="#anylink"  id="chlorhexidine_button" data-role="button" style="display: none;" data-theme="b">Chlorhexidine</a>					
 				</div>
 
 				<div class="ui-block-b" data-role="controlgroup">
@@ -476,8 +470,8 @@ $(function() {
 				
 				
 				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-				<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-				<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+				<input type="submit" value="Submit"  id="submit" data-role="button"  data-theme="c">
+				<a href="#dental_visit"  id="back" data-role="button" data-transition="none"  data-theme="c">Back</a>	
 				</fieldset>
 			</form>
 
@@ -1066,7 +1060,8 @@ $(function() {
 		
 		
 	
-<script type"text/javascript" src="js/localstorage.js"></script>	
+<script type"text/javascript" src="js/localstorage.js"></script>
+<script type="text/javascript" src="js/getstorage.js"></script>	
 <script type"text/javascript">
 
 for (i = new Date().getFullYear(); i > 1900; i--)
