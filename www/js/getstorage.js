@@ -1,5 +1,9 @@
-	$("document").ready(function (){
-		
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+		  function onDeviceReady() {
+        // Now safe to use the Cordova API
+
 		if (window.localStorage.getItem("xylitol_th") == "true"){
 			$("#xylitol_button").show();
 		 } else {
@@ -11,6 +15,6 @@
 		 } else {
 			$("#chlorhexidine_button").hide();
 		 }
-    });
+    }
 
      
