@@ -32,7 +32,7 @@ $(function() {
 			}
 
 
-		$("#change").html(output);
+		$("#change").text("your current caries risk level is: " + window.localStorage.getItem("risk_level"));
 		
 		/*$("#first_name").val( window.localStorage.getItem("firstname")); "Your name is "+ime+" "+prezime+". You are "+pol+", and you are born "+godiste+". " + _visibleCavities + _radiographic
 		$("#last_name").val( window.localStorage.getItem("lastname"));
@@ -66,7 +66,7 @@ $(function() {
 		
 		<div data-role="content">
 		<div id="naslov">
-
+				<p id="change"></p>
 		</div>
 			<div class="ui-grid-a">
 			
@@ -197,6 +197,7 @@ $(function() {
 				<a href="#general_data"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">General Data</a>		
 				<a href="#current_status"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">Current Status</a>
 				<a href="#recommendations"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">Recommendations</a>
+				<a href=""  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b" onclick= "window.localStorage.clear();">Clear all</a>
 				<a href="#list"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">List</a>		
 		</div>
 		

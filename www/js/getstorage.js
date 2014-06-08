@@ -1,4 +1,4 @@
-	$("document").ready(function (){
+	$(function (){
 
 		if (window.localStorage.getItem("xylitol_th") == "true"){
 			$("#xylitol_button").show();
@@ -11,11 +11,10 @@
 		 } else {
 			$("#chlorhexidine_button").hide();
 		 }
+		 
+		 
     });
 	
-	function fReload () {
-			window.location.reload(true);
-			alert("loaded");
-	}
+
 
      
