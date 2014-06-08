@@ -12,5 +12,10 @@
 			$("#chlorhexidine_button").hide();
 		 }
     });
+	
+	function fReload () {
+			window.location.reload(true);
+			alert("loaded");
+	}
 
      

@@ -24,9 +24,17 @@ $(function() {
 		var name = window.localStorage.getItem("username");
 		if (window.localStorage.getItem("visibleCavities") == "true") { var _visibleCavities = "you have cavities.";} else {var _visibleCavities = "";}
 		if (window.localStorage.getItem("radiographic") == "true") { var _radiographic = " you have radiographic approximal lesions";} else {var _radiographic = "";}
-		$("#change").text("Your name is "+ime+" "+prezime+". You are "+pol+", and you are born "+godiste+". " + _visibleCavities + _radiographic);
 		
-		/*$("#first_name").val( window.localStorage.getItem("firstname"));
+		var output = ''; 
+
+		for (var key in localStorage) {
+			output = output+(key + ':' +localStorage[key])+'<br />';
+			}
+
+
+		$("#change").html(output);
+		
+		/*$("#first_name").val( window.localStorage.getItem("firstname")); "Your name is "+ime+" "+prezime+". You are "+pol+", and you are born "+godiste+". " + _visibleCavities + _radiographic
 		$("#last_name").val( window.localStorage.getItem("lastname"));
 		$("#yearpicker").val(window.localStorage.getItem("age"));*/
 });
@@ -58,7 +66,7 @@ $(function() {
 		
 		<div data-role="content">
 		<div id="naslov">
-		<h3 id="change">Your current caries risk level is HIGH</h3>
+
 		</div>
 			<div class="ui-grid-a">
 			
@@ -189,7 +197,7 @@ $(function() {
 				<a href="#general_data"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">General Data</a>		
 				<a href="#current_status"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">Current Status</a>
 				<a href="#recommendations"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">Recommendations</a>
-		
+				<a href="#list"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">List</a>		
 		</div>
 		
 		
@@ -1058,7 +1066,40 @@ $(function() {
 		
 		
 		
+				<!-- =============================== 	list   ======================================= -->
+
+	
+	<section id="list" data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				</ul>
+			</div>
+		</div>
 		
+		
+		
+		<div data-role="content">
+		
+		
+		<h3 id="change">Your current caries risk level is HIGH</h3>
+		
+		</div>
+		
+		
+			<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
+				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
+				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
+				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				</ul>
+			</div>
+	</div>	
+</section>		
 		
 		
 		
