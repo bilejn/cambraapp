@@ -28,10 +28,10 @@ $(function() {
 		var output = ''; 
 
 		for (var key in localStorage) {
-			output = output+(key + ':' +localStorage[key])+'<br />';
+			output = output+(key + ": " +localStorage[key])+"<br />";
 			}
 
-
+		$("#list_output").html(output);
 		$("#change").text("your current caries risk level is: " + window.localStorage.getItem("risk_level"));
 		
 		/*$("#first_name").val( window.localStorage.getItem("firstname")); "Your name is "+ime+" "+prezime+". You are "+pol+", and you are born "+godiste+". " + _visibleCavities + _radiographic
@@ -197,7 +197,7 @@ $(function() {
 				<a href="#general_data"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">General Data</a>		
 				<a href="#current_status"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">Current Status</a>
 				<a href="#recommendations"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">Recommendations</a>
-				<a href=""  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b" onclick= "window.localStorage.clear();">Clear all</a>
+				<a href=""  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b" onclick= "window.localStorage.clear(); window.location.reload(true);">Clear all</a>
 				<a href="#list"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">List</a>		
 		</div>
 		
@@ -1085,8 +1085,8 @@ $(function() {
 		<div data-role="content">
 		
 		
-		<h3 id="change">Your current caries risk level is HIGH</h3>
-		
+		<p id="list_output"></p>
+					<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
 		</div>
 		
 		
