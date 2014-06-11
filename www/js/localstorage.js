@@ -250,8 +250,10 @@
 	
 	function fRecallExams () {
 	
-	var _RecallExamsFrequency = document.recallExams.recalls.value
-	window.localStorage.setItem("recallExamsFrequency", _RecallExamsFrequency);
+	var _RecallExamsFrequency = document.recallExams.recalls.value;
+	var date = new Date();
+    date.setMonth(date.getMonth() + parseInt(_RecallExamsFrequency) + 1);
+	window.localStorage.setItem("recallExam", date);
 	
 		alert("submitted");
 		window.location.reload(true);

@@ -66,23 +66,31 @@ $(function() {
 		
 		<div data-role="content">
 		<div id="naslov">
-				<p id="change"></p>
+				<p id="change">&nbsp</p>
+				<p id="time">&nbsp</p>
 		</div>
-			<div class="ui-grid-a">
-			
-				<div class="ui-block-a" data-role="controlgroup">
-					<a href="#dental_visit"  data-role="button"  data-transition="none" data-theme="b">Dental Visit</a>
-					<a href="#oral_hygiene"  data-role="button"  data-transition="none"  data-theme="b">Oral Hygiene</a>
-				</div>	
-				<div class="ui-block-b" data-role="controlgroup">
-					<a href="#anylink"  data-role="button" style="font-size:15px;" data-theme="e">Snack</a>
-				</div>
-			</div>
-					<a href="#anylink"  id="xylitol_button" data-role="button" data-theme="b">Xylitol</a>
 
 			
-					<a href="#anylink"  id="chlorhexidine_button" data-role="button" data-theme="b">Chlorhexidine</a>					
-
+					
+				<fieldset id="dental_visit_button" data-role="controlgroup" data-type="horizontal" data-mini="true">				
+					<a href="#dental_visit"  class="wide" data-role="button" data-transition="none"  data-theme="b" onclick="alert('This form should be filled by your dentist after dental examination')">Visit to dentist</a>
+					<a href="#"  class="short" data-role="button" data-transition="none"  data-theme="b" data-icon="info" data-iconpos="right">&nbsp</a>	
+				</fieldset>	
+					
+				<fieldset id="snack_button" data-role="controlgroup" data-type="horizontal" data-mini="true">				
+					<a href="#"  class="wide" data-role="button" data-transition="none"  data-theme="e" >Snack</a>
+					<a href="#"  class="short" data-role="button" data-transition="none"  data-theme="e" data-icon="info" data-iconpos="right">&nbsp</a>	
+				</fieldset>
+				
+				<fieldset id="oral_hygiene_button" data-role="controlgroup" data-type="horizontal" data-mini="true">				
+					<a href="#oral_hygiene" class="wide" data-role="button" data-transition="none"  data-theme="d" >Oral Hygiene</a>
+					<a href="#"  class="short" data-role="button" data-transition="none"  data-theme="d" data-icon="info" data-iconpos="right">&nbsp</a>	
+				</fieldset>
+					
+				<fieldset id="xylitol_button" data-role="controlgroup" data-type="horizontal" data-mini="true">				
+					<a href="#"  class="wide" data-role="button" data-transition="none"  data-theme="d" >Xylitol</a>
+					<a href="#"  class="short" data-role="button" data-transition="none"  data-theme="d" data-icon="info" data-iconpos="right">&nbsp</a>	
+				</fieldset>
 
 
 		</div>
@@ -115,8 +123,8 @@ $(function() {
 			<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" class="ui-btn-active ui-state-persist" data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" class="ui-btn-active ui-state-persist" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -151,8 +159,8 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a" class="ui-btn-active ui-state-persist" >Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a" class="ui-btn-active ui-state-persist" >Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -186,19 +194,19 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
 		
 		
 		<div data-role="content">
-				<a href="#general_data"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">General Data</a>		
-				<a href="#current_status"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">Current Status</a>
-				<a href="#recommendations"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">Recommendations</a>
-				<a href=""  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b" onclick= "window.localStorage.clear(); window.location.reload(true);">Clear all</a>
-				<a href="#list"  data-role="button" style="font-size:15px;"  data-transition="none" data-theme="b">List</a>		
+				<a href="#general_data"  data-role="button" data-transition="none" data-theme="b">General Data</a>		
+				<a href="#current_status"  data-role="button" data-transition="none" data-theme="b">Current Status</a>
+				<a href="#recommendations"  data-role="button" data-transition="none" data-theme="b">Recommendations</a>
+				<a href=""  data-role="button" data-transition="none" data-theme="b" onclick= "window.localStorage.clear(); window.location.reload(true);">Clear all</a>
+				<a href="#list"  data-role="button" data-transition="none" data-theme="b">List</a>		
 		</div>
 		
 		
@@ -223,8 +231,8 @@ $(function() {
 		<div data-role="header" data-id="persistent_navbar" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-transition="none"  data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none"  data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -233,9 +241,9 @@ $(function() {
 		<div data-role="content">
 		
 		<h3 style="text-align: center">Oral Hygiene</h3>
-				<a href="#brushing"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">1. Teeth Brushing</a>		
-				<a href="#flossing"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">2. Teeth Flossing</a>
-				<a href="#rinsing"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">3. Mouth Rinsing</a>
+				<a href="#brushing"  data-role="button" data-transition="none"  data-theme="b">1. Teeth Brushing</a>		
+				<a href="#flossing"  data-role="button" data-transition="none"  data-theme="b">2. Teeth Flossing</a>
+				<a href="#rinsing"  data-role="button" data-transition="none"  data-theme="b">3. Mouth Rinsing</a>
 		
 		</div>
 		
@@ -261,21 +269,17 @@ $(function() {
 	<section id="brushing" data-role="dialog" data-theme="b">
 	
 			<div data-role="header" data-theme="b">
-				<h4> Teeth Brushing </h4>
+				<p>&nbsp &nbsp &nbsp &nbsp Teeth Brushing</p> 
 			</div>		
 		
 			<div data-role="content">
 			 	<input type="button" value="Start when ready" id="timer-button" onclick="timer()">
 				<p id="timer"></p>
+				<br />
+				<p id="fluoride_paste_otc">Use standard over-the-counter tooth paste (1100 - 1450 ppm F)</p>
+				<p id="fluoride_paste_5000">Use therapeutic tooth paste prescribed by your dentist.(5000 ppm F)</p>
 			</div>
-		
-			<div data-role="footer" data-theme="b">
-				<h4> footer </h4>
-			</div>
-			
-        </div>	
-		
-		
+	
 	</section>	
 	
 	
@@ -285,22 +289,14 @@ $(function() {
 	<section id="flossing" data-role="dialog" data-theme="b">
 	
 			<div data-role="header" data-theme="b">
-				<h4> 2. Teeth Flossing </h4>
+				<p>&nbsp &nbsp &nbsp &nbsp Teeth Flossing </p>
 			</div>		
 		
 			<div data-role="content">
-
-				<h4> Teeth Flossing </h4>
-				<p>Text Text Text</p>
-			</div>
-		
-			<div data-role="footer" data-theme="b">
-				<h4> footer </h4>
+			 	<input type="button" value="Register" id="flossing-button">
+				<p>You should clean interdental spaces once daily after regular tooth brushing. Use interdental brush or floss as your dentist recommended.</p>
 			</div>
 			
-        </div>	
-		
-		
 	</section>	
 
 
@@ -310,20 +306,16 @@ $(function() {
 	<section id="rinsing" data-role="dialog" data-theme="b">
 	
 			<div data-role="header" data-theme="b">
-				<h4> Mouth Rinsing </h4>
+				<p>&nbsp &nbsp &nbsp &nbsp Mouth Rinsing </p>
 			</div>		
 		
 			<div data-role="content">
-				<h4> Mouth Rinsing </h4>
-				<p>Text Text Text</p>
+			 	<input type="button" value="Register" id="flossing-button">
+				<p id="fluoride_mouthrinse_standard">Rinse your mouth with fluoride mouthrinse once daily after teethbrushing and flosing. Use 0.05% F mouthrinse recommended by your dentist.</p>
+				<p id="fluoride_mouthrinse_extra">Rinse your mouth with fluoride mouthrinse 0.2% once daily after teethbrushing and flosing. After one bottle is used continue to rinse with 0.05% F mouthrinse two times daily - after each teeth brushing.</p>
+				<p id="fluoride_mouthrinse_xerostomia">Rinse your mouth with fluoride mouthrinse 0.05% whenever your mouth feels dry, and after every meal or snack.</p>
+				<p id="chlorhexidine_rinse">Rinse your mouth with chlorhexidine gluconate 0.12% for one minute daily for one week each month. Do not use fluoride mouthrinse during this period! Use it other days in the month.</p>
 			</div>
-		
-			<div data-role="footer" data-theme="b">
-				<h4> footer </h4>
-			</div>
-			
-        </div>	
-		
 		
 	</section>		
 	
@@ -336,8 +328,8 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-transition="none"  data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;" data-transition="none"  data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none"  data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none"  data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -347,6 +339,7 @@ $(function() {
 		
 		<h1>PROFILE</h1>
 		
+
 		</div>
 		
 		
@@ -372,8 +365,8 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;" data-transition="none"  data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none"  data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -408,8 +401,8 @@ $(function() {
 		<div data-role="header">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -444,8 +437,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -464,7 +457,7 @@ $(function() {
 						</div>
 						
 					<div data-role="controlgroup" data-type="vertical"  data-mini="true" >
-						<label>Gender:</label>
+						<label for="gender" >Gender:</label>
 							<input type="radio" name="gender" id="male" value="male" data-theme="b"/>
 							<label for="male">Male</label>
 							<input type="radio" name="gender" id="female" value="female" data-theme="b"/>
@@ -472,7 +465,7 @@ $(function() {
 					</div>
 					
 					<div data-role="controlgroup" data-type="vertical" data-mini="true">
-						<label for="yearpicker"class="select">Age:</label>
+						<label for="yearpicker" class="select">Age:</label>
 							<select name="yearpicker" id="yearpicker" data-theme="b">
 							<option>Please Choose</option>
 							</select>
@@ -516,8 +509,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -528,13 +521,13 @@ $(function() {
 		
 				<h3 style="text-align: center">Current status</h3>
 				
-				<a href="#disease_indicators"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Disease indicators</a>
+				<a href="#disease_indicators"  data-role="button" data-transition="none"  data-theme="b">Disease indicators</a>
 					  
-				<a href="#risk_factors"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Risk factors</a>
+				<a href="#risk_factors"  data-role="button" data-transition="none"  data-theme="b">Risk factors</a>
 						
-				<a href="#protective_factors"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Protective factors</a>
+				<a href="#protective_factors"  data-role="button" data-transition="none"  data-theme="b">Protective factors</a>
 
-				<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>
+				<a href="#dental_visit"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>
 		</div>
 		
 
@@ -560,8 +553,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -585,8 +578,8 @@ $(function() {
 					  </fieldset>
 					  
 					  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-							<a href="#current_status"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+							<input type="submit" value="Submit"  id="submit" data-role="button" data-theme="c">
+							<a href="#current_status"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>	
 					  </fieldset>
 					  	
 				</form>
@@ -619,8 +612,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -629,7 +622,7 @@ $(function() {
 		<div data-role="content">	
 
 		
-				<form name="riskFactors" action="" onsubmit="return fRiskFactors();"  data-ajax="false" >
+				<form name="riskFactors" id="riskFactors" action="" onsubmit="return fRiskFactors();"  data-ajax="false" >
 
 					<fieldset data-role="controlgroup" data-mini="true">
 						<legend>Risk Factors (Biological predisposing factors):</legend>
@@ -654,8 +647,8 @@ $(function() {
 					  </fieldset>
 					  
 					  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-							<a href="#current_status"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+							<input type="submit" value="Submit"  id="submit" data-role="button" data-theme="c">
+							<a href="#current_status"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>	
 					  </fieldset>
 					  	
 				</form>
@@ -686,8 +679,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -725,8 +718,8 @@ $(function() {
 					  </fieldset>
 					  
 					  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-							<a href="#current_status"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+							<input type="submit" value="Submit"  id="submit" data-role="button" data-theme="c">
+							<a href="#current_status"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>	
 					  </fieldset>
 					  	
 				</form>
@@ -757,8 +750,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -770,12 +763,12 @@ $(function() {
 
 	
 	
-				<a href="#recall_exams"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Recall exams frequency</a>
-				<a href="#antibacterials"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Antibacterial therapy</a>	
-				<a href="#fluoride"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Fluoride therapy</a>	
-				<a href="#ph_control"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Ph-control therapy</a>	
-				<a href="#cap_paste"  data-role="button" style="font-size:15px;" data-transition="none"  data-theme="b">Calcium phosphate paste</a>					
-				<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>
+				<a href="#recall_exams"  data-role="button" data-transition="none"  data-theme="b">Recall exams frequency</a>
+				<a href="#antibacterials"  data-role="button" data-transition="none"  data-theme="b">Antibacterial therapy</a>	
+				<a href="#fluoride"  data-role="button" data-transition="none"  data-theme="b">Fluoride therapy</a>	
+				<a href="#ph_control"  data-role="button" data-transition="none"  data-theme="b">Ph-control therapy</a>	
+				<a href="#cap_paste"  data-role="button" data-transition="none"  data-theme="b">Calcium phosphate paste</a>					
+				<a href="#dental_visit"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>
 	
 	
 		</div>
@@ -802,8 +795,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -814,8 +807,6 @@ $(function() {
 		
 		
 				<form name="recallExams" action="" onsubmit="return fRecallExams();"  data-ajax="false" >
-	
-	
 						<fieldset data-role="controlgroup" data-mini="true">	
 						<legend>Recall dental exams:</legend>						
 							  <label for="points">every:</label>
@@ -823,12 +814,11 @@ $(function() {
 						</fieldset>	
 		
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-							<a href="#recommendations"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+							<input type="submit" value="Submit"  id="submit" data-role="button" data-theme="c">
+							<a href="#recommendations"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>	
 						</fieldset>
-		
 				</form>
-		
+				<p>Todays date will be automatically set.</p>
 		</div>
 		
 		
@@ -853,8 +843,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -876,8 +866,8 @@ $(function() {
 						</fieldset>
 		
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-							<a href="#recommendations"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+							<input type="submit" value="Submit"  id="submit" data-role="button" data-theme="c">
+							<a href="#recommendations"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>	
 						</fieldset>
 		
 				</form>
@@ -908,8 +898,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -937,8 +927,8 @@ $(function() {
 						  </fieldset>	
 		
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-							<a href="#recommendations"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+							<input type="submit" value="Submit"  id="submit" data-role="button" data-theme="c">
+							<a href="#recommendations"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>	
 						</fieldset>
 		
 				</form>
@@ -970,8 +960,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -993,8 +983,8 @@ $(function() {
 						</fieldset>	
 		
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-							<a href="#recommendations"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+							<input type="submit" value="Submit"  id="submit" data-role="button" data-theme="c">
+							<a href="#recommendations"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>	
 						</fieldset>
 		
 				</form>
@@ -1023,8 +1013,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -1044,8 +1034,8 @@ $(function() {
 						</fieldset>
 		
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">				
-							<input type="submit" value="Submit"  id="submit" data-role="button" style="font-size:15px;" data-theme="c">
-							<a href="#recommendations"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+							<input type="submit" value="Submit"  id="submit" data-role="button" data-theme="c">
+							<a href="#recommendations"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>	
 						</fieldset>
 		
 				</form>
@@ -1074,8 +1064,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" style="font-size:15px;"  data-transition="none" data-theme="a">Achievements</a></li>
-				  <li><a href="#warnings" style="font-size:15px;"  data-transition="none" data-theme="a">Warnings</a></li>
+				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements</a></li>
+				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings</a></li>
 				</ul>
 			</div>
 		</div>
@@ -1083,10 +1073,9 @@ $(function() {
 		
 		
 		<div data-role="content">
-		
-		
-		<p id="list_output"></p>
-					<a href="#dental_visit"  id="back" data-role="button" data-transition="none" style="font-size:16px;" data-theme="c">Back</a>	
+	
+					<p id="list_output"></p>
+					<a href="#dental_visit"  id="back" data-role="button" data-transition="none" data-theme="c">Back</a>	
 		</div>
 		
 		
@@ -1099,7 +1088,7 @@ $(function() {
 				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
 				</ul>
 			</div>
-	</div>	
+		</div>	
 </section>		
 		
 		
