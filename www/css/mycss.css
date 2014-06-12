@@ -3,11 +3,32 @@ body{
 	font-size: 16px;
 }
 
+.clear {
+	clear: both;
+}
+
 placeholder{
 	font-size: 13px;
 }
 
+.risk {
+	width:80%;
+	margin: 0 auto;
+	padding: 0;
+}
+.risk img{
+	float:left;
+	margin-right: 20px;
+}
 
+#achievements_count {
+	color: cyan;
+	font-size:17px;
+}
+#warnings_count {
+	color: red;
+	font-size:17px;
+}
 
 #naslov {
 	width: 80%;
@@ -19,7 +40,6 @@ placeholder{
 	background-color: orange;
 	height: 20px;
 	border: 1px solid blue;
-
 }
 
 .wide {

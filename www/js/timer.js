@@ -7,6 +7,7 @@ function timer (){
 			document.getElementById("timer").style.width=i+"%";
 			i=i+1;
 			if (i==100){
+				registration('teeth_brushing'); 
 				alert("finished!");
 				clearInterval(TeethBrushingTimer);
 				document.getElementById("timer-button").onclick="timer()";

@@ -1,4 +1,32 @@
 	$(function (){
+	
+		if (window.localStorage.getItem("risk_level") == "low"){
+			$("#low_risk").show();
+		 } else {
+			$("#low_risk").hide();
+		 }
+	
+		if (window.localStorage.getItem("risk_level") == "moderate"){
+			$("#moderate_risk").show();
+		 } else {
+			$("#moderate_risk").hide();
+		 }
+
+		if (window.localStorage.getItem("risk_level") == "high"){
+			$("#high_risk").show();
+		 } else {
+			$("#high_risk").hide();
+		 }		 
+	
+	
+		if (window.localStorage.getItem("recallExam") != undefined && window.localStorage.getItem("recallExam") != ""){
+			var deadline = new Date (window.localStorage.getItem("recallExam")) 
+			$("#time").html("next dental visit: " + deadline.getDate()+"."+deadline.getMonth() + "." + deadline.getFullYear());
+		 } else {
+			$("#time").hide();
+		 }	
+
+	
 		if (window.localStorage.getItem("recallExam") != undefined && window.localStorage.getItem("recallExam") != ""){
 			var deadline = new Date (window.localStorage.getItem("recallExam")) 
 			$("#time").html("next dental visit: " + deadline.getDate()+"."+deadline.getMonth() + "." + deadline.getFullYear());
