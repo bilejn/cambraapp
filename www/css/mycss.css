@@ -13,12 +13,25 @@ placeholder{
 
 .risk {
 	width:80%;
+	height: 100px;
 	margin: 0 auto;
 	padding: 0;
 }
 .risk img{
 	float:left;
 	margin-right: 20px;
+}
+
+#low_risk{
+	border:1px solid #00ff00;
+}
+
+#moderate_risk{
+	border:1px solid #ffff00;
+}
+
+#high_risk{
+	border:1px solid #ff0000;
 }
 
 #achievements_count {
