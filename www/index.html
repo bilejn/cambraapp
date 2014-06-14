@@ -85,11 +85,6 @@ $(function() {
 
 			
 					
-				<fieldset id="dental_visit_button" data-role="controlgroup" data-type="horizontal" data-mini="true">				
-					<a href="#dental_visit"  class="wide" data-role="button" data-transition="none"  data-theme="b" onclick="alert('This form should be filled by your dentist after dental examination')">Visit to dentist</a>
-					<a href="#"  class="short" data-role="button" data-transition="none"  data-theme="b" data-icon="info" data-iconpos="right">&nbsp</a>	
-				</fieldset>	
-					
 				<fieldset id="snack_button" data-role="controlgroup" data-type="horizontal" data-mini="true">				
 					<a href="#"  class="wide" data-role="button" data-transition="none"  data-theme="b" onclick="registration('snack');">Snack</a>
 					<a href="#"  class="short" data-role="button" data-transition="none"  data-theme="b" data-icon="info" data-iconpos="right">&nbsp</a>	
@@ -200,19 +195,24 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Dental visit</h4>
-			<a href="#home" data-transition="none" data-theme="a" data-icon="back">Back</a>
+			<a href="#profile" data-transition="none" data-theme="a" data-icon="back">Back</a>
 		</div>
 		
 		
 		<div data-role="content">
-				<a href="#general_data"  data-role="button" data-transition="none" data-theme="b">General Data</a>		
-				<a href="#current_status"  data-role="button" data-transition="none" data-theme="b">Current Status</a>
-				<a href="#recommendations"  data-role="button" data-transition="none" data-theme="b">Recommendations</a>
-				<a href=""  data-role="button" data-transition="none" data-theme="b" onclick= "window.localStorage.clear(); window.location.reload(true);">Clear all</a>
-				<a href="#list"  data-role="button" data-transition="none" data-theme="b">List</a>		
+		
+
+		<ul data-role="listview" data-theme="b">
+				<li><a href="#general_data" data-transition="none">General Data</a></li>	
+				<li><a href="#current_status" data-transition="none">Current Status</a></li>
+				<li><a href="#recommendations" data-transition="none">Recommendations</a></li>
+				<li><a href="#list" data-transition="none">List</a></li>
+		</ul>
+		
+		<br /><br />
+		<a href=""  data-role="button" data-transition="none" data-theme="b" onclick= "window.localStorage.clear(); window.location.reload(true);">Clear all</a>
+		
 		</div>
-		
-		
 		
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
@@ -284,7 +284,7 @@ $(function() {
 <!-- =============================== 	TEETH FLOSSING   ======================================= -->
 
 	
-	<section id="flossing" data-role="dialog" data-theme="b">
+	<section id="flossing" data-role="dialog" data-theme="b" data-close-btn="right">
 	
 			<div data-role="header" data-theme="b">
 				<p>&nbsp &nbsp &nbsp &nbsp Teeth Flossing </p>
@@ -301,7 +301,7 @@ $(function() {
 <!-- =============================== 	MOUTH RINSING   ======================================= -->
 
 	
-	<section id="rinsing" data-role="dialog" data-theme="b">
+	<section id="rinsing" data-role="dialog" data-theme="b" data-close-btn="right">
 	
 			<div data-role="header" data-theme="b">
 				<p>&nbsp &nbsp &nbsp &nbsp Mouth Rinsing </p>
@@ -319,7 +319,7 @@ $(function() {
 	
 	
 	
-<!-- =============================== 	PROFILE   ======================================= -->
+<!-- =============================== 	Profile   ======================================= -->
 
 	
 	<section id="profile" data-role="page" data-theme="a">
@@ -331,7 +331,16 @@ $(function() {
 		
 		<div data-role="content">
 		
-		<h1>PROFILE</h1>
+		<ul data-role="listview" data-theme="b">
+			<li><a href="#dental_status" data-transition="none">Current status</a></li>
+			<li><a href="#therapy" data-transition="none">Current recomended therapy</a></li>
+			<li><a href="#statistics" data-transition="none">Statistics</a></li>
+		</ul>
+		<br /><br />
+		<fieldset id="dental_visit_button" data-role="controlgroup" data-type="horizontal" data-mini="true">				
+			<a href="#dental_visit"  class="wide" data-role="button" data-transition="none"  data-theme="b" onclick="alert('This form should be filled by your dentist after dental examination')">Visit to dentist</a>
+			<a href="#"  class="short" data-role="button" data-transition="none"  data-theme="b" data-icon="info" data-iconpos="right">&nbsp</a>	
+		</fieldset>	
 		
 
 		</div>
@@ -498,13 +507,13 @@ $(function() {
 		
 		
 		<div data-role="content">	
-
-						<a href="#disease_indicators"  data-role="button" data-transition="none"  data-theme="b">Disease indicators</a>
-					  
-				<a href="#risk_factors"  data-role="button" data-transition="none"  data-theme="b">Risk factors</a>
-						
-				<a href="#protective_factors"  data-role="button" data-transition="none"  data-theme="b">Protective factors</a>
-
+		
+			<ul data-role="listview" data-theme="b">
+					<li><a href="#disease_indicators" data-transition="none">Disease indicators</a></li>	
+					<li><a href="#risk_factors"  data-transition="none">Risk factors</a></li>
+					<li><a href="#protective_factors" data-transition="none">Protective factors</a></li>
+			</ul>
+		
 		</div>
 		
 
@@ -722,17 +731,14 @@ $(function() {
 		
 		<div data-role="content">
 		
-		
-
-	
-	
-				<a href="#recall_exams"  data-role="button" data-transition="none"  data-theme="b">Recall exams frequency</a>
-				<a href="#antibacterials"  data-role="button" data-transition="none"  data-theme="b">Antibacterial therapy</a>	
-				<a href="#fluoride"  data-role="button" data-transition="none"  data-theme="b">Fluoride therapy</a>	
-				<a href="#ph_control"  data-role="button" data-transition="none"  data-theme="b">Ph-control therapy</a>	
-				<a href="#cap_paste"  data-role="button" data-transition="none"  data-theme="b">Calcium phosphate paste</a>	
-	
-	
+			<ul data-role="listview" data-theme="b">
+					<li><a href="#recall_exams" data-transition="none">Recall exams frequency</a></li>	
+					<li><a href="#antibacterials" data-transition="none" >Antibacterial therapy</a>	</li>
+					<li><a href="#fluoride" data-transition="none">Fluoride therapy</a></li>
+					<li><a href="#ph_control" data-transition="none">Ph-control therapy</a>	</li>
+					<li><a href="#cap_paste" data-transition="none">Calcium phosphate paste</a>	</li>
+			</ul>
+			
 		</div>
 		
 

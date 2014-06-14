@@ -103,3 +103,12 @@ input.ui-input-text.ui-slider-input,
 .ui-li-has-count .ui-li-count {
     font-size: 16px; 
 }
+
+.ui-dialog-contain {
+  width: 92.5%;
+  max-width: 500px;
+  margin: 20% auto 15px auto;
+  padding: 0;
+  position: relative;
+  top: -15px;
+}
