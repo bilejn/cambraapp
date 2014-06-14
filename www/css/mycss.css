@@ -55,6 +55,10 @@ placeholder{
 	border: 1px solid blue;
 }
 
+#time {
+	text-align: center;
+}
+
 .wide {
 	width: 73%
 }
@@ -112,3 +116,22 @@ input.ui-input-text.ui-slider-input,
   position: relative;
   top: -15px;
 }
+.list  {
+width: 60%;
+	margin: 10px auto;
+}
+.list li {
+	display: inline-block;
+	float: right;
+}
+
+.list li a {
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	font-size: 15px;
+	width: 100px;
+	height: 100px;
+
+}
+
