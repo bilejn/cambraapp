@@ -81,7 +81,8 @@ $(function() {
 				</div>
 				<p class="clear"></p>
 				<br />
-				<p id="time">&nbsp</p>
+				<p id="time">&nbsp </p>
+				<div class="ui-icon ui-icon-delete"></div>
 		</div>
 
 		<a href="#"  data-role="button" data-transition="none"  onclick="registration('snack');">Snack</a>	
@@ -461,27 +462,31 @@ $(function() {
 						</div>
 						
 					<div data-role="controlgroup" data-type="vertical" >
-						<label for="gender" >Gender:</label>
+						<legend>Gender:</legend>
 							<input type="radio" name="gender" id="male" value="male"/>
 							<label for="male">Male</label>
 							<input type="radio" name="gender" id="female" value="female"/>
 							<label for="female">Female</label>
 					</div>
 					
-					<div data-role="controlgroup" data-type="vertical" data-mini="true">
-						<label for="yearpicker" class="select">Age:</label>
+					<div data-role="controlgroup" data-type="vertical">
+						<legend>Age:</legend>
 							<select name="yearpicker" id="yearpicker" >
 							<option>Please Choose</option>
 							</select>
 					</div>
 
 				</fieldset>
-				
-				
-				<fieldset data-role="controlgroup" data-type="horizontal">				
-				<input type="submit" value="Submit"  id="submit" data-role="button">
-				<a href="#dental_visit"  id="back" data-role="button" data-transition="none">Back</a>	
+	
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
+					<div class="ui-block-b"><a href="#dental_visit"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
 				</fieldset>
+				
+				
+				
+					
+
 			</form>
 
 
@@ -570,10 +575,11 @@ $(function() {
 						  <input type="checkbox" name="last_3_years" id="last_3_years" value="present" > 
 					  </fieldset>
 					  
-					  <fieldset data-role="controlgroup" data-type="horizontal">				
-							<input type="submit" value="Submit"  id="submit" data-role="button" >
-							<a href="#current_status"  id="back" data-role="button" data-transition="none" >Back</a>	
-					  </fieldset>
+
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
+					<div class="ui-block-b"><a href="#current_status"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+				</fieldset>
 					  	
 				</form>
 
@@ -635,10 +641,11 @@ $(function() {
 						  <input type="checkbox" name="orthodontic_appliances" id="orthodontic_appliances" value="orthodontic_appliances"> 
 					  </fieldset>
 					  
-					  <fieldset data-role="controlgroup" data-type="horizontal">				
-							<input type="submit" value="Submit"  id="submit" data-role="button">
-							<a href="#current_status"  id="back" data-role="button" data-transition="none" >Back</a>	
-					  </fieldset>
+							
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
+					<div class="ui-block-b"><a href="#current_status"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+				</fieldset>
 					  	
 				</form>
 
@@ -703,10 +710,10 @@ $(function() {
 						  <input type="checkbox" name="adequate_saliva" id="adequate_saliva" value="adequate_saliva">
 					  </fieldset>
 					  
-				 <fieldset data-role="controlgroup" data-type="horizontal">				
-					<input type="submit" value="Submit"  id="submit" data-role="button">
-					<a href="#current_status"  id="back" data-role="button" data-transition="none">Back</a>	
-				 </fieldset>
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
+					<div class="ui-block-b"><a href="#current_status"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+				</fieldset>
 					  	
 				</form>
 
@@ -789,10 +796,11 @@ $(function() {
 							  <input type="range" name="recalls" id="recalls" value="6" min="0" max="36">months</input>	
 						</fieldset>	
 		
-						<fieldset data-role="controlgroup" data-type="horizontal" >				
-							<input type="submit" value="Submit"  id="submit" data-role="button">
-							<a href="#recommendations"  id="back" data-role="button" data-transition="none" >Back</a>	
-						</fieldset>
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
+					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+				</fieldset>
+				
 				</form>
 		</div>
 		
@@ -837,10 +845,10 @@ $(function() {
 							  <input type="checkbox" name="xylitol_th" id="xylitol_th" value="xylitol_th">
 						</fieldset>
 		
-						<fieldset data-role="controlgroup" data-type="horizontal" >				
-							<input type="submit" value="Submit"  id="submit" data-role="button" >
-							<a href="#recommendations"  id="back" data-role="button" data-transition="none" >Back</a>	
-						</fieldset>
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
+					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+				</fieldset>
 		
 				</form>
 		
@@ -895,10 +903,10 @@ $(function() {
 							  <input type="checkbox" name="fluoride_mouthrinse_xerostomia_th" id="fluoride_mouthrinse_xerostomia_th" value="fluoride_mouthrinse_xerostomia_th">							  
 						  </fieldset>	
 		
-						<fieldset data-role="controlgroup" data-type="horizontal">				
-							<input type="submit" value="Submit"  id="submit" data-role="button">
-							<a href="#recommendations"  id="back" data-role="button" data-transition="none" >Back</a>	
-						</fieldset>
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
+					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+				</fieldset>
 		
 				</form>
 		
@@ -948,10 +956,10 @@ $(function() {
 							  <input type="checkbox" name="phgum_th" id="phgum_th" value="phgum_th">
 						</fieldset>	
 		
-						<fieldset data-role="controlgroup" data-type="horizontal" >				
-							<input type="submit" value="Submit"  id="submit" data-role="button">
-							<a href="#recommendations"  id="back" data-role="button" data-transition="none" >Back</a>	
-						</fieldset>
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
+					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+				</fieldset>
 		
 				</form>
 		
@@ -996,10 +1004,10 @@ $(function() {
 							  <input type="checkbox" name="cap_th" id="cap_th" value="cap_th">
 						</fieldset>
 		
-						<fieldset data-role="controlgroup" data-type="horizontal" >				
-							<input type="submit" value="Submit"  id="submit" data-role="button">
-							<a href="#recommendations"  id="back" data-role="button" data-transition="none">Back</a>	
-						</fieldset>
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
+					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+				</fieldset>
 		
 				</form>
 		
