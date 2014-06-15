@@ -6,10 +6,10 @@
 	
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"> 
 
-	<link rel="stylesheet" href="css/jquery.mobile-1.0.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
 	<link rel="stylesheet" href="css/mycss.css" />
-	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-1.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 	<script type="text/javascript" src="js/timer.js"></script>
 	
 
@@ -52,13 +52,13 @@ $(function() {
 <!-- =============================== H O M E ======================================= -->
 
 
-	<section id="home" data-role="page" data-theme="a">
+	<section id="home" data-role="page" data-theme="b">
 	
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" data-transition="none" data-theme="a">Achievements:&nbsp &nbsp<span id="achievements_count">3</span></a></li>
-				  <li><a href="#warnings" data-transition="none" data-theme="a">Warnings:&nbsp &nbsp<span id="warnings_count">2</span></a></li>
+				  <li><a href="#achievements" data-transition="none">Achievements:&nbsp &nbsp<span id="achievements_count">3</span></a></li>
+				  <li><a href="#warnings" data-transition="none">Warnings:&nbsp &nbsp<span id="warnings_count">2</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -106,7 +106,7 @@ $(function() {
 		
 		
 		
-		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
 					  <li><a href="#home"  data-icon="home" data-transition="none"  class="ui-btn-active ui-state-persist">Home</a></li>
@@ -136,7 +136,7 @@ $(function() {
 		
 		
 		<div data-role="content">
-		
+		<div class="wrapper">
 		<ul data-role="listview" data-theme="b">
 				<li>Months of low risk level<span class="ui-li-count" data-count-theme="b">6</span></li>	
 				<li>No disease indicators present</li>
@@ -148,7 +148,7 @@ $(function() {
 		
 		
 		
-		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
 					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
@@ -185,7 +185,7 @@ $(function() {
 		
 		
 		
-		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
+		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
 					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>

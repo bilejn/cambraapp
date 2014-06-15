@@ -3,6 +3,10 @@ body{
 	font-size: 16px;
 }
 
+.wrapper {
+	padding: 0 10px;
+}
+
 .clear {
 	clear: both;
 }
