@@ -10,6 +10,6 @@ function registration (activity){
 	} else {
 			window.localStorage.setItem(item, "1");
 	}
-		window.location.reload(true);
+		alert("Registered.");
 		return false;
 }

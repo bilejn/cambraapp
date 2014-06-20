@@ -76,6 +76,13 @@
 		 } else {
 			$("#fluoride_mouthrinse_xerostomia").hide();
 		 } 
+		 
+		 
+		var output = ''; 
+		for (var key in localStorage) {
+			output = output+(key + ": " +localStorage[key])+"<br />";
+			}
+		$("#list_output").html(output);
     });
 	
 

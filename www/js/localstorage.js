@@ -4,24 +4,25 @@
 	function generalForm() {
 		if (document.generalData.first_name.value != null  && document.generalData.first_name.value != ""){
 			var fname = document.generalData.first_name.value;
-			window.localStorage.setItem("firstname", fname);
+			$.jStorage.set("firstname", fname);
 		}
-		
+
 		if (document.generalData.last_name.value != null && document.generalData.last_name.value != ""){
 			var lname = document.generalData.last_name.value;
-			window.localStorage.setItem("lastname", lname);		
+			$.jStorage.set("lastname", lname);		
 		}	
 
 		if 	( document.generalData.yearpicker.value != "Please Choose"){
 				var _age = document.generalData.yearpicker.value;
-				window.localStorage.setItem("age", _age);			
+				$.jStorage.set("age", _age);			
 		}
 	
 		var _gender = document.generalData.gender.value;
-		window.localStorage.setItem("gender", _gender);
+		$.jStorage.set("gender", _gender);
 
+
+		$.mobile.changePage( "#general_data", { allowSamePageTransition: true , transition: "none"} );
 		alert("submitted");
-		window.location.reload(true);
 		return false;
 	}
 	

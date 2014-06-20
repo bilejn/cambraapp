@@ -10,38 +10,19 @@
 			<link rel="stylesheet" href="css/mycss.css" />
 			<link rel="stylesheet" href="css/myswatch.css" />
 			<script src="js/jquery-1.9.1.min.js"></script>
+			
+			<script type"text/javascript">
+				$(document).bind("mobileinit", function() {
+				alert ("triggered!");
+				 $.mobile.defaultPageTransition = "none";
+				 $.mobile.defaultDialogTransition = "none";
+				});
+			</script>
+
 			<script src="js/jquery.mobile-1.4.2.js"></script>
+			<script src="js/jstorage.js"></script>
 			<script type="text/javascript" src="js/timer.js"></script>
 		
-
-<script type"text/javascript">
-
-$(function() {
-		var ime = window.localStorage.getItem("firstname");
-		var prezime = window.localStorage.getItem("lastname");
-		var pol = window.localStorage.getItem("gender");
-		var godiste = window.localStorage.getItem("age");
-
-		var name = window.localStorage.getItem("username");
-		if (window.localStorage.getItem("visibleCavities") == "true") { var _visibleCavities = "you have cavities.";} else {var _visibleCavities = "";}
-		if (window.localStorage.getItem("radiographic") == "true") { var _radiographic = " you have radiographic approximal lesions";} else {var _radiographic = "";}
-		
-		var output = ''; 
-
-		for (var key in localStorage) {
-			output = output+(key + ": " +localStorage[key])+"<br />";
-			}
-
-		$("#list_output").html(output);
-		$("#change").text("your current caries risk level is: " + window.localStorage.getItem("risk_level"));
-		
-		/*$("#first_name").val( window.localStorage.getItem("firstname")); "Your name is "+ime+" "+prezime+". You are "+pol+", and you are born "+godiste+". " + _visibleCavities + _radiographic
-		$("#last_name").val( window.localStorage.getItem("lastname"));
-		$("#yearpicker").val(window.localStorage.getItem("age"));*/
-});
-</script>
-
-
 
 
 
@@ -58,8 +39,8 @@ $(function() {
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" data-transition="none"  >Achievements:&nbsp &nbsp<span id="achievements_count">3</span></a></li>
-				  <li><a href="#warnings" data-transition="none" >Warnings:&nbsp &nbsp<span id="warnings_count">2</span></a></li>
+				  <li><a href="#achievements" >Achievements:&nbsp &nbsp<span id="achievements_count">3</span></a></li>
+				  <li><a href="#warnings" >Warnings:&nbsp &nbsp<span id="warnings_count">2</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -85,10 +66,10 @@ $(function() {
 				<div class="ui-icon ui-icon-delete"></div>
 		</div>
 
-		<a href="#"  data-role="button" data-transition="none"  onclick="registration('snack');">Snack</a>	
+		<a href="#"  data-role="button" onclick="registration('snack');">Snack</a>	
 						
-		<a href="#oral_hygiene" data-role="button" data-transition="none"  >Oral Hygiene</a>				
-		<a href="#"  id="xylitol_button" data-role="button" data-transition="none"  data-theme="b" onclick="registration('xylitol_taken');">Xylitol</a>			
+		<a href="#oral_hygiene" data-role="button" >Oral Hygiene</a>				
+		<a href="#"  id="xylitol_button" data-role="button" data-theme="b" onclick="registration('xylitol_taken');">Xylitol</a>			
 
 				
 
@@ -100,10 +81,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none"  class="ui-btn-active ui-state-persist">Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -122,7 +103,7 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Achievements</h4>
-			<a href="#home" data-transition="none" data-icon="back">Back</a>
+			<a href="#home" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -142,10 +123,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -160,7 +141,7 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Warnings</h4>
-			<a href="#home" data-transition="none" data-icon="back">Back</a>
+			<a href="#home" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -179,10 +160,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -196,7 +177,7 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Dental visit</h4>
-			<a href="#profile" data-transition="none" data-icon="back">Back</a>
+			<a href="#profile" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -204,24 +185,24 @@ $(function() {
 		
 
 		<ul data-role="listview">
-				<li><a href="#general_data" data-transition="none">General Data</a></li>	
-				<li><a href="#current_status" data-transition="none">Current Status</a></li>
-				<li><a href="#recommendations" data-transition="none">Recommendations</a></li>
-				<li><a href="#list" data-transition="none">List</a></li>
+				<li><a href="#general_data" >General Data</a></li>	
+				<li><a href="#current_status" >Current Status</a></li>
+				<li><a href="#recommendations" >Recommendations</a></li>
+				<li><a href="#list" >List</a></li>
 		</ul>
 		
 		<br /><br />
-		<a href=""  data-role="button" data-transition="none" data-theme="b" onclick= "window.localStorage.clear(); window.location.reload(true);">Clear all</a>
+		<a href=""  data-role="button" data-theme="b" onclick= "window.localStorage.clear(); window.location.reload(true);">Clear all</a>
 		
 		</div>
 		
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>
@@ -234,15 +215,15 @@ $(function() {
 	<section id="oral_hygiene" data-role="page" data-theme="b">
 		<div data-role="header"  data-position="fixed">
 			<h4>Oral hygiene</h4>
-			<a href="#home" data-transition="none" data-icon="back">Back</a>
+			<a href="#home" data-icon="back">Back</a>
 		</div>
 		
 		
 		<div data-role="content">
 		
-				<a href="#brushing"  data-role="button" data-transition="none" >1. Teeth Brushing</a>		
-				<a href="#flossing"  data-role="button" data-transition="none" >2. Teeth Flossing</a>
-				<a href="#rinsing"  data-role="button" data-transition="none" >3. Mouth Rinsing</a>
+				<a href="#brushing"  data-role="button" >1. Teeth Brushing</a>		
+				<a href="#flossing"  data-role="button" >2. Teeth Flossing</a>
+				<a href="#rinsing"  data-role="button" >3. Mouth Rinsing</a>
 		
 		</div>
 		
@@ -251,10 +232,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"   data-transition="none" data-icon="home">Home</a></li>
-					  <li><a href="#profile"   data-transition="none" data-icon="user">Profile</a></li>
-					  <li><a href="#info"   data-transition="none" data-icon="info">Info</a></li>
-					  <li><a href="#settings"   data-transition="none" data-icon="gear">Settings</a></li>
+					  <li><a href="#home" data-icon="home">Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -270,9 +251,9 @@ $(function() {
 			<div data-role="header">
 				<p>&nbsp &nbsp &nbsp &nbsp Teeth Brushing</p> 
 			</div>		
-		
+
 			<div data-role="content">
-			 	<input type="button" value="Start when ready" id="timer-button" onclick="timer();">
+				<a href="#"  data-role="button" id="timer-button"  onclick="timer();">Start when ready</a>	
 				<p id="timer"></p>
 				<br />
 				<p id="fluoride_paste_otc">Use standard over-the-counter tooth paste (1100 - 1450 ppm F)</p>
@@ -292,7 +273,7 @@ $(function() {
 			</div>		
 		
 			<div data-role="content">
-			 	<input type="button" value="Register" id="flossing-button" onclick="registration('teeth_flossing');">
+				<a href="#"  data-role="button" id="flossing-button"  onclick="registration('teeth_flossing');">Register</a>
 				<p>You should clean interdental spaces once daily after regular tooth brushing. Use interdental brush prescribed by your dentist.</p>
 			</div>
 			
@@ -309,7 +290,7 @@ $(function() {
 			</div>		
 		
 			<div data-role="content">
-			 	<input type="button" value="Register" id="rinsing-button" onclick="registration('mouth_rinsing');">
+				<a href="#"  data-role="button" id="rinsing-button" onclick="registration('mouth_rinsing');">Register</a>
 				<p id="fluoride_mouthrinse_standard">Rinse your mouth with fluoride mouthrinse once daily after teethbrushing and flosing. Use 0.05% F mouthrinse recommended by your dentist.</p>
 				<p id="fluoride_mouthrinse_extra">Rinse your mouth with fluoride mouthrinse 0.2% once daily after teethbrushing and flosing. After one bottle is used continue to rinse with 0.05% F mouthrinse two times daily - after each teeth brushing.</p>
 				<p id="fluoride_mouthrinse_xerostomia">Rinse your mouth with fluoride mouthrinse 0.05% whenever your mouth feels dry, and after every meal or snack.</p>
@@ -326,21 +307,21 @@ $(function() {
 	<section id="profile" data-role="page" data-theme="b">
 		<div data-role="header"  data-position="fixed">
 			<h4>Profile</h4>
-			<a href="#home" data-transition="none" data-icon="back">Back</a>
+			<a href="#home" data-icon="back">Back</a>
 		</div>
 		
 		
 		<div data-role="content">
 		
 			<ul data-role="listview" >
-				<li><a href="#dental_status" data-transition="none">Current status</a></li>
-				<li><a href="#therapy" data-transition="none">Current recomended therapy</a></li>
-				<li><a href="#statistics" data-transition="none">Statistics</a></li>
+				<li><a href="#dental_status" >Current status</a></li>
+				<li><a href="#therapy" >Current recomended therapy</a></li>
+				<li><a href="#statistics" >Statistics</a></li>
 			</ul>
 			
 			<br /><br />
 			
-			<a href="#dental_visit"  class="wide" data-role="button" data-transition="none"  data-theme="b" onclick="alert('This form should be filled by your dentist after dental examination')">Visit to dentist</a>
+			<a href="#dental_visit" class="wide" data-role="button" data-theme="b" onclick="alert('This form should be filled by your dentist after dental examination')">Visit to dentist</a>
 
 		
 
@@ -351,10 +332,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user" class="ui-btn-active ui-state-persist" >Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user" class="ui-btn-active ui-state-persist" >Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -369,17 +350,17 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Info</h4>
-			<a href="#home" data-transition="none" data-icon="back">Back</a>
+			<a href="#home" data-icon="back">Back</a>
 		</div>
 		
 		
 		<div data-role="content">
 		
 		<ul data-role="listview" >
-				<li><a href="#" data-transition="none">Dental caries</a></li>	
-				<li><a href="#" data-transition="none">periodontal (gum) disease</a></li>
-				<li><a href="#" data-transition="none">Preventive measures</a></li>
-				<li><a href="#" data-transition="none">About using this application</a></li>
+				<li><a href="#">Dental caries</a></li>	
+				<li><a href="#">periodontal (gum) disease</a></li>
+				<li><a href="#">Preventive measures</a></li>
+				<li><a href="#">About using this application</a></li>
 		</ul>
 		
 		</div>
@@ -389,10 +370,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info"  class="ui-btn-active ui-state-persist" >Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info" class="ui-btn-active ui-state-persist" >Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>
@@ -405,19 +386,19 @@ $(function() {
 	
 	<section id="settings" data-role="page" data-theme="b">
 	
-		<div data-role="header"  data-position="fixed">
+		<div data-role="header" data-position="fixed">
 			<h4>Settings</h4>
-			<a href="#home" data-transition="none" data-icon="back">Back</a>
+			<a href="#home" data-icon="back">Back</a>
 		</div>
 		
 		
 		<div data-role="content">
 		
 		<ul data-role="listview">
-				<li><a href="#" data-transition="none">Language</a></li>	
-				<li><a href="#" data-transition="none">Sound</a></li>
-				<li><a href="#" data-transition="none">Display</a></li>
-				<li><a href="#" data-transition="none">About</a></li>
+				<li><a href="#">Language</a></li>	
+				<li><a href="#">Sound</a></li>
+				<li><a href="#">Display</a></li>
+				<li><a href="#">About</a></li>
 		</ul>
 		
 		</div>
@@ -427,10 +408,10 @@ $(function() {
 		<div data-role="footer" data-id="persistent_navbar" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear"  class="ui-btn-active ui-state-persist" >Settings</a></li>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear"  class="ui-btn-active ui-state-persist" >Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -445,7 +426,7 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>General data</h4>
-			<a href="#dental_visit" data-transition="none"data-icon="back">Back</a>
+			<a href="#dental_visit" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -480,7 +461,7 @@ $(function() {
 	
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
-					<div class="ui-block-b"><a href="#dental_visit"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+					<div class="ui-block-b"><a href="#dental_visit"  id="back" data-role="button" data-icon="back">Back</a></div>	   
 				</fieldset>
 				
 				
@@ -499,10 +480,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -518,16 +499,16 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Current status</h4>
-			<a href="#dental_visit" data-transition="none" data-icon="back">Back</a>
+			<a href="#dental_visit" data-icon="back">Back</a>
 		</div>
 		
 		
 		<div data-role="content">	
 		
 			<ul data-role="listview">
-					<li><a href="#disease_indicators" data-transition="none">Disease indicators</a></li>	
-					<li><a href="#risk_factors"  data-transition="none">Risk factors</a></li>
-					<li><a href="#protective_factors" data-transition="none">Protective factors</a></li>
+					<li><a href="#disease_indicators">Disease indicators</a></li>	
+					<li><a href="#risk_factors">Risk factors</a></li>
+					<li><a href="#protective_factors">Protective factors</a></li>
 			</ul>
 		
 		</div>
@@ -537,10 +518,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home">Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -554,7 +535,7 @@ $(function() {
 	<section id="disease_indicators" data-role="page" data-theme="b">
 		<div data-role="header"  data-position="fixed">
 			<h4>Disease indicators</h4>
-			<a href="#current_status" data-transition="none" data-icon="back">Back</a>
+			<a href="#current_status" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -578,7 +559,7 @@ $(function() {
 
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
-					<div class="ui-block-b"><a href="#current_status"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+					<div class="ui-block-b"><a href="#current_status"  id="back" data-role="button" data-icon="back">Back</a></div>	   
 				</fieldset>
 					  	
 				</form>
@@ -591,10 +572,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home" data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -610,7 +591,7 @@ $(function() {
 	<section id="risk_factors" data-role="page" data-theme="b">
 		<div data-role="header"  data-position="fixed">
 			<h4>Risk factors</h4>
-			<a href="#current_status" data-transition="none" data-icon="back">Back</a>
+			<a href="#current_status" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -644,7 +625,7 @@ $(function() {
 							
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
-					<div class="ui-block-b"><a href="#current_status"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+					<div class="ui-block-b"><a href="#current_status"  id="back" data-role="button" data-icon="back">Back</a></div>	   
 				</fieldset>
 					  	
 				</form>
@@ -657,10 +638,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -673,9 +654,9 @@ $(function() {
 	
 	<section id="protective_factors" data-role="page" data-theme="b">
 	
-		<div data-role="header"  data-position="fixed">
+		<div data-role="header" data-position="fixed">
 			<h4>Protective factors</h4>
-			<a href="#current_status" data-transition="none"  data-icon="back">Back</a>
+			<a href="#current_status" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -712,7 +693,7 @@ $(function() {
 					  
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
-					<div class="ui-block-b"><a href="#current_status"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+					<div class="ui-block-b"><a href="#current_status"  id="back" data-role="button" data-icon="back">Back</a></div>	   
 				</fieldset>
 					  	
 				</form>
@@ -725,10 +706,10 @@ $(function() {
 		<div data-role="footer" data-position="fixed">
               	<div data-role="navbar">
 					<ul>
-					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#home"  data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -743,18 +724,18 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Recommendations</h4>
-			<a href="#dental_visit" data-transition="none" data-icon="back">Back</a>
+			<a href="#dental_visit" data-icon="back">Back</a>
 		</div>
 		
 		
 		<div data-role="content">
 		
 			<ul data-role="listview">
-					<li><a href="#recall_exams" data-transition="none">Recall exams frequency</a></li>	
-					<li><a href="#antibacterials" data-transition="none" >Antibacterial therapy</a>	</li>
-					<li><a href="#fluoride" data-transition="none">Fluoride therapy</a></li>
-					<li><a href="#ph_control" data-transition="none">Ph-control therapy</a>	</li>
-					<li><a href="#cap_paste" data-transition="none">Calcium phosphate paste</a>	</li>
+					<li><a href="#recall_exams" >Recall exams frequency</a></li>	
+					<li><a href="#antibacterials" >Antibacterial therapy</a>	</li>
+					<li><a href="#fluoride" >Fluoride therapy</a></li>
+					<li><a href="#ph_control" >Ph-control therapy</a>	</li>
+					<li><a href="#cap_paste" >Calcium phosphate paste</a>	</li>
 			</ul>
 			
 		</div>
@@ -765,9 +746,9 @@ $(function() {
               	<div data-role="navbar">
 					<ul>
 					  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-					  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-					  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-					  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
 					</ul>
 				</div>
         </div>	
@@ -781,7 +762,7 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Recall exam frequency</h4>
-			<a href="#recommendations" data-transition="none" data-icon="back">Back</a>
+			<a href="#recommendations" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -798,7 +779,7 @@ $(function() {
 		
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
-					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-icon="back">Back</a></div>	   
 				</fieldset>
 				
 				</form>
@@ -808,10 +789,10 @@ $(function() {
 			<div data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				  <li><a href="#home"  data-icon="home">Home</a></li>
+				  <li><a href="#profile" data-icon="user">Profile</a></li>
+				  <li><a href="#info" data-icon="info">Info</a></li>
+				  <li><a href="#settings" data-icon="gear">Settings</a></li>
 				</ul>
 			</div>
 	</div>	
@@ -826,7 +807,7 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Antibacterial therapy</h4>
-			<a href="#recommendations" data-transition="none" data-icon="back">Back</a>
+			<a href="#recommendations" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -847,7 +828,7 @@ $(function() {
 		
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
-					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-icon="back">Back</a></div>	   
 				</fieldset>
 		
 				</form>
@@ -858,10 +839,10 @@ $(function() {
 			<div data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				  <li><a href="#home"  data-icon="home">Home</a></li>
+				  <li><a href="#profile" data-icon="user">Profile</a></li>
+				  <li><a href="#info" data-icon="info">Info</a></li>
+				  <li><a href="#settings" data-icon="gear">Settings</a></li>
 				</ul>
 			</div>
 	</div>	
@@ -878,7 +859,7 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Fluoride therapy</h4>
-			<a href="#recommendations" data-transition="none" data-icon="back">Back</a>
+			<a href="#recommendations" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -905,7 +886,7 @@ $(function() {
 		
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
-					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-icon="back">Back</a></div>	   
 				</fieldset>
 		
 				</form>
@@ -916,10 +897,10 @@ $(function() {
 			<div data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				  <li><a href="#home"  data-icon="home">Home</a></li>
+				  <li><a href="#profile" data-icon="user">Profile</a></li>
+				  <li><a href="#info" data-icon="info">Info</a></li>
+				  <li><a href="#settings" data-icon="gear">Settings</a></li>
 				</ul>
 			</div>
 	</div>	
@@ -937,7 +918,7 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>Ph-control therapy</h4>
-			<a href="#recommendations" data-transition="none" data-icon="back">Back</a>
+			<a href="#recommendations" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -958,7 +939,7 @@ $(function() {
 		
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
-					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-icon="back">Back</a></div>	   
 				</fieldset>
 		
 				</form>
@@ -969,10 +950,10 @@ $(function() {
 			<div data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				  <li><a href="#home"  data-icon="home" >Home</a></li>
+				  <li><a href="#profile" data-icon="user">Profile</a></li>
+				  <li><a href="#info" data-icon="info">Info</a></li>
+				  <li><a href="#settings" data-icon="gear">Settings</a></li>
 				</ul>
 			</div>
 	</div>	
@@ -987,7 +968,7 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>CaP paste</h4>
-			<a href="#recommendations" data-transition="none" data-icon="back">Back</a>
+			<a href="#recommendations" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -1006,7 +987,7 @@ $(function() {
 		
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a"><input type="submit" value="Submit"  id="submit" data-role="button" data-icon="check"></div>
-					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-transition="none" data-icon="back">Back</a></div>	   
+					<div class="ui-block-b"><a href="#recommendations"  id="back" data-role="button" data-icon="back">Back</a></div>	   
 				</fieldset>
 		
 				</form>
@@ -1017,10 +998,10 @@ $(function() {
 			<div data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				  <li><a href="#home"  data-icon="home" >Home</a></li>
+				  <li><a href="#profile" data-icon="user">Profile</a></li>
+				  <li><a href="#info" data-icon="info">Info</a></li>
+				  <li><a href="#settings" data-icon="gear">Settings</a></li>
 				</ul>
 			</div>
 	</div>	
@@ -1035,7 +1016,7 @@ $(function() {
 	
 		<div data-role="header"  data-position="fixed">
 			<h4>List</h4>
-			<a href="#dental_visit" data-transition="none" data-icon="back">Back</a>
+			<a href="#dental_visit" data-icon="back">Back</a>
 		</div>
 		
 		
@@ -1049,10 +1030,10 @@ $(function() {
 			<div data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#home"  data-icon="home" data-transition="none" >Home</a></li>
-				  <li><a href="#profile"  data-transition="none"  data-icon="user">Profile</a></li>
-				  <li><a href="#info"  data-transition="none"  data-icon="info">Info</a></li>
-				  <li><a href="#settings"  data-transition="none"  data-icon="gear">Settings</a></li>
+				  <li><a href="#home" data-transition="none" >Home</a></li>
+				  <li><a href="#profile" data-icon="user">Profile</a></li>
+				  <li><a href="#info" data-icon="info">Info</a></li>
+				  <li><a href="#settings" data-icon="gear">Settings</a></li>
 				</ul>
 			</div>
 		</div>	
