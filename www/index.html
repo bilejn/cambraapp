@@ -13,7 +13,6 @@
 			
 			<script type"text/javascript">
 				$(document).bind("mobileinit", function() {
-				alert ("triggered!");
 				 $.mobile.defaultPageTransition = "none";
 				 $.mobile.defaultDialogTransition = "none";
 				});
@@ -23,7 +22,11 @@
 			<script src="js/jstorage.js"></script>
 			<script type="text/javascript" src="js/timer.js"></script>
 		
-
+			<script type"text/javascript">
+				$( "#home" ).on( "pagebeforecreate", function( event ) {
+				  // manipulate this page before its widgets are auto-initialized
+				});
+			</script>
 
 
 </head>
@@ -66,13 +69,20 @@
 				<div class="ui-icon ui-icon-delete"></div>
 		</div>
 
-		<a href="#"  data-role="button" onclick="registration('snack');">Snack</a>	
-						
-		<a href="#oral_hygiene" data-role="button" >Oral Hygiene</a>				
-		<a href="#"  id="xylitol_button" data-role="button" data-theme="b" onclick="registration('xylitol_taken');">Xylitol</a>			
+		
+		<div id="registrationButtons">
+			<a href="#"  data-role="button" onclick="registration('snack');">Snack</a>	
+							
+			<a href="#oral_hygiene" data-role="button" >Oral hygiene</a>	
+			
+			<a href="#"  id="xylitol_th_button" data-role="button" data-theme="b" onclick="registration('xylitol_taken');">Xylitol</a>		
 
-				
+			<a href="#"  id="cap_th_button" data-role="button" data-theme="b" onclick="registration('cap_paste_taken');">Calcium phosphate paste</a>	
+					
+			<a href="#"  id="ph_th_button" data-role="button" data-theme="b" onclick="registration('ph_th_taken');">Baking soda solution</a>			
 
+			<a href="#"  id="phgum_th_button" data-role="button" data-theme="b" onclick="registration('phgum_th_taken');">Baking soda gum</a>			
+		</div>
 
 		</div>
 		
@@ -256,8 +266,8 @@
 				<a href="#"  data-role="button" id="timer-button"  onclick="timer();">Start when ready</a>	
 				<p id="timer"></p>
 				<br />
-				<p id="fluoride_paste_otc">Use standard over-the-counter tooth paste (1100 - 1450 ppm F)</p>
-				<p id="fluoride_paste_5000">Use therapeutic tooth paste prescribed by your dentist.(5000 ppm F)</p>
+				<p id="#fluoride_paste_otc_th_button">Use standard over-the-counter tooth paste (1100 - 1450 ppm F)</p>
+				<p id="fluoride_paste_5000_th_button">Use therapeutic tooth paste prescribed by your dentist.(5000 ppm F)</p>
 			</div>
 	
 	</section>	
@@ -291,10 +301,10 @@
 		
 			<div data-role="content">
 				<a href="#"  data-role="button" id="rinsing-button" onclick="registration('mouth_rinsing');">Register</a>
-				<p id="fluoride_mouthrinse_standard">Rinse your mouth with fluoride mouthrinse once daily after teethbrushing and flosing. Use 0.05% F mouthrinse recommended by your dentist.</p>
-				<p id="fluoride_mouthrinse_extra">Rinse your mouth with fluoride mouthrinse 0.2% once daily after teethbrushing and flosing. After one bottle is used continue to rinse with 0.05% F mouthrinse two times daily - after each teeth brushing.</p>
-				<p id="fluoride_mouthrinse_xerostomia">Rinse your mouth with fluoride mouthrinse 0.05% whenever your mouth feels dry, and after every meal or snack.</p>
-				<p id="chlorhexidine_rinse">Rinse your mouth with chlorhexidine gluconate 0.12% for one minute daily for one week each month. Do not use fluoride mouthrinse during this period! Use it other days in the month.</p>
+				<p id="fluoride_mouthrinse_th_button">Rinse your mouth with fluoride mouthrinse once daily after teethbrushing and flosing. Use 0.05% F mouthrinse recommended by your dentist.</p>
+				<p id="fluoride_mouthrinse_extra_th_button">Rinse your mouth with fluoride mouthrinse 0.2% once daily after teethbrushing and flosing. After one bottle is used continue to rinse with 0.05% F mouthrinse two times daily - after each teeth brushing.</p>
+				<p id="fluoride_mouthrinse_xerostomia_th">Rinse your mouth with fluoride mouthrinse 0.05% whenever your mouth feels dry, and after every meal or snack.</p>
+				<p id="chlorhexidine_th_button">Rinse your mouth with chlorhexidine gluconate 0.12% for one minute daily for one week each month. Do not use fluoride mouthrinse during this period! Use it other days in the month.</p>
 			</div>
 		
 	</section>		
@@ -1030,7 +1040,7 @@
 			<div data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#home" data-transition="none" >Home</a></li>
+				  <li><a href="#home" data-icon="home">Home</a></li>
 				  <li><a href="#profile" data-icon="user">Profile</a></li>
 				  <li><a href="#info" data-icon="info">Info</a></li>
 				  <li><a href="#settings" data-icon="gear">Settings</a></li>

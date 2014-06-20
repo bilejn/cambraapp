@@ -20,9 +20,9 @@
 		var _gender = document.generalData.gender.value;
 		$.jStorage.set("gender", _gender);
 
-
-		$.mobile.changePage( "#general_data", { allowSamePageTransition: true , transition: "none"} );
+		
 		alert("submitted");
+		$.mobile.changePage( "#general_data", { allowSamePageTransition: true } );
 		return false;
 	}
 	
@@ -30,39 +30,39 @@
 	function fDiseaseIndicators() {
 	
 		if (document.diseaseIndicators.visible_cavities.checked == true){
-			if (!window.localStorage.visible_cavities)
-			window.localStorage.setItem("visible_cavities", "true");
+			if (!$.jStorage.get("visible_cavities"))
+			$.jStorage.set("visible_cavities", "true");
 		} else {
-			if (window.localStorage.visible_cavities)
-			window.localStorage.removeItem("visible_cavities");
+			if ($.jStorage.get("visible_cavities"))
+			$.jStorage.deleteKey("visible_cavities");
 		}
 		
 		if (document.diseaseIndicators.radiographic.checked == true){
-			if (!window.localStorage.radiographic)
-			window.localStorage.setItem("radiographic", "true");
+			if (!$.jStorage.get("radiographic"))
+			$.jStorage.set("radiographic", "true");
 		} else {
-			if (window.localStorage.radiographic)
-			window.localStorage.removeItem("radiographic");
+			if ($.jStorage.get("radiographic"))
+			$.jStorage.deleteKey("radiographic");
 		}	
-	
+
 		if (document.diseaseIndicators.white_spots.checked == true){
-			if (!window.localStorage.white_spots)
-			window.localStorage.setItem("white_spots", "true");
+			if (!$.jStorage.get("white_spots"))
+			$.jStorage.set("white_spots", "true");
 		} else {
-			if (window.localStorage.white_spots)
-			window.localStorage.removeItem("white_spots");
+			if ($.jStorage.get("white_spots"))
+			$.jStorage.deleteKey("white_spots");
 		}	
 		
 		if (document.diseaseIndicators.last_3_years.checked == true){
-			if (!window.localStorage.last_3_years)
-			window.localStorage.setItem("last_3_years", "true");
+			if (!$.jStorage.get("last_3_years"))
+			$.jStorage.set("last_3_years", "true");
 		} else {
-			if (window.localStorage.last_3_years)
-			window.localStorage.removeItem("last_3_years");
+			if ($.jStorage.get("last_3_years"))
+			$.jStorage.deleteKey("last_3_years");
 		}	
-		
-		alert("submitted");
-		window.location.reload(true);
+
+		alert("submitted");		
+		$.mobile.changePage( "#disease_indicators", { allowSamePageTransition: true } );
 		return false;
 	}
 	
@@ -70,177 +70,176 @@
 	function fRiskFactors() {
 	
 		if (document.riskFactors.ms_lb.checked == true){
-			if (!window.localStorage.ms_lb)
-			window.localStorage.setItem("ms_lb", "true");
+			if (!$.jStorage.get("ms_lb"))
+			$.jStorage.set("ms_lb", "true");
 		} else {
-			if (window.localStorage.ms_lb)
-			window.localStorage.removeItem("ms_lb");
+			if ($.jStorage.get("ms_lb"))
+			$.jStorage.deleteKey("ms_lb");
 		}	
 		
 		if (document.riskFactors.visible_plaque.checked == true){
 			if (!window.localStorage.visible_plaque)
-			window.localStorage.setItem("visible_plaque", "true");
+			$.jStorage.set("visible_plaque", "true");
 		} else {
 			if (window.localStorage.visible_plaque)
-			window.localStorage.removeItem("visible_plaque");
+			$.jStorage.deleteKey("visible_plaque");
 		}		
 		
 		if (document.riskFactors.frequent_snack.checked == true){
-			if (!window.localStorage.frequent_snack)
-			window.localStorage.setItem("frequent_snack", "true");
+			if (!$.jStorage.get("frequent_snack"))
+			$.jStorage.set("frequent_snack", "true");
 		} else {
-			if (window.localStorage.frequent_snack)
-			window.localStorage.removeItem("frequent_snack");
+			if ($.jStorage.get("frequent_snack"))
+			$.jStorage.deleteKey("frequent_snack");
 		}
 
 		if (document.riskFactors.pits_and_fissures.checked == true){
-			if (!window.localStorage.pits_and_fissures)
-			window.localStorage.setItem("pits_and_fissures", "true");
+			if (!$.jStorage.get("pits_and_fissures"))
+			$.jStorage.set("pits_and_fissures", "true");
 		} else {
-			if (window.localStorage.pits_and_fissures)
-			window.localStorage.removeItem("pits_and_fissures");
+			if ($.jStorage.get("pits_and_fissures"))
+			$.jStorage.deleteKey("pits_and_fissures");
 		}		
 		
 		if (document.riskFactors.drug_use.checked == true){
-			if (!window.localStorage.drug_use)
-			window.localStorage.setItem("drug_use", "true");
+			if (!$.jStorage.get("drug_use"))
+			$.jStorage.set("drug_use", "true");
 		} else {
-			if (window.localStorage.drug_use)
-			window.localStorage.removeItem("drug_use");
+			if ($.jStorage.get("drug_use"))
+			$.jStorage.deleteKey("drug_use");
 		}
 		
 		if (document.riskFactors.inadequate_saliva.checked == true){
-			if (!window.localStorage.inadequate_saliva)
-			window.localStorage.setItem("inadequate_saliva", "true");
+			if (!$.jStorage.get("inadequate_saliva"))
+			$.jStorage.set("inadequate_saliva", "true");
 		} else {
-			if (window.localStorage.inadequate_saliva)
-			window.localStorage.removeItem("inadequate_saliva");
+			if ($.jStorage.get("inadequate_saliva"))
+			$.jStorage.deleteKey("inadequate_saliva");
 		}
 		
 		if (document.riskFactors.saliva_reducing_factors.checked == true){
-			if (!window.localStorage.saliva_reducing_factors)
-			window.localStorage.setItem("saliva_reducing_factors", "true");
+			if (!$.jStorage.get("saliva_reducing_factors"))
+			$.jStorage.set("saliva_reducing_factors", "true");
 		} else {
-			if (window.localStorage.saliva_reducing_factors)
-			window.localStorage.removeItem("saliva_reducing_factors");
+			if ($.jStorage.get("saliva_reducing_factors"))
+			$.jStorage.deleteKey("saliva_reducing_factors");
 		}
 		
 		if (document.riskFactors.exposed_roots.checked == true){
-			if (!window.localStorage.exposed_roots)
-			window.localStorage.setItem("exposed_roots", "true");
+			if (!$.jStorage.get("exposed_roots"))
+			$.jStorage.set("exposed_roots", "true");
 		} else {
-			if (window.localStorage.exposed_roots)
-			window.localStorage.removeItem("exposed_roots");
+			if ($.jStorage.get("exposed_roots"))
+			$.jStorage.deleteKey("exposed_roots");
 		}
 		
 		
 		if (document.riskFactors.orthodontic_appliances.checked == true){
-			if (!window.localStorage.orthodontic_appliances)
-			window.localStorage.setItem("orthodontic_appliances", "true");
+			if (!$.jStorage.get("orthodontic_appliances"))
+			$.jStorage.set("orthodontic_appliances", "true");
 		} else {
-			if (window.localStorage.orthodontic_appliances)
-			window.localStorage.removeItem("orthodontic_appliances");
+			if ($.jStorage.get("orthodontic_appliances"))
+			$.jStorage.deleteKey("orthodontic_appliances");
 		}		
 	
-	
-		alert("submitted");
-		window.location.reload(true);
+		alert("submitted");	
+		$.mobile.changePage( "#risk_factors", { allowSamePageTransition: true } );
 		return false;
 	}
 	
 	
 	function fProtectiveFactors(){
-	
+
 		if (document.protectiveFactors.fluoridated_community.checked == true){
-			if (!window.localStorage.fluoridated_community)
-			window.localStorage.setItem("fluoridated_community", "true");
+			if (!$.jStorage.get("fluoridated_community"))
+			$.jStorage.set("fluoridated_community", "true");
 		} else {
-			if (window.localStorage.fluoridated_community)
-			window.localStorage.removeItem("fluoridated_community");
+			if ($.jStorage.get("fluoridated_community"))
+			$.jStorage.deleteKey("fluoridated_community");
 		}
 		
 		if (document.protectiveFactors.fluoride_paste_once.checked == true){
-			if (!window.localStorage.fluoride_paste_once)
-			window.localStorage.setItem("fluoride_paste_once", "true");
+			if (!$.jStorage.get("fluoride_paste_once"))
+			$.jStorage.set("fluoride_paste_once", "true");
 		} else {
-			if (window.localStorage.fluoride_paste_once)
-			window.localStorage.removeItem("fluoride_paste_once");
+			if ($.jStorage.get("fluoride_paste_once"))
+			$.jStorage.deleteKey("fluoride_paste_once");
 		}
 		
 		if (document.protectiveFactors.fluoride_paste_twice.checked == true){
-			if (!window.localStorage.fluoride_paste_twice)
-			window.localStorage.setItem("fluoride_paste_twice", "true");
+			if (!$.jStorage.get("fluoride_paste_twice"))
+			$.jStorage.set("fluoride_paste_twice", "true");
 		} else {
-			if (window.localStorage.fluoride_paste_twice)
-			window.localStorage.removeItem("fluoride_paste_twice");
+			if ($.jStorage.get("fluoride_paste_twice"))
+			$.jStorage.deleteKey("fluoride_paste_twice");
 		}
 	
 		if (document.protectiveFactors.fluoride_mouthrinse.checked == true){
-			if (!window.localStorage.fluoride_mouthrinse)
-			window.localStorage.setItem("fluoride_mouthrinse", "true");
+			if (!$.jStorage.get("fluoride_mouthrinse"))
+			$.jStorage.set("fluoride_mouthrinse", "true");
 		} else {
-			if (window.localStorage.fluoride_mouthrinse)
-			window.localStorage.removeItem("fluoride_mouthrinse");
+			if ($.jStorage.get("fluoride_mouthrinse"))
+			$.jStorage.deleteKey("fluoride_mouthrinse");
 		}
 	
 		if (document.protectiveFactors.fluoride_5000.checked == true){
-			if (!window.localStorage.fluoride_5000)
-			window.localStorage.setItem("fluoride_5000", "true");
+			if (!$.jStorage.get("fluoride_5000"))
+			$.jStorage.set("fluoride_5000", "true");
 		} else {
-			if (window.localStorage.fluoride_5000)
-			window.localStorage.removeItem("fluoride_5000");
+			if ($.jStorage.get("fluoride_5000"))
+			$.jStorage.deleteKey("fluoride_5000");
 		}
 	
 		if (document.protectiveFactors.fluoride_varnish.checked == true){
-			if (!window.localStorage.fluoride_varnish)
-			window.localStorage.setItem("fluoride_varnish", "true");
+			if (!$.jStorage.get("fluoride_varnish"))
+			$.jStorage.set("fluoride_varnish", "true");
 		} else {
-			if (window.localStorage.fluoride_varnish)
-			window.localStorage.removeItem("fluoride_varnish");
+			if ($.jStorage.get("fluoride_varnish"))
+			$.jStorage.deleteKey("fluoride_varnish");
 		}
 	
 		if (document.protectiveFactors.topical_fluoride.checked == true){
-			if (!window.localStorage.topical_fluoride)
-			window.localStorage.setItem("topical_fluoride", "true");
+			if (!$.jStorage.get("topical_fluoride"))
+			$.jStorage.set("topical_fluoride", "true");
 		} else {
-			if (window.localStorage.topical_fluoride)
-			window.localStorage.removeItem("topical_fluoride");
+			if ($.jStorage.get("topical_fluoride"))
+			$.jStorage.deleteKey("topical_fluoride");
 		}
 	
 		if (document.protectiveFactors.chlorhexidine.checked == true){
-			if (!window.localStorage.chlorhexidine)
-			window.localStorage.setItem("chlorhexidine", "true");
+			if (!$.jStorage.get("chlorhexidine"))
+			$.jStorage.set("chlorhexidine", "true");
 		} else {
-			if (window.localStorage.chlorhexidine)
-			window.localStorage.removeItem("chlorhexidine");
+			if ($.jStorage.get("chlorhexidine"))
+			$.jStorage.deleteKey("chlorhexidine");
 		}
 	
 		if (document.protectiveFactors.xylitol.checked == true){
-			if (!window.localStorage.xylitol)
-			window.localStorage.setItem("xylitol", "true");
+			if (!$.jStorage.get("xylitol"))
+			$.jStorage.set("xylitol", "true");
 		} else {
-			if (window.localStorage.xylitol)
-			window.localStorage.removeItem("xylitol");
+			if ($.jStorage.get("xylitol"))
+			$.jStorage.deleteKey("xylitol");
 		}
 		
 		if (document.protectiveFactors.tooth_mousse.checked == true){
-			if (!window.localStorage.tooth_mousse)
-			window.localStorage.setItem("tooth_mousse", "true");
+			if (!$.jStorage.get("tooth_mousse"))
+			$.jStorage.set("tooth_mousse", "true");
 		} else {
-			if (window.localStorage.tooth_mousse)
-			window.localStorage.removeItem("tooth_mousse");
+			if ($.jStorage.get("tooth_mousse"))
+			$.jStorage.deleteKey("tooth_mousse");
 		}
 		
 		if (document.protectiveFactors.adequate_saliva.checked == true){
-			if (!window.localStorage.adequate_saliva)
-			window.localStorage.setItem("adequate_saliva", "true");
+			if (!$.jStorage.get("adequate_saliva"))
+			$.jStorage.set("adequate_saliva", "true");
 		} else {
-			if (window.localStorage.adequate_saliva)
-			window.localStorage.removeItem("adequate_saliva");
+			if ($.jStorage.get("adequate_saliva"))
+			$.jStorage.deleteKey("adequate_saliva");
 		}
 		
-		alert("submitted");
-		window.location.reload(true);
+		alert("submitted");		
+		$.mobile.changePage( "#protective_factors", { allowSamePageTransition: true } );
 		return false;
 	
 	}
@@ -253,11 +252,11 @@
 	
 	var _RecallExamsFrequency = document.recallExams.recalls.value;
 	var date = new Date();
-    date.setMonth(date.getMonth() + parseInt(_RecallExamsFrequency) + 1);
-	window.localStorage.setItem("recallExam", date);
-	
-		alert("submitted");
-		window.location.reload(true);
+    date.setMonth(date.getMonth() + parseInt(_RecallExamsFrequency));
+	$.jStorage.set("recallExam", date);
+
+		alert("submitted");	
+		$.mobile.changePage( "#recall_exams", { allowSamePageTransition: true } );
 		return false;
 	}
 	
@@ -265,72 +264,71 @@
 	function fAntibacterials () {
 	
 		if (document.antibacterials_th.chlorhexidine_th.checked == true){
-			if (!window.localStorage.chlorhexidine_th)
-			window.localStorage.setItem("chlorhexidine_th", "true");
+			if (!$.jStorage.get("chlorhexidine_th"))
+			$.jStorage.set("chlorhexidine_th", "true");
 		} else {
-			if (window.localStorage.chlorhexidine_th)
-			window.localStorage.removeItem("chlorhexidine_th");
+			if ($.jStorage.get("chlorhexidine_th"))
+			$.jStorage.deleteKey("chlorhexidine_th");
 		}
 		
 		if (document.antibacterials_th.xylitol_th.checked == true){
-			if (!window.localStorage.xylitol_th)
-			window.localStorage.setItem("xylitol_th", "true");
+			if (!$.jStorage.get("xylitol_th"))
+			$.jStorage.set("xylitol_th", "true");
 		} else {
-			if (window.localStorage.xylitol_th)
-			window.localStorage.removeItem("xylitol_th");
+			if ($.jStorage.get("xylitol_th"))
+			$.jStorage.deleteKey("xylitol_th");
 		}
-	
-		alert("submitted");
-		window.location.reload(true);
+		
+		alert("submitted");	
+		$.mobile.changePage( "#antibacterials", { allowSamePageTransition: true } );
 		return false;
 	}
 	
 	function fFluoride () {
 	
 		if (document.fluoride_th.fluoride_paste_otc_th.checked == true){
-			if (!window.localStorage.fluoride_paste_otc_th)
-			window.localStorage.setItem("fluoride_paste_otc_th", "true");
+			if (!$.jStorage.get("fluoride_paste_otc_th"))
+			$.jStorage.set("fluoride_paste_otc_th", "true");
 		} else {
-			if (window.localStorage.fluoride_paste_otc_th)
-			window.localStorage.removeItem("fluoride_paste_otc_th");
+			if ($.jStorage.get("fluoride_paste_otc_th"))
+			$.jStorage.deleteKey("fluoride_paste_otc_th");
 		}
 		
 		if (document.fluoride_th.fluoride_paste_5000_th.checked == true){
-			if (!window.localStorage.fluoride_paste_5000_th)
-			window.localStorage.setItem("fluoride_paste_5000_th", "true");
+			if (!$.jStorage.get("fluoride_paste_5000_th"))
+			$.jStorage.set("fluoride_paste_5000_th", "true");
 		} else {
-			if (window.localStorage.fluoride_paste_5000_th)
-			window.localStorage.removeItem("fluoride_paste_5000_th");
+			if ($.jStorage.get("fluoride_paste_5000_th"))
+			$.jStorage.deleteKey("fluoride_paste_5000_th");
 		}
 
 		if (document.fluoride_th.fluoride_mouthrinse_th.checked == true){
-			if (!window.localStorage.fluoride_mouthrinse_th)
-			window.localStorage.setItem("fluoride_mouthrinse_th", "true");
+			if (!$.jStorage.get("fluoride_mouthrinse_th"))
+			$.jStorage.set("fluoride_mouthrinse_th", "true");
 		} else {
-			if (window.localStorage.fluoride_mouthrinse_th)
-			window.localStorage.removeItem("fluoride_mouthrinse_th");
+			if ($.jStorage.get("fluoride_mouthrinse_th"))
+			$.jStorage.deleteKey("fluoride_mouthrinse_th");
 		}
 		
 		
 		if (document.fluoride_th.fluoride_mouthrinse_extra_th.checked == true){
-			if (!window.localStorage.fluoride_mouthrinse_extra_th)
-			window.localStorage.setItem("fluoride_mouthrinse_extra_th", "true");
+			if (!$.jStorage.get("fluoride_mouthrinse_extra_th"))
+			$.jStorage.set("fluoride_mouthrinse_extra_th", "true");
 		} else {
-			if (window.localStorage.fluoride_mouthrinse_extra_th)
-			window.localStorage.removeItem("fluoride_mouthrinse_extra_th");
+			if ($.jStorage.get("fluoride_mouthrinse_extra_th"))
+			$.jStorage.deleteKey("fluoride_mouthrinse_extra_th");
 		}
 		
 		if (document.fluoride_th.fluoride_mouthrinse_xerostomia_th.checked == true){
-			if (!window.localStorage.fluoride_mouthrinse_xerostomia_th)
-			window.localStorage.setItem("fluoride_mouthrinse_xerostomia_th", "true");
+			if (!$.jStorage.get("fluoride_mouthrinse_xerostomia_th"))
+			$.jStorage.set("fluoride_mouthrinse_xerostomia_th", "true");
 		} else {
-			if (window.localStorage.fluoride_mouthrinse_xerostomia_th)
-			window.localStorage.removeItem("fluoride_mouthrinse_xerostomia_th");
+			if ($.jStorage.get("fluoride_mouthrinse_xerostomia_th"))
+			$.jStorage.deleteKey("fluoride_mouthrinse_xerostomia_th");
 		}
 	
-	
-		alert("submitted");
-		window.location.reload(true);
+		alert("submitted");	
+		$.mobile.changePage( "#fluoride", { allowSamePageTransition: true } );
 		return false;
 	}
 	
@@ -341,24 +339,23 @@
 function fPhControl () {
 	
 		if (document.ph_control.ph_th.checked == true){
-			if (!window.localStorage.ph_th)
-			window.localStorage.setItem("ph_th", "true");
+			if (!$.jStorage.get("ph_th"))
+			$.jStorage.set("ph_th", "true");
 		} else {
-			if (window.localStorage.ph_th)
-			window.localStorage.removeItem("ph_th");
+			if ($.jStorage.get("ph_th"))
+			$.jStorage.deleteKey("ph_th");
 		}
 		
 		if (document.ph_control.phgum_th.checked == true){
-			if (!window.localStorage.phgum_th)
-			window.localStorage.setItem("phgum_th", "true");
+			if (!$.jStorage.get("phgum_th"))
+			$.jStorage.set("phgum_th", "true");
 		} else {
-			if (window.localStorage.phgum_th)
-			window.localStorage.removeItem("phgum_th");
+			if ($.jStorage.get("phgum_th"))
+			$.jStorage.deleteKey("phgum_th");
 		}
 	
-	
-		alert("submitted");
-		window.location.reload(true);
+		alert("submitted");	
+		$.mobile.changePage( "#ph_control", { allowSamePageTransition: true } );
 		return false;
 	}
 	
@@ -366,19 +363,30 @@ function fPhControl () {
 	function fCaPPaste() {
 	
 		if (document.cap_paste.cap_th.checked == true){
-			if (!window.localStorage.cap_th)
-			window.localStorage.setItem("cap_th", "true");
+			if (!$.jStorage.get("cap_th"))
+			$.jStorage.set("cap_th", "true");
 		} else {
-			if (window.localStorage.cap_th)
-			window.localStorage.removeItem("cap_th");
+			if ($.jStorage.get("cap_th"))
+			$.jStorage.deleteKey("cap_th");
 		}
 	
-		
-		alert("submitted");
-		window.location.reload(true);
+		alert("submitted");		
+		$.mobile.changePage( "#cap_paste", { allowSamePageTransition: true } );
 		return false;
 	}
 	
+
+
+	
+	
+	
+
+	/*                                                         ============================ C  A  L  C  U  L  A  T  E ============================ */
+
+
+
+
+
 	
 	/* ============================ RISK LEVEL DETERMINATION ================ */	
 	
@@ -399,19 +407,19 @@ function fPhControl () {
 		var protective_count = 0;
 		
 		 for (i=0; i < diseaseIndicatorsArray.length; i++){
-			if (window.localStorage.getItem(diseaseIndicatorsArray[i]) != undefined){
+			if ($.jStorage.get(diseaseIndicatorsArray[i]) != undefined){
 			disease_count = disease_count + 1;
 			}
 		 }
 		 
 		for (i=0; i < riskFactorsArray.length; i++){
-			if (window.localStorage.getItem(riskFactorsArray[i]) != undefined){
+			if ($.jStorage.get(riskFactorsArray[i]) != undefined){
 			risk_count = risk_count + 1;
 			}
 		} 
 		
 		for (i=0; i < protectiveFactorsArray.length; i++){
-			if (window.localStorage.getItem(protectiveFactorsArray[i]) != undefined){
+			if ($.jStorage.get(protectiveFactorsArray[i]) != undefined){
 			protective_count = protective_count + 1;
 			}
 		} 
@@ -431,7 +439,7 @@ function fPhControl () {
 		return risk_level;
 	}
 	
-	window.localStorage.setItem("risk_level", riskLevel());
+	$.jStorage.set("risk_level", riskLevel());
 	
 
 	

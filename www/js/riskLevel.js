@@ -15,19 +15,19 @@
 		var protective_count = 0;
 		
 		 for (i=0; i < diseaseIndicatorsArray; i++){
-			if (window.localStorage.getItem(diseaseIndicatorsArray[i]) != undefined){
+			if ($.jStorage.get(diseaseIndicatorsArray[i]) != undefined){
 			disease_count = disease_count + 1;
 			}
 		 }
 		 
 		for (i=0; i < riskFactorsArray; i++){
-			if (window.localStorage.getItem(riskFactorsArray[i]) != undefined){
+			if ($.jStorage.get(riskFactorsArray[i]) != undefined){
 			risk_count = risk_count + 1;
 			}
 		} 
 		
 		for (i=0; i < protectiveFactorsArray; i++){
-			if (window.localStorage.getItem(protectiveFactorsArray[i]) != undefined){
+			if ($.jStorage.get(protectiveFactorsArray[i]) != undefined){
 			protective_count = protective_count + 1;
 			}
 		} 
