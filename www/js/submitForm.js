@@ -62,6 +62,7 @@
 		}	
 
 		alert("submitted");		
+		calculate();
 		$.mobile.changePage( "#disease_indicators", { allowSamePageTransition: true } );
 		return false;
 	}
@@ -142,7 +143,8 @@
 			$.jStorage.deleteKey("orthodontic_appliances");
 		}		
 	
-		alert("submitted");	
+		alert("submitted");
+		calculate();		
 		$.mobile.changePage( "#risk_factors", { allowSamePageTransition: true } );
 		return false;
 	}
@@ -238,11 +240,14 @@
 			$.jStorage.deleteKey("adequate_saliva");
 		}
 		
-		alert("submitted");		
+		alert("submitted");	
+		calculate();		
 		$.mobile.changePage( "#protective_factors", { allowSamePageTransition: true } );
 		return false;
 	
 	}
+	
+	
 	
 	
 	/* ============================ THERAPY RECOMMENDATIONS FUNCTIONS ================ */
@@ -251,14 +256,23 @@
 	function fRecallExams () {
 	
 	var _RecallExamsFrequency = document.recallExams.recalls.value;
+	var broj = parseInt(_RecallExamsFrequency);
 	var date = new Date();
-    date.setMonth(date.getMonth() + parseInt(_RecallExamsFrequency));
-	$.jStorage.set("recallExam", date);
+
+	var day = date.getDate(); if (day < 10) { day = "0" + day; }
+	var month = date.getMonth() + 1 + broj; 
+	var year = date.getFullYear()
+ 		if (month > 12) {month = month % 12; year = year + 1}
+		if (month < 10) { month = "0" + month; }
+	var item = day + "." + month + "." + year + ".";
+
+	$.jStorage.set("recallExam", item.toString());
 
 		alert("submitted");	
 		$.mobile.changePage( "#recall_exams", { allowSamePageTransition: true } );
 		return false;
 	}
+	
 	
 	
 	function fAntibacterials () {
@@ -283,6 +297,7 @@
 		$.mobile.changePage( "#antibacterials", { allowSamePageTransition: true } );
 		return false;
 	}
+	
 	
 	function fFluoride () {
 	
@@ -381,65 +396,8 @@ function fPhControl () {
 	
 	
 
-	/*                                                         ============================ C  A  L  C  U  L  A  T  E ============================ */
-
-
-
-
 
 	
-	/* ============================ RISK LEVEL DETERMINATION ================ */	
-	
-		function riskLevel() {
-
-		var diseaseIndicatorsArray = ["visible_cavities", "radiographic", "white_spots", "last_3_years"];
-		var riskFactorsArray = ["ms_lb", "visible_plaque", "frequent_snack", "pits_and_fissures", "drug_use", "inadequate_saliva", "saliva_reducing_factors", "exposed_roots", "orthodontic_appliances"];
-		var protectiveFactorsArray = ["fluoridated_community", "fluoride_paste_once", "fluoride_paste_twice", "fluoride_mouthrinse", "fluoride_5000", "fluoride_varnish", "topical_fluoride", "chlorhexidine", "xylitol", "tooth_mousse", "adequate_saliva"];
-
-
-		var risk_level = "";
-		var a = 0;
-		var b = 0;
-		var c = 0;
-		
-		var disease_count = 0;
-		var risk_count = 0;
-		var protective_count = 0;
-		
-		 for (i=0; i < diseaseIndicatorsArray.length; i++){
-			if ($.jStorage.get(diseaseIndicatorsArray[i]) != undefined){
-			disease_count = disease_count + 1;
-			}
-		 }
-		 
-		for (i=0; i < riskFactorsArray.length; i++){
-			if ($.jStorage.get(riskFactorsArray[i]) != undefined){
-			risk_count = risk_count + 1;
-			}
-		} 
-		
-		for (i=0; i < protectiveFactorsArray.length; i++){
-			if ($.jStorage.get(protectiveFactorsArray[i]) != undefined){
-			protective_count = protective_count + 1;
-			}
-		} 
-		
-		if (disease_count != 0){
-			risk_level = "high";
-		} else {
-			if (risk_count > protective_count){
-				risk_level = "high";
-			}else if (risk_count = protective_count){
-				risk_level = "moderate";
-			}else {
-				risk_level = "low";
-			}
-		}
-		
-		return risk_level;
-	}
-	
-	$.jStorage.set("risk_level", riskLevel());
 	
 
 	

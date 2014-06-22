@@ -784,7 +784,7 @@
 						<fieldset data-role="controlgroup" >	
 						<legend>Recall dental exams:</legend>						
 							  <label for="points">every:</label>
-							  <input type="range" name="recalls" id="recalls" value="6" min="0" max="36">months</input>	
+							  <input type="range" name="recalls" id="recalls" value="6" min="0" max="12">months</input>	
 						</fieldset>	
 		
 				<fieldset class="ui-grid-a">
@@ -1047,14 +1047,51 @@
 				</ul>
 			</div>
 		</div>	
-</section>		
+</section>
+
+
+<!-- =============================== 	statistics  ======================================= -->
+
+	
+	<section id="statistics" data-role="page" data-theme="b">
+		<div data-role="header"  data-position="fixed">
+			<h4>Statistics</h4>
+			<a href="#profile" data-icon="back">Back</a>
+		</div>
+		
+		
+		<div data-role="content">
+		
+		<p id="statistics_entry"><p>
+
+		
+
+		</div>
+		
+		
+		
+		<div data-role="footer" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user" class="ui-btn-active ui-state-persist" >Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>			
+			
 		
 		
 		
 	
-<script type"text/javascript" src="js/localstorage.js"></script>
-<script type="text/javascript" src="js/getstorage.js"></script>	
+<script type"text/javascript" src="js/submitForm.js"></script>
+<script type"text/javascript" src="js/calculate.js"></script>
+	
 <script type="text/javascript" src="js/registration.js"></script>	
+<script type="text/javascript" src="js/events.js"></script>	
+<script type="text/javascript" src="js/getstorage.js"></script>
 <script type"text/javascript">
 
 for (i = new Date().getFullYear(); i > 1900; i--)
