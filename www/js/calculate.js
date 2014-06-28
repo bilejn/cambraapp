@@ -3,7 +3,7 @@
 	/*============================ C  A  L  C  U  L  A  T  E ============================ */
 
 	function calculate() {
-		$.jStorage.set("snack",'{"dates":[{"22.06.2014":2},{"23.06.2014":4},{"24.06.2014":3}]}');
+
 		riskLevel();
 		listOutput();
 		statistics ();
@@ -82,15 +82,20 @@
 	/* ============================ STATISTICS ===================================== */
 
 	function statistics () {
-	var snack = JSON.parse($.jStorage.get("snack"));
-	var output = "";
-	for (var i = 0; i < snack.dates.length; i ++){
-		for (key in snack.dates[i]){
-		output += key +":  "+snack.dates[i][key] + "<br />";
+	if ($.jStorage.get("snack")){
+		var snack = JSON.parse($.jStorage.get("snack"));
+		var output = "";
+		var sum = 0;
+		var days = snack.dates.length;
+		for (var i = 0; i < snack.dates.length; i ++){
+			for (key in snack.dates[i]){
+			output += key +":  "+ (snack.dates[i][key]) + "<br />";
+			sum += snack.dates[i][key];
+			}
 		}
+		var overall = sum / days;
+		$("#statistics_entry").html(output + "<br /> Overall:" + overall);
 	}
-	$("#statistics_entry").html(output);
-	
 	
 	
 	}

@@ -24,7 +24,10 @@
 
   <body>
   
-	<section id="home" data-role="page" data-theme="a">
+
+	
+	
+	<section id="form" data-role="page" data-theme="a">
 		<div data-role="header" data-position="fixed">
             <div data-role="navbar">
 				<ul>
@@ -32,12 +35,26 @@
 					<li><a href="index3.html" data-ajax="false">Form</a></li>
 				</ul>
 			 </div>		
-		</div> 
-		
-		<div data-role="content">		
+		</div> 	
+			<!--	<form name="myForm" action="" onsubmit="return fForm();"  data-ajax="false" >
+					  <fieldset data-role="controlgroup" data-mini="true">
+						<legend>Buttons</legend>
+						  <label for="checkbutton1">Show Button 1</label>
+						  <input type="checkbox" name="checkbutton1" id="checkbutton1" value="checkbutton1" data-theme="b">
+						  <label for="checkbutton2">Show Button 2</label>
+						  <input type="checkbox" name="checkbutton2" id="checkbutton2" value="checkbutton2" data-theme="b">
+					  </fieldset>			  
+					  <fieldset data-role="controlgroup">				
+							<input type="submit" value="Submit"  id="submit" data-role="button" data-theme="c">
+					  </fieldset>					  	
+				</form>
+			-->	
+		<div data-role="content">	
+			<a href="#" id="onoff" data-role="button" data-transition="none"  onclick="fButtonChange()">&nbsp </a>
+			<a href="#anylink"  id="button1" data-role="button" data-theme="b">button1</a>	
+			<a href="#anylink"  id="button2" data-role="button" data-theme="b">button2</a>
+   </div>
 
-				<p id="count"></p>
-		</div>
 		
 		<div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -46,12 +63,8 @@
 					<li><a href="index3.html" data-ajax="false">Form</a></li>
 				</ul>
 			 </div>		
-		</div> 
-		
+		</div> 	
 	</section>
-	
-	
-	
 	
 	<script type="text/javascript">
 	
