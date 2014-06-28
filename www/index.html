@@ -9,24 +9,20 @@
 			<link rel="stylesheet" href="css/jquery.mobile-1.4.2.css" />
 			<link rel="stylesheet" href="css/mycss.css" />
 			<link rel="stylesheet" href="css/myswatch.css" />
-			<script src="js/jquery-1.9.1.min.js"></script>
+			<script  type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 			
 			<script type"text/javascript">
 				$(document).bind("mobileinit", function() {
 				 $.mobile.defaultPageTransition = "none";
 				 $.mobile.defaultDialogTransition = "none";
+				 $.mobile.page.prototype.options.domCache = true;
 				});
 			</script>
 
-			<script src="js/jquery.mobile-1.4.2.js"></script>
-			<script src="js/jstorage.js"></script>
+			<script  type="text/javascript" src="js/jquery.mobile-1.4.2.js"></script>
+			<script type="text/javascript"  src="js/jstorage.js"></script>
 			<script type="text/javascript" src="js/timer.js"></script>
 		
-			<script type"text/javascript">
-				$( "#home" ).on( "pagebeforecreate", function( event ) {
-				  // manipulate this page before its widgets are auto-initialized
-				});
-			</script>
 
 
 </head>
@@ -73,7 +69,7 @@
 		<div id="registrationButtons">
 			<a href="#"  data-role="button" onclick="registration('snack_taken');">Snack</a>	
 							
-			<a href="#oral_hygiene" data-role="button" >Oral hygiene</a>	
+			<a href="oral_hygiene.html" data-role="button" data-ajax="false">Oral hygiene</a>	
 			
 			<a href="#"  id="xylitol_th_button" data-role="button" data-theme="b" onclick="registration('xylitol_taken');">Xylitol</a>		
 
@@ -219,96 +215,7 @@
 	</section>		
 	
 	
-<!-- =============================== 	ORAL HYGIENE   ======================================= -->
 
-	
-	<section id="oral_hygiene" data-role="page" data-theme="b">
-		<div data-role="header"  data-position="fixed">
-			<h4>Oral hygiene</h4>
-			<a href="#home" data-icon="back">Back</a>
-		</div>
-		
-		
-		<div data-role="content">
-		
-				<a href="#brushing"  data-role="button" >1. Teeth Brushing</a>		
-				<a href="#flossing"  data-role="button" >2. Teeth Flossing</a>
-				<a href="#rinsing"  data-role="button" >3. Mouth Rinsing</a>
-		
-		</div>
-		
-		
-		
-		<div data-role="footer" data-position="fixed">
-              	<div data-role="navbar">
-					<ul>
-					  <li><a href="#home" data-icon="home">Home</a></li>
-					  <li><a href="#profile" data-icon="user">Profile</a></li>
-					  <li><a href="#info" data-icon="info">Info</a></li>
-					  <li><a href="#settings" data-icon="gear">Settings</a></li>
-					</ul>
-				</div>
-        </div>	
-	</section>		
-	
-	
-	
-<!-- =============================== 	TEETH BRUSHING   ======================================= -->
-
-	
-	<section id="brushing" data-role="dialog" data-theme="b" data-close-btn="right">
-	
-			<div data-role="header">
-				<p>&nbsp &nbsp &nbsp &nbsp Teeth Brushing</p> 
-			</div>		
-
-			<div data-role="content">
-				<a href="#"  data-role="button" id="timer-button"  onclick="timer();">Start when ready</a>	
-				<p id="timer"></p>
-				<br />
-				<p id="#fluoride_paste_otc_th_button">Use standard over-the-counter tooth paste (1100 - 1450 ppm F)</p>
-				<p id="fluoride_paste_5000_th_button">Use therapeutic tooth paste prescribed by your dentist.(5000 ppm F)</p>
-			</div>
-	
-	</section>	
-	
-	
-<!-- =============================== 	TEETH FLOSSING   ======================================= -->
-
-	
-	<section id="flossing" data-role="dialog" data-theme="b" data-close-btn="right">
-	
-			<div data-role="header" >
-				<p>&nbsp &nbsp &nbsp &nbsp Teeth Flossing </p>
-			</div>		
-		
-			<div data-role="content">
-				<a href="#"  data-role="button" id="flossing-button"  onclick="registration('teeth_flossing_done');">Register</a>
-				<p>You should clean interdental spaces once daily after regular tooth brushing. Use interdental brush prescribed by your dentist.</p>
-			</div>
-			
-	</section>	
-
-
-<!-- =============================== 	MOUTH RINSING   ======================================= -->
-
-	
-	<section id="rinsing" data-role="dialog" data-theme="b" data-close-btn="right">
-	
-			<div data-role="header" >
-				<p>&nbsp &nbsp &nbsp &nbsp Mouth Rinsing </p>
-			</div>		
-		
-			<div data-role="content">
-				<a href="#"  data-role="button" id="rinsing-button" onclick="registration('mouth_rinsing');">Register</a>
-				<p id="fluoride_mouthrinse_th_button">Rinse your mouth with fluoride mouthrinse once daily after teethbrushing and flosing. Use 0.05% F mouthrinse recommended by your dentist.</p>
-				<p id="fluoride_mouthrinse_extra_th_button">Rinse your mouth with fluoride mouthrinse 0.2% once daily after teethbrushing and flosing. After one bottle is used continue to rinse with 0.05% F mouthrinse two times daily - after each teeth brushing.</p>
-				<p id="fluoride_mouthrinse_xerostomia_th">Rinse your mouth with fluoride mouthrinse 0.05% whenever your mouth feels dry, and after every meal or snack.</p>
-				<p id="chlorhexidine_th_button">Rinse your mouth with chlorhexidine gluconate 0.12% for one minute daily for one week each month. Do not use fluoride mouthrinse during this period! Use it other days in the month.</p>
-			</div>
-		
-	</section>		
-	
 	
 	
 <!-- =============================== 	Profile   ======================================= -->
