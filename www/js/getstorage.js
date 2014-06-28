@@ -1,11 +1,35 @@
 	$(function (){
 	
+/*================================ Local storage initialization ====================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 		
 /*================================ Risk level ====================================*/
 		calculate ();
 		if ($.jStorage.get("risk_level") == "low"){
 			$("#low_risk").show();
-			$("#overall_caries_risk span").html("LOW");
+			$("#overall_caries_risk span").html("low");
 			$("#overall_caries_risk span").attr("class", "low");
 
 		 } else {
@@ -43,70 +67,20 @@
 		
 /*================================ Registration buttons ====================================*/	
 
-		
-		if ($.jStorage.get("xylitol_th") == "true"){
-			$("#xylitol_th_button").show();
-		 } else {
-			$("#xylitol_th_button").hide();
-		 }
+	buttons = ["chlorhexidine_th", "xylitol_th", "fluoride_paste_otc_th", "fluoride_paste_5000_th", "fluoride_mouthrinse_th", "fluoride_mouthrinse_extra_th", "fluoride_mouthrinse_xerostomia_th", "ph_th", "phgum_th", "cap_th"];
+	
 
-		 if ($.jStorage.get("chlorhexidine_th") == "true"){
-			$("#chlorhexidine_th_button").show();
+	var b;
+	for (b = 0; b < buttons.length; b++){
+		if ($.jStorage.get(buttons[b]) == "true") {
+			$("#"+buttons[b]+"_button").show();
 		 } else {
-			$("#chlorhexidine_th_button").hide();
+			$("#"+buttons[b]+"_button").hide();
 		 }
+	}
+	
+	
 
-		 if ($.jStorage.get("fluoride_paste_otc_th") == "true"){
-			$("#fluoride_paste_otc_th_button").show();
-		 } else {
-			$("#fluoride_paste_otc_th_button").hide();
-		 }
-		 
-		 if ($.jStorage.get("fluoride_paste_5000_th") == "true"){
-			$("#fluoride_paste_5000_th_button").show();
-		 } else {
-			$("#fluoride_paste_5000_th_button").hide();
-		 }
-		 
-		 if ($.jStorage.get("fluoride_mouthrinse_th") == "true"){
-			$("#fluoride_mouthrinse_th_button").show();
-		 } else {
-			$("#fluoride_mouthrinse_th_button").hide();
-		 }
-		 
-		if ($.jStorage.get("fluoride_mouthrinse_extra_th") == "true"){
-			$("#fluoride_mouthrinse_extra_th_button").show();
-		 } else {
-			$("#fluoride_mouthrinse_extra_th_button").hide();
-		 } 
-		 
-		 
-		if ($.jStorage.get("fluoride_mouthrinse_xerostomia_th") == "true"){
-			$("#fluoride_mouthrinse_xerostomia_th_button").show();
-		 } else {
-			$("#fluoride_mouthrinse_xerostomia_th_button").hide();
-		 } 
-		 
-		 
-		 
-		if ($.jStorage.get("ph_th") == "true"){
-			$("#ph_th_button").show();
-		 } else {
-			$("#ph_th_button").hide();
-		 } 
-		 
-		if ($.jStorage.get("phgum_th") == "true"){
-			$("#phgum_th_button").show();
-		 } else {
-			$("#phgum_th_button").hide();
-		 } 
-		 
-		if ($.jStorage.get("cap_th") == "true"){
-			$("#cap_th_button").show();
-		 } else {
-			$("#cap_th_button").hide();
-		 }
-		 
 		 
 		 
 /*================================================ form initialization =============================================*/
@@ -131,21 +105,22 @@
 	}
 	 
 /*================================================ statistics initialization =============================================*/
+
 /*== snack==*/
 
 	if($.jStorage.get("snack_statistics") < 3){
-			$("#eating_habits span").html("GOOD");
+			$("#eating_habits span").html("good");
 			$("#eating_habits span").attr("class", "low");		
 	}
 	
 	if($.jStorage.get("snack_statistics") == 3){
-			$("#eating_habits span").html("MODERATE");
+			$("#eating_habits span").html("moderate");
 			$("#eating_habits span").attr("class", "moderate");
 		
 	}
 
 	if($.jStorage.get("snack_statistics") > 3){
-			$("#eating_habits span").html("BAD");
+			$("#eating_habits span").html("bad");
 			$("#eating_habits span").attr("class", "high");		
 		
 	}
@@ -153,10 +128,10 @@
 /*== oral hygiene ==*/
 
 	if($.jStorage.get("brushing_statistics") >= 2 && $.jStorage.get("flossing_statistics") >= 1){
-			$("#oral_hygiene_habits span").html("GOOD");
+			$("#oral_hygiene_habits span").html("good");
 			$("#oral_hygiene_habits span").attr("class", "low");		
 	}else{
-			$("#oral_hygiene_habits span").html("BAD");
+			$("#oral_hygiene_habits span").html("bad");
 			$("#oral_hygiene_habits span").attr("class", "high");
 	}
 
@@ -166,11 +141,11 @@
 	if ($.jStorage.get("xylitol_th") == "true"){
 			$("#xylitol_taking_habits").show();		
 			if($.jStorage.get("xylitol_statistics") >= 4){
-				$("#xylitol_taking_habits span").html("GOOD");
+				$("#xylitol_taking_habits span").html("good");
 				$("#xylitol_taking_habits span").attr("class", "low");		
 			}
 			if($.jStorage.get("xylitol_statistics") < 4){
-				$("#xylitol_taking_habits span").html("BAD");
+				$("#xylitol_taking_habits span").html("bad");
 				$("#xylitol_taking_habits span").attr("class", "high");		
 			}
 	

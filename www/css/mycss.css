@@ -5,7 +5,9 @@ a {
 	text-decoration: none;
 }
 
-
+.wrap {
+    white-space: normal !important;
+}
 
 .clear {
 	clear: both;
