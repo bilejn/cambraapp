@@ -82,21 +82,78 @@
 	/* ============================ STATISTICS ===================================== */
 
 	function statistics () {
-	if ($.jStorage.get("snack")){
-		var snack = JSON.parse($.jStorage.get("snack"));
-		var output = "";
+		
+		
+		
+/* ====================================== snack statistics =======================================*/
+
+
+	if ($.jStorage.get("snack_taken")){
+		var snack = JSON.parse($.jStorage.get("snack_taken"));
 		var sum = 0;
 		var days = snack.dates.length;
 		for (var i = 0; i < snack.dates.length; i ++){
 			for (key in snack.dates[i]){
-			output += key +":  "+ (snack.dates[i][key]) + "<br />";
 			sum += snack.dates[i][key];
 			}
 		}
-		var overall = sum / days;
-		$("#statistics_entry").html(output + "<br /> Overall:" + overall);
+		var result = sum / days;
+		$.jStorage.set("snack_statistics",result);
 	}
 	
+	
+	
+/* ====================================== oral hygiene statistics =======================================*/
+
+	if ($.jStorage.get("teeth_brushing_done")){
+		var brushing = JSON.parse($.jStorage.get("teeth_brushing_done"));
+		var sum = 0;
+		var days = brushing.dates.length;
+		for (var i = 0; i < brushing.dates.length; i ++){
+			for (key in brushing.dates[i]){
+			sum += brushing.dates[i][key];
+			}
+		}
+		var result = sum / days;
+		$.jStorage.set("brushing_statistics",result);
+	}
+	
+	
+	if ($.jStorage.get("teeth_flossing_done")){
+		var flossing = JSON.parse($.jStorage.get("teeth_flossing_done"));
+		var sum = 0;
+		var days = flossing.dates.length;
+		for (var i = 0; i < flossing.dates.length; i ++){
+			for (key in flossing.dates[i]){
+			sum += flossing.dates[i][key];
+			}
+		}
+		var result = sum / days;
+		$.jStorage.set("flossing_statistics",result);
+	}
+	
+
+
+
+
+
+
+	
+
+/* ====================================== xylitol statistics =======================================*/	
+
+	if ($.jStorage.get("xylitol_taken")){
+		var xylitol = JSON.parse($.jStorage.get("xylitol_taken"));
+		var sum = 0;
+		var days = xylitol.dates.length;
+		for (var i = 0; i < xylitol.dates.length; i ++){
+			for (key in xylitol.dates[i]){
+			sum += xylitol.dates[i][key];
+			}
+		}
+		var result = sum / days;
+		$.jStorage.set("xylitol_statistics",result);
+	}
 	
 	}
 

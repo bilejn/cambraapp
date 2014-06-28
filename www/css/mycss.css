@@ -23,6 +23,20 @@ a {
 	float:left;
 	margin-right: 20px;
 }
+.low {
+	
+	color: #00ff00;
+}
+
+.moderate {
+	
+		color: #ffff00;
+}
+
+.high {
+	
+		color: #ff0000;
+}
 
 #low_risk{
 	border:1px solid #00ff00;

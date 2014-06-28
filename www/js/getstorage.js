@@ -5,18 +5,25 @@
 		calculate ();
 		if ($.jStorage.get("risk_level") == "low"){
 			$("#low_risk").show();
+			$("#overall_caries_risk span").html("LOW");
+			$("#overall_caries_risk span").attr("class", "low");
+
 		 } else {
 			$("#low_risk").hide();
 		 }
 	
 		if ($.jStorage.get("risk_level") == "moderate"){
 			$("#moderate_risk").show();
+			$("#overall_caries_risk span").html("MODERATE");
+			$("#overall_caries_risk span").attr("class", "moderate");
 		 } else {
 			$("#moderate_risk").hide();
 		 }
 
 		if ($.jStorage.get("risk_level") == "high"){
 			$("#high_risk").show();
+			$("#overall_caries_risk span").html("HIGH");
+			$("#overall_caries_risk span").attr("class", "high");
 		 } else {
 			$("#high_risk").hide();
 		 }		 
@@ -123,7 +130,53 @@
 		}	
 	}
 	 
+/*================================================ statistics initialization =============================================*/
+/*== snack==*/
+
+	if($.jStorage.get("snack_statistics") < 3){
+			$("#eating_habits span").html("GOOD");
+			$("#eating_habits span").attr("class", "low");		
+	}
 	
+	if($.jStorage.get("snack_statistics") == 3){
+			$("#eating_habits span").html("MODERATE");
+			$("#eating_habits span").attr("class", "moderate");
+		
+	}
+
+	if($.jStorage.get("snack_statistics") > 3){
+			$("#eating_habits span").html("BAD");
+			$("#eating_habits span").attr("class", "high");		
+		
+	}
+	
+/*== oral hygiene ==*/
+
+	if($.jStorage.get("brushing_statistics") >= 2 && $.jStorage.get("flossing_statistics") >= 1){
+			$("#oral_hygiene_habits span").html("GOOD");
+			$("#oral_hygiene_habits span").attr("class", "low");		
+	}else{
+			$("#oral_hygiene_habits span").html("BAD");
+			$("#oral_hygiene_habits span").attr("class", "high");
+	}
+
+	
+	
+/*== xylitol ==*/	
+	if ($.jStorage.get("xylitol_th") == "true"){
+			$("#xylitol_taking_habits").show();		
+			if($.jStorage.get("xylitol_statistics") >= 4){
+				$("#xylitol_taking_habits span").html("GOOD");
+				$("#xylitol_taking_habits span").attr("class", "low");		
+			}
+			if($.jStorage.get("xylitol_statistics") < 4){
+				$("#xylitol_taking_habits span").html("BAD");
+				$("#xylitol_taking_habits span").attr("class", "high");		
+			}
+	
+	}else{
+			$("#xylitol_taking_habits").hide();
+	}
 
 /*================================================ local storage list initialization =============================================*/
 

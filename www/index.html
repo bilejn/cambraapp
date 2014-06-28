@@ -71,7 +71,7 @@
 
 		
 		<div id="registrationButtons">
-			<a href="#"  data-role="button" onclick="registration('snack');">Snack</a>	
+			<a href="#"  data-role="button" onclick="registration('snack_taken');">Snack</a>	
 							
 			<a href="#oral_hygiene" data-role="button" >Oral hygiene</a>	
 			
@@ -283,7 +283,7 @@
 			</div>		
 		
 			<div data-role="content">
-				<a href="#"  data-role="button" id="flossing-button"  onclick="registration('teeth_flossing');">Register</a>
+				<a href="#"  data-role="button" id="flossing-button"  onclick="registration('teeth_flossing_done');">Register</a>
 				<p>You should clean interdental spaces once daily after regular tooth brushing. Use interdental brush prescribed by your dentist.</p>
 			</div>
 			
@@ -324,7 +324,7 @@
 		<div data-role="content">
 		
 			<ul data-role="listview" >
-				<li><a href="#dental_status" >Current status</a></li>
+				<li><a href="#current_status_info" >Current status</a></li>
 				<li><a href="#therapy" >Current recomended therapy</a></li>
 				<li><a href="#statistics" >Statistics</a></li>
 			</ul>
@@ -368,7 +368,7 @@
 		
 		<ul data-role="listview" >
 				<li><a href="#">Dental caries</a></li>	
-				<li><a href="#">periodontal (gum) disease</a></li>
+				<li><a href="#">Periodontal (gum) disease</a></li>
 				<li><a href="#">Preventive measures</a></li>
 				<li><a href="#">About using this application</a></li>
 		</ul>
@@ -1062,10 +1062,30 @@
 		
 		<div data-role="content">
 		
-		<p id="statistics_entry"><p>
-
+			<ul data-role="listview">
+				
+					<li id="overall_caries_risk"><a href="#" ><h2>Caries risk level</h2>
+									<p>Overall caries risk level is: <span></span></p>
+					</a></li>
+					
+					<li id="visits_to_dentist"><a href="#"><h2>Dental visits</h2>
+									<p>You are visiting dentist: <span></span></p>
+					</a></li>
+					
+					<li id="eating_habits"><a href="#"><h2>Eating habits</h2>
+									<p>Your eating habits are: <span></span></p>
+					</a></li>	
+					
+					<li id="oral_hygiene_habits"><a href="#"><h2>Oral hygiene</h2>
+									<p>Your oral hygiene habits are: <span></span></p>
+					</a></li>
+					
+					<li id="xylitol_taking_habits"><a href="#"><h2>Xylitol</h2>
+									<p>Your xylitol taking habits are: <span></span></p>
+					</a></li>
+					
+			</ul>
 		
-
 		</div>
 		
 		
@@ -1082,8 +1102,44 @@
         </div>	
 	</section>			
 			
+<!-- =============================== 	current status  ======================================= -->
+
+	
+	<section id="current_status_info" data-role="page" data-theme="b">
+		<div data-role="header"  data-position="fixed">
+			<h4>Current Dental Status</h4>
+			<a href="#profile" data-icon="back">Back</a>
+		</div>
 		
 		
+		<div data-role="content">
+			
+			
+					<ul data-role="listview" data-split-icon="info">
+					  <li data-role="list-divider">Disease indicators</li>
+					  <li><a data-icon="info">Visible cavities: <span class="high">present</span></a><a>info</a></li>
+					  <li>Radiographic approximal lesions</li>
+					  <li>White spots</li>
+					  <li>Restorations in last 3 years</li>
+					</ul>
+			
+			
+			
+			
+			
+		</div>
+		
+		<div data-role="footer" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user" class="ui-btn-active ui-state-persist" >Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>	
+	</section>
 		
 	
 <script type"text/javascript" src="js/submitForm.js"></script>
