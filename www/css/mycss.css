@@ -53,11 +53,11 @@ a {
 }
 
 #achievements_count {
-	color: cyan;
+	color: #00ff00;
 	font-size:17px;
 }
 #warnings_count {
-	color: red;
+	color: #ff0000;
 	font-size:17px;
 }
 

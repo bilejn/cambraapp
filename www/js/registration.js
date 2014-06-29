@@ -47,5 +47,6 @@ function registration (activity){
 
 */	
 		alert("Registered.");
+		calculate();
 		return false;
 }

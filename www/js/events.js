@@ -21,6 +21,29 @@ $.jStorage.listenKeyChange("risk_level", function(){
 		 }	
 });
 
+$.jStorage.listenKeyChange("disease_count",function(){
+		if ($.jStorage.get("disease_count")){
+		$("#disease_indicators_presence span").html($.jStorage.get("disease_count"));
+		$("#disease_indicators_presence span").attr("class", "high");
+		}
+});
+
+$.jStorage.listenKeyChange("risk_count",function(){		
+		if ($.jStorage.get("risk_count")){
+		$("#risk_factors_presence span").html($.jStorage.get("risk_count"));
+		$("#risk_factors_presence span").attr("class", "high");
+		}
+});
+
+$.jStorage.listenKeyChange("protective_count",function(){	
+		if ($.jStorage.get("protective_count")){
+		$("#protective_factors_presence span").html($.jStorage.get("protective_count"));
+		$("#protective_factors_presence span").attr("class", "low");
+		}
+});
+
+
+
 
 /*================================ Date ====================================*/
 
@@ -34,90 +57,123 @@ $.jStorage.listenKeyChange("recallExam", function(){
 });
 
 
-/*========================================== buttons ====================================*/
 
+/*================================ Prescribed therapy ====================================*/	
+ 
 
 $.jStorage.listenKeyChange("xylitol_th", function(){
 		if ($.jStorage.get("xylitol_th") == "true"){
-			$("#xylitol_th_button").show();
+			$(".xylitol_th").show();
 		 } else {
-			$("#xylitol_th_button").hide();
+			$(".xylitol_th").hide();
 		 }
 });
 
 $.jStorage.listenKeyChange("chlorhexidine_th", function(){
 		 if ($.jStorage.get("chlorhexidine_th") == "true"){
-			$("#chlorhexidine_th_button").show();
+			$(".chlorhexidine_th").show();
 		 } else {
-			$("#chlorhexidine_th_button").hide();
+			$(".chlorhexidine_th").hide();
 		 }
 });
 
 
 $.jStorage.listenKeyChange("fluoride_paste_otc_th", function(){
 	 if ($.jStorage.get("fluoride_paste_otc_th") == "true"){
-			$("#fluoride_paste_otc_th_button").show();
+			$(".fluoride_paste_otc_th").show();
 		 } else {
-			$("#fluoride_paste_otc_th_button").hide();
+			$(".fluoride_paste_otc_th").hide();
 		 }
 });
 
 $.jStorage.listenKeyChange("fluoride_paste_5000_th", function(){		 
 		 if ($.jStorage.get("fluoride_paste_5000_th") == "true"){
-			$("#fluoride_paste_5000_th_button").show();
+			$(".fluoride_paste_5000_th").show();
 		 } else {
-			$("#fluoride_paste_5000_th_button").hide();
+			$(".fluoride_paste_5000_th").hide();
 		 }
 });
 
 $.jStorage.listenKeyChange("fluoride_mouthrinse_th", function(){		 
 		 if ($.jStorage.get("fluoride_mouthrinse_th") == "true"){
-			$("#fluoride_mouthrinse_th_button").show();
+			$(".fluoride_mouthrinse_th").show();
 		 } else {
-			$("#fluoride_mouthrinse_th_button").hide();
+			$(".fluoride_mouthrinse_th").hide();
 		 }
 });
 	 
 $.jStorage.listenKeyChange("fluoride_mouthrinse_extra_th", function(){
 		if ($.jStorage.get("fluoride_mouthrinse_extra_th") == "true"){
-			$("#fluoride_mouthrinse_extra_th_button").show();
+			$(".fluoride_mouthrinse_extra_th").show();
 		 } else {
-			$("#fluoride_mouthrinse_extra_th_button").hide();
+			$(".fluoride_mouthrinse_extra_th").hide();
 		 } 
 });
 		 
 $.jStorage.listenKeyChange("fluoride_mouthrinse_xerostomia_th", function(){	 
 		if ($.jStorage.get("fluoride_mouthrinse_xerostomia_th") == "true"){
-			$("#fluoride_mouthrinse_xerostomia_th_button").show();
+			$(".fluoride_mouthrinse_xerostomia_th").show();
 		 } else {
-			$("#fluoride_mouthrinse_xerostomia_th_button").hide();
+			$(".fluoride_mouthrinse_xerostomia_th").hide();
 		 } 
 });		 
 		 
 $.jStorage.listenKeyChange("ph_th", function(){		 
 		if ($.jStorage.get("ph_th") == "true"){
-			$("#ph_th_button").show();
+			$(".ph_th").show();
 		 } else {
-			$("#ph_th_button").hide();
+			$(".ph_th").hide();
 		 } 
 });
 
 $.jStorage.listenKeyChange("phgum_th", function(){		 
 		if ($.jStorage.get("phgum_th") == "true"){
-			$("#phgum_th_button").show();
+			$(".phgum_th").show();
 		 } else {
-			$("#phgum_th_button").hide();
+			$(".phgum_th").hide();
 		 } 
 });
 
 $.jStorage.listenKeyChange("cap_th", function(){		 
 		if ($.jStorage.get("cap_th") == "true"){
-			$("#cap_th_button").show();
+			$(".cap_th").show();
 		 } else {
-			$("#cap_th_button").hide();
+			$(".cap_th").hide();
 		 }
 });		 
-		 
-		 
-		 
+	
+	
+/*================================ Compliance/achievement/warning ====================================*/
+
+
+/*== snack==*/
+$.jStorage.listenKeyChange("snack_statistics", function(){
+	if($.jStorage.get("snack_statistics")){
+		if($.jStorage.get("snack_statistics") == "good"){
+				$("#eating_habits span").html("good");
+				$("#eating_habits span").attr("class", "low");	
+					$("<li />", { text: "Eating habits: good"}).appendTo("#achievements_list");					
+		} else{
+				$("#eating_habits span").html("bad");
+				$("#eating_habits span").attr("class", "high");	
+					$("<li />", { text: "Eating habits: bad"}).appendTo("#warnings_list");
+		}
+	}	
+});	
+	
+/*== oral hygiene ==*/
+
+$.jStorage.listenKeyChange("oral_hygiene_statistics", function(){
+	if($.jStorage.get("oral_hygiene_statistics")){
+		if($.jStorage.get("oral_hygiene_statistics") == "good"){
+				$("#oral_hygiene_habits span").html("good");
+				$("#oral_hygiene_habits span").attr("class", "low");
+					$("<li />", { text: "Oral hygiene: good"}).appendTo("#achievements_list");				
+		}else{
+				$("#oral_hygiene_habits span").html("bad");
+				$("#oral_hygiene_habits span").attr("class", "high");
+					$("<li />", { text: "Oral hygiene: bad"}).appendTo("#warnings_list");
+		}
+	}
+});		 
 		 

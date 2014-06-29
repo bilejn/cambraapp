@@ -38,8 +38,8 @@
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" >Achievements:&nbsp &nbsp<span id="achievements_count">3</span></a></li>
-				  <li><a href="#warnings" >Warnings:&nbsp &nbsp<span id="warnings_count">2</span></a></li>
+				  <li><a href="#achievements" >Achievements:&nbsp &nbsp<span id="achievements_count"></span></a></li>
+				  <li><a href="#warnings" >Warnings:&nbsp &nbsp<span id="warnings_count"></span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -71,13 +71,22 @@
 							
 			<a href="#oral_hygiene" data-role="button" data-ajax="false">Oral hygiene</a>	
 			
-			<a href="#"  id="xylitol_th_button" data-role="button" data-theme="b" onclick="registration('xylitol_taken');">Xylitol</a>		
+			<a href="#"  class="xylitol_th" data-role="button" data-theme="b" onclick="registration('xylitol_taken');">Xylitol</a>		
 
-			<a href="#"  id="cap_th_button" data-role="button" data-theme="b" onclick="registration('cap_paste_taken');">Calcium phosphate paste</a>	
+			<a href="#"  class="chlorhexidine_th" data-role="button" data-theme="b" onclick="registration('chlorhexidine_taken');">Chlorhexidine mouthrinse</a>	
+			
+			<a href="#"  class="fluoride_mouthrinse_th" data-role="button" data-theme="b" onclick="registration('fluoride_mouthrinse_taken');">Standard fluoride mouthrinse</a>
+
+			<a href="#"  class="fluoride_mouthrinse_extra_th" data-role="button" data-theme="b" onclick="registration('fluoride_mouthrinse_extra_taken');">Extra fluoride mouthrinse</a>
+			
+			<a href="#"  class="fluoride_mouthrinse_xerostomia_th" data-role="button" data-theme="b" onclick="registration('fluoride_mouthrinse_xerostomia_taken');">Fluoride mouthrinse for dry mouth</a>	
+						
+			<a href="#"  class="cap_th" data-role="button" data-theme="b" onclick="registration('cap_taken');">Calcium phosphate paste</a>	
 					
-			<a href="#"  id="ph_th_button" data-role="button" data-theme="b" onclick="registration('ph_th_taken');">Baking soda solution</a>			
+			<a href="#"  class="ph_th" data-role="button" data-theme="b" onclick="registration('ph_taken');">Baking soda solution</a>			
 
-			<a href="#"  id="phgum_th_button" data-role="button" data-theme="b" onclick="registration('phgum_th_taken');">Baking soda gum</a>			
+			<a href="#"  class="phgum_th" data-role="button" data-theme="b" onclick="registration('phgum_taken');">Baking soda gum</a>	
+			
 		</div>
 
 		</div>
@@ -114,14 +123,13 @@
 		
 		
 		<div data-role="content">
+		
 
-			<ul data-role="listview">
-					<li>Months of low risk level<span class="ui-li-count" >6</span></li>	
-					<li>No disease indicators present</li>
-					<li>Months of infrequent snacks<span class="ui-li-count">2</span></li>
+				<ul id="achievements_list" data-role="listview" style="border: 1px solid green;">
 
-			</ul>
-			
+
+				</ul>
+
 
 		
 		</div>
@@ -153,11 +161,10 @@
 		
 		<div data-role="content">
 		
-		<ul data-role="listview">
-				<li>Missed teeth brushing<span class="ui-li-count" >1</span></li>	
-				<li>Missed dental appointment<span class="ui-li-count" >1</span></li>
+			<ul data-role="listview" id="warnings_list" style="border: 1px solid red;">
 
-		</ul>
+
+			</ul>
 		
 		</div>
 		
@@ -176,17 +183,7 @@
 	</section>	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	  
   
  <!-- =============================== 	ORAL HYGIENE   ======================================= -->
@@ -203,7 +200,6 @@
 		
 				<a href="#brushing"  data-role="button" >1. Teeth Brushing</a>		
 				<a href="#flossing"  data-role="button" >2. Teeth Flossing</a>
-				<a href="#rinsing"  data-role="button" >3. Mouth Rinsing</a>
 		
 		</div>
 		
@@ -236,8 +232,8 @@
 				<a href="#"  data-role="button" id="timer-button"  onclick="timer();">Start when ready</a>	
 				<p id="timer"></p>
 				<br />
-				<p id="#fluoride_paste_otc_th_button">Use standard over-the-counter tooth paste (1100 - 1450 ppm F)</p>
-				<p id="fluoride_paste_5000_th_button">Use therapeutic tooth paste prescribed by your dentist.(5000 ppm F)</p>
+				<p class="#fluoride_paste_otc_th">Use standard over-the-counter tooth paste (1100 - 1450 ppm F)</p>
+				<p class="fluoride_paste_5000_th">Use therapeutic tooth paste prescribed by your dentist.(5000 ppm F)</p>
 			</div>
 	
 	</section>	
@@ -260,50 +256,6 @@
 	</section>	
 
 
-<!-- =============================== 	MOUTH RINSING   ======================================= -->
-
-	
-	<section id="rinsing" data-role="dialog" data-theme="b" data-close-btn="right">
-	
-			<div data-role="header" >
-				<p>&nbsp &nbsp &nbsp &nbsp Mouth Rinsing </p>
-			</div>		
-		
-			<div data-role="content">
-				<a href="#"  data-role="button" id="rinsing-button" onclick="registration('mouth_rinsing');">Register</a>
-				<p id="fluoride_mouthrinse_th_button">Rinse your mouth with fluoride mouthrinse once daily after teethbrushing and flosing. Use 0.05% F mouthrinse recommended by your dentist.</p>
-				<p id="fluoride_mouthrinse_extra_th_button">Rinse your mouth with fluoride mouthrinse 0.2% once daily after teethbrushing and flosing. After one bottle is used continue to rinse with 0.05% F mouthrinse two times daily - after each teeth brushing.</p>
-				<p id="fluoride_mouthrinse_xerostomia_th">Rinse your mouth with fluoride mouthrinse 0.05% whenever your mouth feels dry, and after every meal or snack.</p>
-				<p id="chlorhexidine_th_button">Rinse your mouth with chlorhexidine gluconate 0.12% for one minute daily for one week each month. Do not use fluoride mouthrinse during this period! Use it other days in the month.</p>
-			</div>
-		
-	</section>	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 <!-- =============================== 	DENTAL VISIT   ======================================= -->
@@ -368,7 +320,7 @@
 			
 			<br /><br />
 			
-			<a href="#dental_visit" class="wide" data-role="button" data-theme="b" onclick="alert('This form should be filled by your dentist after dental examination')">Visit to dentist</a>
+			<a href="#dental_visit" data-role="button" data-theme="b" onclick="alert('This form should be filled by your dentist after dental examination')">Visit to dentist</a>
 
 		
 
@@ -1102,43 +1054,47 @@
 			<ul data-role="listview">
 					<li data-role="list-divider">General:</li>	
 					
-					<li id="visits_to_dentist"><a href="#"><h2>Dental visits: <span></span></h2>
+					<li id="visits_to_dentist"><a href="#"><h2>Dental visits: <span>N/A</span></h2>
 									<p class="wrap">Regularity of periodic dental visits.</p>
 					</a></li>
 					
-					<li id="eating_habits"><a href="#"><h2>Eating habits: <span></span></h2>
+					<li id="eating_habits"><a href="#"><h2>Eating habits: <span>N/A</span></h2>
 									<p class="wrap">Frequency of taking sugar containing food.</p>
 					</a></li>	
 					
-					<li id="oral_hygiene_habits"><a href="#"><h2>Oral hygiene: <span></span></h2>
+					<li id="oral_hygiene_habits"><a href="#"><h2>Oral hygiene: <span>N/A</span></h2>
 									<p class="wrap">Regularity of teeth brushing and flossing.</p>
 					</a></li>
 					
+					
+					
 					<li data-role="list-divider">Prescribed therapy:</li>
+	
 					
-					<li id="no_prescribed_therapy"><h2>None</h2>
-								<p class="wrap">Your dentist did not recommend any specific therapy.</p>
-					</li>	
-					
-					<li id="chlorhexidine_taking_habits"><a href="#"><h2>Chlorhexidine usage: <span></span></h2>
-									<p class="wrap">Rinsing mouth with chlorhexidine containing mouthrinse according to the regimen prescribed by your dentist.</p>
+					<li class="chlorhexidine_th"><a href="#"><h2>Chlorhexidine: <span></span></h2>
+									<p class="wrap">You should rinse your mouth with Chlorhexidine gluconate 0.12% 10 ml mouthrinse for one minute daily for one week each month.</p>
 					</a></li>
-					<li id="xylitol_taking_habits"><a href="#"><h2>Xylitol usage: <span></span></h2>
-									<p class="wrap">Using xylitol sweets according to the regimen prescribed by your dentist.</p>
+					<li class="xylitol_th" ><a href="#"><h2>Xylitol: <span></span></h2>
+									<p class="wrap">Xylitol (6-10 grams/day) gum or candies. Two tabs of gum or two candies four times daily.</p>
 					</a></li>
-					<li id="fluoride_taking_habits"><a href="#"><h2>Fluoride usage: <span></span></h2>
-									<p class="wrap">Using fluoride containing products according to the regimen prescribed by your dentist.</p>
+					<li class="fluoride_mouthrinse_th"><a href="#"><h2>Fluoride mouthrinse usage: <span></span></h2>
+									<p class="wrap">Regular fluoride mouthrinse twice daily after teeth brushing</p>
 					</a></li>
-					<li id="cap_taking_habits"><a href="#"><h2>CaP paste usage: <span></span></h2>
-									<p class="wrap">Using Cap paste according to the regimen prescribed by your dentist.</p>
+					<li class="fluoride_mouthrinse_extra_th"><a href="#"><h2>Extra fluoride mouthrinse usage: <span></span></h2>
+									<p class="wrap">Extra fluoride mouthrinse twice daily after teeth brushing</p>
 					</a></li>
-					<li id="ph_therapy_habits"><a href="#"><h2>Oral Ph therapy usage: <span></span> </h2>
-									<p class="wrap">Using products for oral Ph control according to the regimen prescribed by your dentist.</p>
+					<li class="fluoride_mouthrinse_xerostomia_th"><a href="#"><h2>Fluoride mouthrinse for dry mouth usage: <span></span></h2>
+									<p class="wrap">Fluoride mouthrinse whenever your mouth feels dry</p>
+					</a></li>
+					<li class="cap_th"><a href="#"><h2>CaP paste usage: <span></span></h2>
+									<p class="wrap">Apply calcium/ phosphate paste twice daily.</p>
+					</a></li>
+					<li class="ph_th"><a href="#"><h2>Oral Ph therapy usage: <span></span> </h2>
+									<p class="wrap">Acid-neutralizing rinses as needed if mouth feels dry, after snacking, bedtime and after breakfast.</p>
 					</a></li>
 					<li data-role="list-divider"></li>
 
-					
-			</ul>
+					</ul>
 		
 		</div>
 		
@@ -1171,20 +1127,21 @@
 			
 			<ul data-role="listview">
 					
-					<li id="overall_caries_risk"><a href="#" ><h2>Caries risk level: <span></span></h2>
+					<li id="overall_caries_risk"><a href="#" ><h2>Caries risk level: <span>N/A</span></h2>
 									<p class="wrap">Likelihood of having new caries lesions in comming months or years.</p>
 					</a></li>
-					<li id="disease_indicators_presence"><a href="#" ><h2>Disease indicators: <span></span></h2>
+					<li id="disease_indicators_presence"><a href="#" ><h2>Disease indicators: <span>N/A</span></h2>
 									<p class="wrap">Presence of caries lesions according to last dental examination.</p>
 					</a></li>
-					<li id="risk_factors_presence"><a href="#" ><h2>Risk factors: <span></span></h2>
+					<li id="risk_factors_presence"><a href="#" ><h2>Risk factors: <span>N/A</span></h2>
 									<p class="wrap">Factors leading to new caries lesions according to last dental examination.</p>
 					</a></li>
-					<li id="protective_factors_presence"><a href="#" ><h2>Protective factors: <span></span></h2>
+					<li id="protective_factors_presence"><a href="#" ><h2>Protective factors: <span>N/A</span></h2>
 									<p class="wrap">Factors lowering risk for new caries lesions according to last dental examination.</p>
 					</a></li>
 					<li data-role="list-divider"></li>
-					</ul>
+					
+				</ul>
 			
 			
 			
@@ -1224,30 +1181,41 @@
 									<p class="wrap">No matter what your current caries risk level is, you should eat sugar containing food as much as possible. At least keep frequency of eating it below three times a day (tap to learn more).</p>
 					</a></li>
 					<li><a href="#" ><h2>Keeping oral hygiene</h2>
-									<p class="wrap">Brush your teeth two times daily - after breakfast and at bed time. Tecnique and duration of teeth brushing should be correct.</p>
-									<p class="wrap">Also floss your teeth once daily - after teeth brushing. (tap to learn more).</p>
+									<p class="wrap">Brush your teeth two times daily - after breakfast and at bed time. Floss your teeth once daily after teeth brushing. Tap to learn about correct technique and duration of teeth brushing and flossing.</p>
 					</a></li>
 					<li><a href="#" ><h2>Regular dental visits</h2>
 									<p class="wrap">You should regularly visit your dentist for recall exams.</p>
 					</a></li>
-					<li data-role="list-divider">Specific therapy prescribed by your dentist:</li>
-					<li id="no_prescribed_therapy_p"><h2>None</h2>
-								<p class="wrap">Your dentist did not recommend any specific therapy.</p>
-					</li>	
 					
-					<li id="chlorhexidine_p"><a href="#"><h2>Chlorhexidine<span></span></h2>
+					
+					<li data-role="list-divider" class="wrap">Specific therapy prescribed by your dentist:</li>
+
+					
+					<li class="chlorhexidine_th"><a href="#"><h2>Chlorhexidine</h2>
 									<p class="wrap">You should rinse your mouth with Chlorhexidine gluconate 0.12% 10 ml mouthrinse for one minute daily for one week each month.</p>
 					</a></li>
-					<li id="xylitol_p"><a href="#"><h2>Xylitol <span></span></h2>
+					<li class="xylitol_th" ><a href="#"><h2>Xylitol</h2>
 									<p class="wrap">Xylitol (6-10 grams/day) gum or candies. Two tabs of gum or two candies four times daily.</p>
 					</a></li>
-					<li id="fluoride_p"><a href="#"><h2>Fluoride usage: <span></span></h2>
-									<p class="wrap">1.1% NaF toothpaste instead of regular fluoride toothpaste twice daily, after breakfast and at bedtime.</p>
+					<li class="fluoride_paste_otc_th"><a href="#"><h2>Fluoride otc paste</h2>
+									<p class="wrap">Regular NaF toothpaste twice daily, after breakfast and at bedtime.</p>
 					</a></li>
-					<li id="cap_p"><a href="#"><h2>CaP paste usage: <span></span></h2>
-									<p class="wrap">Apply calcium/ phosphate paste twice daily.</p>
+					<li class="fluoride_paste_5000_th"><a href="#"><h2>5000ppm fluoride paste</h2>
+									<p class="wrap">5000ppm NaF toothpaste twice daily, after breakfast and at bedtime.</p>
 					</a></li>
-					<li id="ph_p"><a href="#"><h2>Oral Ph therapy usage: <span></span> </h2>
+					<li class="fluoride_mouthrinse_th"><a href="#"><h2>Fluoride mouthrinse</h2>
+									<p class="wrap">Regular fluoride mouthrinse twice daily after teeth brushing</p>
+					</a></li>
+					<li class="fluoride_mouthrinse_extra_th"><a href="#"><h2>Extra fluoride mouthrinse</h2>
+									<p class="wrap">Extra fluoride mouthrinse twice daily after teeth brushing</p>
+					</a></li>
+					<li class="fluoride_mouthrinse_xerostomia_th"><a href="#"><h2>Fluoride mouthrinse for dry mouth</h2>
+									<p class="wrap">Fluoride mouthrinse whenever your mouth feels dry</p>
+					</a></li>
+					<li class="cap_th"><a href="#"><h2>CaP paste</h2>
+									<p class="wrap">Apply calcium phosphate paste twice daily.</p>
+					</a></li>
+					<li class="ph_th"><a href="#"><h2>Oral Ph therapy</h2>
 									<p class="wrap">Acid-neutralizing rinses as needed if mouth feels dry, after snacking, bedtime and after breakfast.</p>
 					</a></li>
 					<li data-role="list-divider"></li>
