@@ -1,47 +1,30 @@
 
 
-/*================================ Risk level ====================================*/
-$.jStorage.listenKeyChange("risk_level", function(){	
-		if ($.jStorage.get("risk_level") == "low"){
-			$("#low_risk").show();
-		 } else {
-			$("#low_risk").hide();
-		 }
+
+
+
+/*================================================ form initialization =============================================*/
+
+
+
+$.jStorage.listenKeyChange("submit_form", function(){
+
+    document.generalData.first_name.value = $.jStorage.get("firstname");
+    document.generalData.last_name.value = $.jStorage.get("lastname");
+	document.generalData.yearpicker.value = $.jStorage.get("age");
+	document.generalData.gender.value = $.jStorage.get("gender");
+
 	
-		if ($.jStorage.get("risk_level") == "moderate"){
-			$("#moderate_risk").show();
-		 } else {
-			$("#moderate_risk").hide();
-		 }
-
-		if ($.jStorage.get("risk_level") == "high"){
-			$("#high_risk").show();
-		 } else {
-			$("#high_risk").hide();
-		 }	
+	entry = ["visible_cavities", "radiographic", "white_spots", "last_3_years", "ms_lb", "visible_plaque", "frequent_snack", "pits_and_fissures", "drug_use", "inadequate_saliva", "saliva_reducing_factors", "exposed_roots", "orthodontic_appliances", "fluoridated_community", "fluoride_paste_once", "fluoride_paste_twice", "fluoride_mouthrinse", "fluoride_5000", "fluoride_varnish", "topical_fluoride","chlorhexidine", "xylitol", "tooth_mousse", "adequate_saliva", "chlorhexidine_th", "xylitol_th", "fluoride_paste_otc_th", "fluoride_paste_5000_th", "fluoride_mouthrinse_th", "fluoride_mouthrinse_extra_th", "fluoride_mouthrinse_xerostomia_th", "ph_th", "phgum_th", "cap_th"];
+	var p;
+	for (p = 0; p < entry.length; p++){
+		if ($.jStorage.get(entry[p]) == "true") {
+			$("#"+entry[p]).prop('checked',true);
+		} else {
+			$("#"+entry[p]).prop('checked',false);
+		}	
+	}
 });
-
-$.jStorage.listenKeyChange("disease_count",function(){
-		if ($.jStorage.get("disease_count")){
-		$("#disease_indicators_presence span").html($.jStorage.get("disease_count"));
-		$("#disease_indicators_presence span").attr("class", "high");
-		}
-});
-
-$.jStorage.listenKeyChange("risk_count",function(){		
-		if ($.jStorage.get("risk_count")){
-		$("#risk_factors_presence span").html($.jStorage.get("risk_count"));
-		$("#risk_factors_presence span").attr("class", "high");
-		}
-});
-
-$.jStorage.listenKeyChange("protective_count",function(){	
-		if ($.jStorage.get("protective_count")){
-		$("#protective_factors_presence span").html($.jStorage.get("protective_count"));
-		$("#protective_factors_presence span").attr("class", "low");
-		}
-});
-
 
 
 
@@ -58,7 +41,7 @@ $.jStorage.listenKeyChange("recallExam", function(){
 
 
 
-/*================================ Prescribed therapy ====================================*/	
+/*================================ Prescribed therapy ===========================*/
  
 
 $.jStorage.listenKeyChange("xylitol_th", function(){
@@ -141,6 +124,49 @@ $.jStorage.listenKeyChange("cap_th", function(){
 			$(".cap_th").hide();
 		 }
 });		 
+
+
+
+/*================================ Risk level ====================================*/
+
+$.jStorage.listenKeyChange("risk_level", function(){	
+		if ($.jStorage.get("risk_level") == "low"){
+			$("#place_holder").html('<div id="low_risk" class="risk"><img src="img/low.png" height="100px"><p>Your current caries risk level is LOW.</p></div>');
+			$("#overall_caries_risk span").html("LOW");
+			$("#overall_caries_risk span").attr("class", "low");
+				achievements("Caries risk level: low.");
+		} else if ($.jStorage.get("risk_level") == "moderate"){
+			$("#place_holder").html('<div id="moderate_risk" class="risk"><img src="img/moderate.png" height="100px"><p>Your current caries risk level is MODERATE.</p></div>');
+			$("#overall_caries_risk span").html("MODERATE");
+			$("#overall_caries_risk span").attr("class", "moderate");
+		} else if ($.jStorage.get("risk_level") == "high"){
+			$("#place_holder").html('<div id="high_risk" class="risk"><img src="img/high.png" height="100px"><p>Your current caries risk level is HIGH.</p></div>');
+			$("#overall_caries_risk span").html("high");
+			$("#overall_caries_risk span").attr("class", "high");
+				warnings("Caries risk level: high.");
+		} else {
+			$("#place_holder").html('<div id="undefined_risk" class="risk"><img src="img/undefined.png" height="100px"><p>Your current caries risk level is UNDEFINED.</p></div>');	
+		}	
+
+
+		$("#disease_indicators_presence span").html($.jStorage.get("disease_count"));
+		$("#disease_indicators_presence span").attr("class", "high");
+
+		
+
+		$("#risk_factors_presence span").html($.jStorage.get("risk_count"));
+		$("#risk_factors_presence span").attr("class", "high");
+		
+		
+
+		$("#protective_factors_presence span").html($.jStorage.get("protective_count"));
+		$("#protective_factors_presence span").attr("class", "low");
+
+		listOutput();
+		
+});
+
+
 	
 	
 /*================================ Compliance/achievement/warning ====================================*/
@@ -148,15 +174,13 @@ $.jStorage.listenKeyChange("cap_th", function(){
 
 /*== snack==*/
 $.jStorage.listenKeyChange("snack_statistics", function(){
-	if($.jStorage.get("snack_statistics")){
+	if($.jStorage.get("snack_statistics") != "undefined"){
 		if($.jStorage.get("snack_statistics") == "good"){
 				$("#eating_habits span").html("good");
-				$("#eating_habits span").attr("class", "low");	
-					$("<li />", { text: "Eating habits: good"}).appendTo("#achievements_list");					
+				$("#eating_habits span").attr("class", "low");					
 		} else{
 				$("#eating_habits span").html("bad");
 				$("#eating_habits span").attr("class", "high");	
-					$("<li />", { text: "Eating habits: bad"}).appendTo("#warnings_list");
 		}
 	}	
 });	
@@ -164,16 +188,136 @@ $.jStorage.listenKeyChange("snack_statistics", function(){
 /*== oral hygiene ==*/
 
 $.jStorage.listenKeyChange("oral_hygiene_statistics", function(){
-	if($.jStorage.get("oral_hygiene_statistics")){
+	if($.jStorage.get("oral_hygiene_statistics") != "undefined"){
 		if($.jStorage.get("oral_hygiene_statistics") == "good"){
 				$("#oral_hygiene_habits span").html("good");
-				$("#oral_hygiene_habits span").attr("class", "low");
-					$("<li />", { text: "Oral hygiene: good"}).appendTo("#achievements_list");				
+				$("#oral_hygiene_habits span").attr("class", "low");				
 		}else{
 				$("#oral_hygiene_habits span").html("bad");
 				$("#oral_hygiene_habits span").attr("class", "high");
-					$("<li />", { text: "Oral hygiene: bad"}).appendTo("#warnings_list");
 		}
 	}
-});		 
+});		
+
+
+$.jStorage.listenKeyChange("xylitol_th_statistics", function(){
+	if($.jStorage.get("xylitol_th_statistics") != "undefined"){
+		if($.jStorage.get("xylitol_th_statistics") == "good"){
+				$(".xylitol_th span").html("good");
+				$(".xylitol_th span").attr("class", "low");				
+		}else{
+				$(".xylitol_th span").html("bad");
+				$(".xylitol_th span").attr("class", "high");
+		}
+	}
+});
+
+$.jStorage.listenKeyChange("chlorhexidine_th_statistics", function(){
+	if($.jStorage.get("chlorhexidine_th_statistics") != "undefined"){
+		if($.jStorage.get("chlorhexidine_th_statistics") == "good"){
+				$(".chlorhexidine_th span").html("good");
+				$(".chlorhexidine_th span").attr("class", "low");				
+		}else{
+				$(".chlorhexidine_th span").html("bad");
+				$(".chlorhexidine_th span").attr("class", "high");
+		}
+	}
+});
+
+$.jStorage.listenKeyChange("fluoride_paste_otc_th_statistics", function(){
+	if($.jStorage.get("fluoride_paste_otc_th_statistics") != "undefined"){
+		if($.jStorage.get("fluoride_paste_otc_th_statistics") == "good"){
+				$(".fluoride_paste_otc_th span").html("good");
+				$(".fluoride_paste_otc_th span").attr("class", "low");				
+		}else{
+				$(".fluoride_paste_otc_th span").html("bad");
+				$(".fluoride_paste_otc_th span").attr("class", "high");
+		}
+	}
+});
+
+$.jStorage.listenKeyChange("fluoride_paste_5000_th_statistics", function(){
+	if($.jStorage.get("fluoride_paste_5000_th_statistics") != "undefined"){
+		if($.jStorage.get("fluoride_paste_5000_th_statistics") == "good"){
+				$(".fluoride_paste_5000_th span").html("good");
+				$(".fluoride_paste_5000_th span").attr("class", "low");				
+		}else{
+				$(".fluoride_paste_5000_th span").html("bad");
+				$(".fluoride_paste_5000_th span").attr("class", "high");
+		}
+	}
+});
+
+$.jStorage.listenKeyChange("fluoride_mouthrinse_th_statistics", function(){
+	if($.jStorage.get("fluoride_mouthrinse_th_statistics") != "undefined"){
+		if($.jStorage.get("fluoride_mouthrinse_th_statistics") == "good"){
+				$(".fluoride_mouthrinse_th span").html("good");
+				$(".fluoride_mouthrinse_th span").attr("class", "low");				
+		}else{
+				$(".fluoride_mouthrinse_th span").html("bad");
+				$(".fluoride_mouthrinse_th span").attr("class", "high");
+		}
+	}
+});
+
+$.jStorage.listenKeyChange("fluoride_mouthrinse_extra_th_statistics", function(){
+	if($.jStorage.get("fluoride_mouthrinse_extra_th_statistics") != "undefined"){
+		if($.jStorage.get("fluoride_mouthrinse_extra_th_statistics") == "good"){
+				$(".fluoride_mouthrinse_extra_th span").html("good");
+				$(".fluoride_mouthrinse_extra_th span").attr("class", "low");				
+		}else{
+				$(".fluoride_mouthrinse_extra_th span").html("bad");
+				$(".fluoride_mouthrinse_extra_th span").attr("class", "high");
+		}
+	}
+});
+
+$.jStorage.listenKeyChange("fluoride_mouthrinse_xerostomia_th_statistics", function(){
+	if($.jStorage.get("fluoride_mouthrinse_xerostomia_th_statistics") != "undefined"){
+		if($.jStorage.get("fluoride_mouthrinse_xerostomia_th_statistics") == "good"){
+				$(".fluoride_mouthrinse_xerostomia_th span").html("good");
+				$(".fluoride_mouthrinse_xerostomia_th span").attr("class", "low");				
+		}else{
+				$(".fluoride_mouthrinse_xerostomia_th span").html("bad");
+				$(".fluoride_mouthrinse_xerostomia_th span").attr("class", "high");
+		}
+	}
+});
+
+$.jStorage.listenKeyChange("cap_th_statistics", function(){
+	if($.jStorage.get("cap_th_statistics") != "undefined"){
+		if($.jStorage.get("cap_th_statistics") == "good"){
+				$(".cap_th span").html("good");
+				$(".cap_th span").attr("class", "low");				
+		}else{
+				$(".cap_th span").html("bad");
+				$(".cap_th span").attr("class", "high");
+		}
+	}
+});
+
+$.jStorage.listenKeyChange("ph_th_statistics", function(){
+	if($.jStorage.get("ph_th_statistics") != "undefined"){
+		if($.jStorage.get("ph_th_statistics") == "good"){
+				$(".ph_th span").html("good");
+				$(".ph_th span").attr("class", "low");				
+		}else{
+				$(".ph_th span").html("bad");
+				$(".ph_th span").attr("class", "high");
+		}
+	}
+});
+
+$.jStorage.listenKeyChange("phgum_th_statistics", function(){
+	if($.jStorage.get("phgum_th_statistics") != "undefined"){
+		if($.jStorage.get("phgum_th_statistics") == "good"){
+				$(".phgum_th span").html("good");
+				$(".phgum_th span").attr("class", "low");				
+		}else{
+				$(".phgum_th span").html("bad");
+				$(".phgum_th span").attr("class", "high");
+		}
+	}
+});
+ 
 		 

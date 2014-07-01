@@ -5,48 +5,33 @@ function registration (activity){
 
 	var date_of_registration = day + "." + month + "." + datum.getFullYear();
 
-	console.log(date_of_registration)
 	if ($.jStorage.get(activity) != null && $.jStorage.get(activity) != "" ){	
 
-		var json_object = JSON.parse($.jStorage.get(activity));
+		var object = JSON.parse($.jStorage.get(activity));
 		
-		for ( var i = 0; i < json_object.dates.length; i++){
+		for ( var i = 0; i < object.dates.length; i++){
 			
-			if (json_object.dates[i][date_of_registration]){
+			if (object.dates[i][date_of_registration]){
 				
-				json_object.dates[i][date_of_registration] +=1;
+				object.dates[i][date_of_registration] +=1;
 				
 			}else {
 				
-				json_object.dates[i][date_of_registration] =1;
+				object.dates[i][date_of_registration] =1;
 			}			
 		}
 
 		/*$.jStorage.set(activity, JSON.stringify(json_object));*/
-		$.jStorage.set(activity,JSON.stringify(json_object));
+		$.jStorage.set(activity,JSON.stringify(object));
 		
 	} else {
-	var json_object = {dates : [{}]};
-	json_object.dates[0][date_of_registration] =1;
+	var object = {dates : [{}]};
+	object.dates[0][date_of_registration] =1;
 
 	/*$.jStorage.set(activity, JSON.stringify(json_object));*/
-	$.jStorage.set(activity, JSON.stringify(json_object));
+	$.jStorage.set(activity, JSON.stringify(object));
 }	
 	
-	
-	
-/*	var item = activity + " " + day + "." + month + "." + datum.getFullYear();
-	if ($.jStorage.get(item) != null && $.jStorage.get(item) != "" ){
-		var value = parseInt($.jStorage.get(item));
-		value += 1;
-		$.jStorage.set(item, value);
-	} else {
-		$.jStorage.set(item, "1");
-	}
-		listOutput();
-
-*/	
 		alert("Registered.");
-		calculate();
 		return false;
 }

@@ -1,13 +1,7 @@
 	
 	
 	/*============================ C  A  L  C  U  L  A  T  E ============================ */
-
-	function calculate() {
-
-		riskLevel();
-		listOutput();
-		statistics ();
-	}
+	
 
 
 
@@ -22,48 +16,52 @@
 
 
 		var risk_level = "";
-		var a = 0;
-		var b = 0;
-		var c = 0;
+
 		
 		var disease_count = 0;
 		var risk_count = 0;
 		var protective_count = 0;
 		
-		 for (i=0; i < diseaseIndicatorsArray.length; i++){
-			if ($.jStorage.get(diseaseIndicatorsArray[i]) != null){
+		 for (var a=0; a < diseaseIndicatorsArray.length; a++){
+			if ($.jStorage.get(diseaseIndicatorsArray[a]) == "true"){
 			disease_count = disease_count + 1;
 			}
 		 }
 		 
-		for (i=0; i < riskFactorsArray.length; i++){
-			if ($.jStorage.get(riskFactorsArray[i]) != null){
+		for (var b=0; b < riskFactorsArray.length; b++){
+			if ($.jStorage.get(riskFactorsArray[b]) == "true"){
 			risk_count = risk_count + 1;
 			}
 		} 
 		
-		for (i=0; i < protectiveFactorsArray.length; i++){
-			if ($.jStorage.get(protectiveFactorsArray[i]) != null){
+		for (var i=0; i < protectiveFactorsArray.length; i++){
+			if ($.jStorage.get(protectiveFactorsArray[i]) == "true"){
 			protective_count = protective_count + 1;
 			}
 		} 
 		
 		if (disease_count != 0){
 			risk_level = "high";
+				achwar ("Caries risk level","war");
 		} else {
 			if (risk_count > protective_count){
 				risk_level = "high";
+				achwar ("Caries risk level","war");
+				
 			}else if (risk_count == protective_count){
 				risk_level = "moderate";
 			}else {
 				risk_level = "low";
+				achwar ("Caries risk level","ach");
 			}
 		}
 		
-		$.jStorage.set("risk_level", risk_level);
+		
 		$.jStorage.set("disease_count", disease_count);
 		$.jStorage.set("risk_count", risk_count);
-		$.jStorage.set("protective_count", protective_count);
+		$.jStorage.set("protective_count", protective_count);	
+		$.jStorage.set("risk_level", risk_level);
+
 	}
 	
 	
@@ -84,14 +82,14 @@
 	
 	/* ============================ STATISTICS ===================================== */
 
-	function statistics () {
+
 		
 		
 		
 /* ====================================== snack statistics =======================================*/
 
-
-	if ($.jStorage.get("snack_taken")){
+$.jStorage.listenKeyChange("snack_taken", function(){	 
+	if($.jStorage.get("snack_taken") != ""){
 		var snack = JSON.parse($.jStorage.get("snack_taken"));
 		var sum = 0;
 		var days = snack.dates.length;
@@ -102,16 +100,17 @@
 		}
 		var result = sum / days;
 		var mark;
-		if (result > 3) mark = "bad";
-		if (result <= 3) mark = "good";		
+		if (result > 3) {mark = "bad"; achwar ("Snack statistics","war");}
+		if (result <= 3) {mark = "good"; achwar ("Snack statistics","ach");}
 		$.jStorage.set("snack_statistics",mark);
 	}
-	
+});	
 	
 	
 /* ====================================== oral hygiene statistics =======================================*/
 
-	if ($.jStorage.get("teeth_brushing_done")){
+$.jStorage.listenKeyChange("teeth_brushing_done", function(){
+	if($.jStorage.get("teeth_brushing_done") != ""){
 		var brushing = JSON.parse($.jStorage.get("teeth_brushing_done"));
 		var sum = 0;
 		var days = brushing.dates.length;
@@ -125,10 +124,13 @@
 		if (result >= 2) mark = "good";
 		if (result < 2) mark = "bad";
 		$.jStorage.set("brushing_statistics",mark);
-	}
+		oralhygiene ();
+	}	
+});
 	
 	
-	if ($.jStorage.get("teeth_flossing_done")){
+$.jStorage.listenKeyChange("teeth_flossing_done", function(){	
+	if($.jStorage.get("teeth_flossing_done") != ""){
 		var flossing = JSON.parse($.jStorage.get("teeth_flossing_done"));
 		var sum = 0;
 		var days = flossing.dates.length;
@@ -142,20 +144,22 @@
 		if (result < 1) mark = "bad";
 		if (result >= 1) mark = "good";
 		$.jStorage.set("flossing_statistics",mark);
-	}
-	
-	if($.jStorage.get("flossing_statistics") || $.jStorage.get("brushing_statistics")){
+		oralhygiene ();
+	}	
+});
+
+function oralhygiene (){
+
 		if($.jStorage.get("flossing_statistics")=="good" && $.jStorage.get("brushing_statistics")=="good" ){
-					$.jStorage.set("oral_hygiene_statistics", "good");
+					$.jStorage.set("oral_hygiene_statistics", "good"); achwar ("Oral hygiene", "ach");
 					if ($.jStorage.get("fluoride_paste_otc_th")=="true") $.jStorage.set("fluoride_paste_otc_th_statistics", "good");
 					if ($.jStorage.get("fluoride_paste_5000_th")=="true") $.jStorage.set("fluoride_paste_5000_th_statistics", "good");
-		}else{
-					$.jStorage.set("oral_hygiene_statistics", "bad");	
+		}else if ($.jStorage.get("flossing_statistics")=="bad" || $.jStorage.get("brushing_statistics")=="bad"){
+					$.jStorage.set("oral_hygiene_statistics", "bad"); achwar ("Oral hygiene", "war");	
 					if ($.jStorage.get("fluoride_paste_otc_th")=="true") $.jStorage.set("fluoride_paste_otc_th_statistics", "bad");
 					if ($.jStorage.get("fluoride_paste_5000_th")=="true") $.jStorage.set("fluoride_paste_5000_th_statistics", "bad");
-		}
-	}	
-
+		}	
+}
 
 
 
@@ -164,8 +168,8 @@
 	
 
 /* ====================================== xylitol statistics =======================================*/	
-
-	if ($.jStorage.get("xylitol_taken")){
+$.jStorage.listenKeyChange("xylitol_taken", function(){
+	if ($.jStorage.get("xylitol_taken") != ""){
 		var xylitol = JSON.parse($.jStorage.get("xylitol_taken"));
 		var sum = 0;
 		var days = xylitol.dates.length;
@@ -176,17 +180,17 @@
 		}
 		var result = sum / days;
 		var mark;
-		if (result < 4) mark = "bad";
-		if (result >= 4) mark = "good";
+		if (result < 4){ mark = "bad"; achwar ("Xylitol statistics", "war");}
+		if (result >= 4) { mark = "good";  achwar ("Xylitol statistics", "ach");}
 		$.jStorage.set("xylitol_th_statistics",mark);
 	}
-	
+});	
 
 
 
 /* ====================================== chlorhexidine statistics =======================================*/	
-
-	if ($.jStorage.get("chlorhexidine_taken")){
+$.jStorage.listenKeyChange("chlorhexidine_taken", function(){
+	if ($.jStorage.get("chlorhexidine_taken") != ""){
 		var object = JSON.parse($.jStorage.get("chlorhexidine_taken"));
 		var sum = 0;
 		var days = object.dates.length;
@@ -197,15 +201,16 @@
 		}
 		var result = sum / days;
 		var mark;
-		if (result < 1) mark = "bad";
-		if (result >= 1) mark = "good";
+		if (result < 1) {mark = "bad"; achwar ("chlorhexidine statistics", "war");}
+		if (result >= 1) {mark = "good"; achwar ("chlorhexidine statistics", "ach");}
 		$.jStorage.set("chlorhexidine_th_statistics",mark);
 	}
-	
+});		
 	
 /* ====================================== fluoride mouthrinse statistics =======================================*/	
 
-	if ($.jStorage.get("fluoride_mouthrinse_taken")){
+$.jStorage.listenKeyChange("fluoride_mouthrinse_taken", function(){
+	if ($.jStorage.get("fluoride_mouthrinse_taken")!=""){
 		var object = JSON.parse($.jStorage.get("fluoride_mouthrinse_taken"));
 		var sum = 0;
 		var days = object.dates.length;
@@ -216,14 +221,16 @@
 		}
 		var result = sum / days;
 		var mark;
-		if (result < 1) mark = "bad";
-		if (result >= 1) mark = "good";
+		if (result < 1) {mark = "bad"; achwar ("fluoride mouthrinse statistics", "war");}
+		if (result >= 1) {mark = "good";  achwar ("fluoride mouthrinse statistics", "ach");}
 		$.jStorage.set("fluoride_mouthrinse_th_statistics",mark);
 	}
+});		
 	
 	/* ====================================== fluoride mouthrinse  extra statistics =======================================*/	
-
-	if ($.jStorage.get("fluoride_mouthrinse_extra_taken")){
+	
+$.jStorage.listenKeyChange("fluoride_mouthrinse_extra_taken", function(){
+	if ($.jStorage.get("fluoride_mouthrinse_extra_taken")!=""){
 		var object = JSON.parse($.jStorage.get("fluoride_mouthrinse_extra_taken"));
 		var sum = 0;
 		var days = object.dates.length;
@@ -234,14 +241,16 @@
 		}
 		var result = sum / days;
 		var mark;
-		if (result < 1) mark = "bad";
-		if (result >= 1) mark = "good";
+		if (result < 1) {mark = "bad";  achwar ("fluoride extra mouthrinse statistics", "war");}
+		if (result >= 1) {mark = "good";  achwar ("fluoride extra mouthrinse statistics", "ach");}
 		$.jStorage.set("fluoride_mouthrinse_extra_th_statistics",mark);
 	}
-	
+});	
+
 		/* ====================================== fluoride mouthrinse  xerostomia statistics =======================================*/
 		
-	if ($.jStorage.get("fluoride_mouthrinse_xerostomia_taken")){
+$.jStorage.listenKeyChange("fluoride_mouthrinse_xerostomia_taken", function(){		
+	if ($.jStorage.get("fluoride_mouthrinse_xerostomia_taken")!=""){
 		var object = JSON.parse($.jStorage.get("fluoride_mouthrinse_xerostomia_taken"));
 		var sum = 0;
 		var days = object.dates.length;
@@ -252,14 +261,16 @@
 		}
 		var result = sum / days;
 		var mark;
-		if (result < 1) mark = "bad";
-		if (result >= 1) mark = "good";
+		if (result < 1) {mark = "bad";  achwar ("fluoride mouthrinse for dry mouth statistics", "war");}
+		if (result >= 1) {mark = "good"; achwar ("fluoride mouthrinse for dry mouth statistics", "ach");}
 		$.jStorage.set("fluoride_mouthrinse_xerostomia_th_statistics",mark);
 	}
+});	
 	
 		/* ====================================== cap statistics =======================================*/
 		
-	if ($.jStorage.get("cap_taken")){
+$.jStorage.listenKeyChange("cap_taken", function(){		
+	if ($.jStorage.get("cap_taken")!=""){
 		var object = JSON.parse($.jStorage.get("cap_taken"));
 		var sum = 0;
 		var days = object.dates.length;
@@ -270,14 +281,16 @@
 		}
 		var result = sum / days;
 		var mark;
-		if (result < 2) mark = "bad";
-		if (result >= 2) mark = "good";
+		if (result < 2) {mark = "bad"; achwar ("calcium phosphate paste statistics", "war");}
+		if (result >= 2) {mark = "good"; achwar ("calcium phosphate paste statistics", "ach");}
 		$.jStorage.set("cap_th_statistics",mark);
 	}
-	
+});		
+
 		/* ====================================== ph therapy statistics =======================================*/
-		
-	if ($.jStorage.get("ph_taken")){
+
+$.jStorage.listenKeyChange("ph_taken", function(){			
+	if ($.jStorage.get("ph_taken")!=""){
 		var object = JSON.parse($.jStorage.get("ph_taken"));
 		var sum = 0;
 		var days = object.dates.length;
@@ -288,14 +301,17 @@
 		}
 		var result = sum / days;
 		var mark;
-		if (result < 1) mark = "bad";
-		if (result >= 1) mark = "good";
+		if (result < 1) {mark = "bad"; achwar ("baking soda solution statistics", "war");}
+		if (result >= 1) {mark = "good"; achwar ("baking soda solution statistics", "ach");}
 		$.jStorage.set("ph_th_statistics",mark);
 	}	
+});		
+
 	
 		/* ====================================== ph gum therapy statistics =======================================*/
-		
-	if ($.jStorage.get("phgum_taken")){
+
+$.jStorage.listenKeyChange("phgum_taken", function(){		
+	if ($.jStorage.get("phgum_taken")!=""){
 		var object = JSON.parse($.jStorage.get("phgum_taken"));
 		var sum = 0;
 		var days = object.dates.length;
@@ -306,36 +322,32 @@
 		}
 		var result = sum / days;
 		var mark;
-		if (result < 1) mark = "bad";
-		if (result >= 1) mark = "good";
+		if (result < 1) {mark = "bad"; achwar ("baking soda gum statistics", "war");}
+		if (result >= 1) {mark = "good"; achwar ("baking soda gum statistics", "ach");}
 		$.jStorage.set("phgum_th_statistics",mark);
 	}	
 	
-	}
+});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		/* ====================================== achievements/warnings =======================================*/
 	
+	
+	function achwar (string, mark){
+	
+		var achievements = $.jStorage.get("achievements");
+		var warnings = $.jStorage.get("warnings");
+		
+		if (mark == "ach"){
+			if(achievements.indexOf(string) == -1) achievements.push(string);
+			if(warnings.indexOf(string) != -1)	warnings.splice(warnings.indexOf(string),1);
+		} else {
+			if(achievements.indexOf(string) != -1) achievements.splice(warnings.indexOf(string),1);
+			if(warnings.indexOf(string) == -1)	warnings.push(string);
+		}	
+		
+		$.jStorage.set("achievements", achievements);
+		$.jStorage.set("warnings", warnings);
+	}
 	
 	

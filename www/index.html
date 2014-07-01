@@ -47,29 +47,19 @@
 		
 		<div data-role="content">
 		<div id="naslov">
-				<div id="low_risk" class="risk">
-					<img src="img/low.png" height="100px">
-					<p>Your current caries risk level is LOW.</p>
-				</div>
-				<div id="moderate_risk" class="risk">
-					<img src="img/moderate.png" height="100px">
-					<p>Your current caries risk level is MODERATE.</p>
-				</div>
-				<div id="high_risk" class="risk">
-					<img src="img/high.png" height="100px">
-					<p>Your current caries risk level is HIGH.</p>
-				</div>
-				<p class="clear"></p>
-				<br />
-				<p id="time">&nbsp </p>
-				<div class="ui-icon ui-icon-delete"></div>
+			<div id="place_holder">
+
+			</div>
+			<p class="clear"></p>
+
+			<p id="time">&nbsp </p>
 		</div>
 
 		
 		<div id="registrationButtons">
 			<a href="#"  data-role="button" onclick="registration('snack_taken');">Snack</a>	
 							
-			<a href="#oral_hygiene" data-role="button" data-ajax="false">Oral hygiene</a>	
+			<a href="#oral_hygiene" data-role="button" >Oral hygiene</a>	
 			
 			<a href="#"  class="xylitol_th" data-role="button" data-theme="b" onclick="registration('xylitol_taken');">Xylitol</a>		
 
@@ -1071,26 +1061,30 @@
 					<li data-role="list-divider">Prescribed therapy:</li>
 	
 					
-					<li class="chlorhexidine_th"><a href="#"><h2>Chlorhexidine: <span></span></h2>
+					<li class="chlorhexidine_th"><a href="#"><h2>Chlorhexidine: <span>N/A</span></h2>
 									<p class="wrap">You should rinse your mouth with Chlorhexidine gluconate 0.12% 10 ml mouthrinse for one minute daily for one week each month.</p>
 					</a></li>
-					<li class="xylitol_th" ><a href="#"><h2>Xylitol: <span></span></h2>
+					<li class="xylitol_th" ><a href="#"><h2>Xylitol: <span>N/A</span></h2>
 									<p class="wrap">Xylitol (6-10 grams/day) gum or candies. Two tabs of gum or two candies four times daily.</p>
 					</a></li>
-					<li class="fluoride_mouthrinse_th"><a href="#"><h2>Fluoride mouthrinse usage: <span></span></h2>
+					<li class="fluoride_mouthrinse_th"><a href="#"><h2>Fluoride mouthrinse usage: <span>N/A</span></h2>
 									<p class="wrap">Regular fluoride mouthrinse twice daily after teeth brushing</p>
 					</a></li>
-					<li class="fluoride_mouthrinse_extra_th"><a href="#"><h2>Extra fluoride mouthrinse usage: <span></span></h2>
+					<li class="fluoride_mouthrinse_extra_th"><a href="#"><h2>Extra fluoride mouthrinse usage: <span>N/A</span></h2>
 									<p class="wrap">Extra fluoride mouthrinse twice daily after teeth brushing</p>
 					</a></li>
-					<li class="fluoride_mouthrinse_xerostomia_th"><a href="#"><h2>Fluoride mouthrinse for dry mouth usage: <span></span></h2>
+					<li class="fluoride_mouthrinse_xerostomia_th"><a href="#"><h2>Fluoride mouthrinse for dry mouth usage: <span>N/A</span></h2>
 									<p class="wrap">Fluoride mouthrinse whenever your mouth feels dry</p>
 					</a></li>
-					<li class="cap_th"><a href="#"><h2>CaP paste usage: <span></span></h2>
+					<li class="cap_th"><a href="#"><h2>CaP paste usage: <span>N/A</span></h2>
 									<p class="wrap">Apply calcium/ phosphate paste twice daily.</p>
 					</a></li>
-					<li class="ph_th"><a href="#"><h2>Oral Ph therapy usage: <span></span> </h2>
+					<li class="ph_th"><a href="#"><h2>Oral Ph therapy usage: <span>N/A</span> </h2>
 									<p class="wrap">Acid-neutralizing rinses as needed if mouth feels dry, after snacking, bedtime and after breakfast.</p>
+					</a></li>
+					
+					<li class="phgum_th"><a href="#"><h2>Oral Ph therapy usage: <span>N/A</span> </h2>
+									<p class="wrap">Acid-neutralizing gum as needed if mouth feels dry, after snacking, bedtime and after breakfast.</p>
 					</a></li>
 					<li data-role="list-divider"></li>
 
@@ -1127,7 +1121,7 @@
 			
 			<ul data-role="listview">
 					
-					<li id="overall_caries_risk"><a href="#" ><h2>Caries risk level: <span>N/A</span></h2>
+					<li id="overall_caries_risk"><a href="#" ><h2>Caries risk level: <span></span></h2>
 									<p class="wrap">Likelihood of having new caries lesions in comming months or years.</p>
 					</a></li>
 					<li id="disease_indicators_presence"><a href="#" ><h2>Disease indicators: <span>N/A</span></h2>
@@ -1141,7 +1135,7 @@
 					</a></li>
 					<li data-role="list-divider"></li>
 					
-				</ul>
+			</ul>
 			
 			
 			
@@ -1217,6 +1211,9 @@
 					</a></li>
 					<li class="ph_th"><a href="#"><h2>Oral Ph therapy</h2>
 									<p class="wrap">Acid-neutralizing rinses as needed if mouth feels dry, after snacking, bedtime and after breakfast.</p>
+					</a></li>
+					<li class="phgum_th"><a href="#"><h2>Oral Ph therapy usage: <span></span> </h2>
+									<p class="wrap">Acid-neutralizing gum as needed if mouth feels dry, after snacking, bedtime and after breakfast.</p>
 					</a></li>
 					<li data-role="list-divider"></li>
 
