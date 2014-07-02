@@ -47,11 +47,6 @@ $(function (){
 		}
 
 	}
-	listOutput();
-	$.jStorage.set("array", ["jedan","dva","tri"]);
-	var ary=$.jStorage.get("array");
-	var word = ary.indexOf("dva");
-		$("#time").html(word);
 
 
 });
