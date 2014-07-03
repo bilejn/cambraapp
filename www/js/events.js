@@ -131,21 +131,23 @@ $.jStorage.listenKeyChange("cap_th", function(){
 
 $.jStorage.listenKeyChange("risk_level", function(){	
 		if ($.jStorage.get("risk_level") == "low"){
-			$("#place_holder").html('<div id="low_risk" class="risk"><img src="img/low.png" height="100px"><p>Your current caries risk level is LOW.</p></div>');
+			$("#place_holder").html('<div id="low_risk" class="risk"><img src="img/low.png" height="100px"><p>Your current caries risk level is: LOW.</p></div>');
 			$("#overall_caries_risk span").html("LOW");
 			$("#overall_caries_risk span").attr("class", "low");
-				achievements("Caries risk level: low.");
+			
 		} else if ($.jStorage.get("risk_level") == "moderate"){
-			$("#place_holder").html('<div id="moderate_risk" class="risk"><img src="img/moderate.png" height="100px"><p>Your current caries risk level is MODERATE.</p></div>');
+			$("#place_holder").html('<div id="moderate_risk" class="risk"><img src="img/moderate.png" height="100px"><p>Your current caries risk level is: MODERATE.</p></div>');
 			$("#overall_caries_risk span").html("MODERATE");
 			$("#overall_caries_risk span").attr("class", "moderate");
 		} else if ($.jStorage.get("risk_level") == "high"){
-			$("#place_holder").html('<div id="high_risk" class="risk"><img src="img/high.png" height="100px"><p>Your current caries risk level is HIGH.</p></div>');
+			$("#place_holder").html('<div id="high_risk" class="risk"><img src="img/high.png" height="100px"><p>Your current caries risk level is: HIGH.</p></div>');
 			$("#overall_caries_risk span").html("high");
 			$("#overall_caries_risk span").attr("class", "high");
-				warnings("Caries risk level: high.");
+			
 		} else {
-			$("#place_holder").html('<div id="undefined_risk" class="risk"><img src="img/undefined.png" height="100px"><p>Your current caries risk level is UNDEFINED.</p></div>');	
+			$("#place_holder").html('<div id="undefined_risk" class="risk"><img src="img/undefined.png" height="100px"><p>Your current caries risk level is: UNDEFINED.</p></div>');
+			$("#overall_caries_risk span").html("UNDEFINED");
+			$("#overall_caries_risk span").attr("class", "undefined");	
 		}	
 
 
@@ -162,7 +164,7 @@ $.jStorage.listenKeyChange("risk_level", function(){
 		$("#protective_factors_presence span").html($.jStorage.get("protective_count"));
 		$("#protective_factors_presence span").attr("class", "low");
 
-		listOutput();
+
 		
 });
 
@@ -319,5 +321,29 @@ $.jStorage.listenKeyChange("phgum_th_statistics", function(){
 		}
 	}
 });
- 
-		 
+
+	/* achievements & warnings */
+
+$.jStorage.listenKeyChange("achievements", function(){
+	var achievements = $.jStorage.get("achievements");
+	var output = '';
+	for (var i =0; i < achievements.length; i++){
+		output = output + "<li>"+achievements[i]+"</li>";
+	}
+
+	$("#achievements_list").html(output);
+	$("#achievements_count").html(achievements.length);
+});	
+
+
+$.jStorage.listenKeyChange("warnings", function(){
+	var warnings = $.jStorage.get("warnings");
+	var output = '';
+	for (var i =0; i < warnings.length; i++){
+		output = output + "<li>"+warnings[i]+"</li>";
+	}
+
+	$("#warnings_list").html(output);
+	$("#warnings_count").html(warnings.length);
+});	
+

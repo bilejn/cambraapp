@@ -45,10 +45,9 @@ $(function (){
 		}else{
 			$.jStorage.set(ls[i],$.jStorage.get(ls[i]));
 		}
-
 	}
 
-
+	listOutput();
 });
 
 

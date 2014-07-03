@@ -25,6 +25,11 @@ a {
 	float:left;
 	margin-right: 20px;
 }
+
+.undefined {
+	
+	color: #ffffff;
+}
 .low {
 	
 	color: #00ff00;
@@ -38,6 +43,10 @@ a {
 .high {
 	
 		color: #ff0000;
+}
+
+#undefined_risk{
+	border:1px solid #ffffff;
 }
 
 #low_risk{
@@ -56,9 +65,17 @@ a {
 	color: #00ff00;
 	font-size:17px;
 }
+
+#achievements_list{
+	border: 1px solid #00ff00;
+}
 #warnings_count {
 	color: #ff0000;
 	font-size:17px;
+}
+
+#warnings_list{
+	border: 1px solid #ff0000;
 }
 
 #naslov {

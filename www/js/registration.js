@@ -5,7 +5,7 @@ function registration (activity){
 
 	var date_of_registration = day + "." + month + "." + datum.getFullYear();
 
-	if ($.jStorage.get(activity) != null && $.jStorage.get(activity) != "" ){	
+	if ($.jStorage.get(activity) != "" ){	
 
 		var object = JSON.parse($.jStorage.get(activity));
 		
@@ -16,7 +16,7 @@ function registration (activity){
 				object.dates[i][date_of_registration] +=1;
 				
 			}else {
-				
+				var object;
 				object.dates[i][date_of_registration] =1;
 			}			
 		}
@@ -35,3 +35,4 @@ function registration (activity){
 		alert("Registered.");
 		return false;
 }
+

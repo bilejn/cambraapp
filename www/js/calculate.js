@@ -1,92 +1,6 @@
-	
-	
-	/*============================ C  A  L  C  U  L  A  T  E ============================ */
-	
 
-
-
-	
-	/* ============================ RISK LEVEL DETERMINATION ================ */	
-	
-		function riskLevel() {
-
-		diseaseIndicatorsArray = ["visible_cavities", "radiographic", "white_spots", "last_3_years"];
-		riskFactorsArray = ["ms_lb", "visible_plaque", "frequent_snack", "pits_and_fissures", "drug_use", "inadequate_saliva", "saliva_reducing_factors", "exposed_roots", "orthodontic_appliances"];
-		protectiveFactorsArray = ["fluoridated_community", "fluoride_paste_once", "fluoride_paste_twice", "fluoride_mouthrinse", "fluoride_5000", "fluoride_varnish", "topical_fluoride", "chlorhexidine", "xylitol", "tooth_mousse", "adequate_saliva"];
-
-
-		var risk_level = "";
-
-		
-		var disease_count = 0;
-		var risk_count = 0;
-		var protective_count = 0;
-		
-		 for (var a=0; a < diseaseIndicatorsArray.length; a++){
-			if ($.jStorage.get(diseaseIndicatorsArray[a]) == "true"){
-			disease_count = disease_count + 1;
-			}
-		 }
-		 
-		for (var b=0; b < riskFactorsArray.length; b++){
-			if ($.jStorage.get(riskFactorsArray[b]) == "true"){
-			risk_count = risk_count + 1;
-			}
-		} 
-		
-		for (var i=0; i < protectiveFactorsArray.length; i++){
-			if ($.jStorage.get(protectiveFactorsArray[i]) == "true"){
-			protective_count = protective_count + 1;
-			}
-		} 
-		
-		if (disease_count != 0){
-			risk_level = "high";
-				achwar ("Caries risk level","war");
-		} else {
-			if (risk_count > protective_count){
-				risk_level = "high";
-				achwar ("Caries risk level","war");
-				
-			}else if (risk_count == protective_count){
-				risk_level = "moderate";
-			}else {
-				risk_level = "low";
-				achwar ("Caries risk level","ach");
-			}
-		}
-		
-		
-		$.jStorage.set("disease_count", disease_count);
-		$.jStorage.set("risk_count", risk_count);
-		$.jStorage.set("protective_count", protective_count);	
-		$.jStorage.set("risk_level", risk_level);
-
-	}
-	
-	
-	function listOutput() {	
-		var output ="";
-		var index = $.jStorage.index();
-		var indexCounter;
-		for (indexCounter = 0; indexCounter < index.length; indexCounter++ ){
-		output = output + index[indexCounter] + ": "+ $.jStorage.get(index[indexCounter]) + "<br />";
-		}
-
-		$("#list_output").html(output);
-	}
-
-
-
-
-	
-	/* ============================ STATISTICS ===================================== */
-
-
-		
-		
-		
 /* ====================================== snack statistics =======================================*/
+
 
 $.jStorage.listenKeyChange("snack_taken", function(){	 
 	if($.jStorage.get("snack_taken") != ""){
@@ -154,18 +68,13 @@ function oralhygiene (){
 					$.jStorage.set("oral_hygiene_statistics", "good"); achwar ("Oral hygiene", "ach");
 					if ($.jStorage.get("fluoride_paste_otc_th")=="true") $.jStorage.set("fluoride_paste_otc_th_statistics", "good");
 					if ($.jStorage.get("fluoride_paste_5000_th")=="true") $.jStorage.set("fluoride_paste_5000_th_statistics", "good");
-		}else if ($.jStorage.get("flossing_statistics")=="bad" || $.jStorage.get("brushing_statistics")=="bad"){
+		}else{
 					$.jStorage.set("oral_hygiene_statistics", "bad"); achwar ("Oral hygiene", "war");	
 					if ($.jStorage.get("fluoride_paste_otc_th")=="true") $.jStorage.set("fluoride_paste_otc_th_statistics", "bad");
 					if ($.jStorage.get("fluoride_paste_5000_th")=="true") $.jStorage.set("fluoride_paste_5000_th_statistics", "bad");
-		}	
+
+	}
 }
-
-
-
-
-
-	
 
 /* ====================================== xylitol statistics =======================================*/	
 $.jStorage.listenKeyChange("xylitol_taken", function(){
@@ -189,6 +98,7 @@ $.jStorage.listenKeyChange("xylitol_taken", function(){
 
 
 /* ====================================== chlorhexidine statistics =======================================*/	
+
 $.jStorage.listenKeyChange("chlorhexidine_taken", function(){
 	if ($.jStorage.get("chlorhexidine_taken") != ""){
 		var object = JSON.parse($.jStorage.get("chlorhexidine_taken"));
@@ -247,7 +157,7 @@ $.jStorage.listenKeyChange("fluoride_mouthrinse_extra_taken", function(){
 	}
 });	
 
-		/* ====================================== fluoride mouthrinse  xerostomia statistics =======================================*/
+		/* ====================================== fluoride mouthrinse  xerostomia statistics ==============================*/
 		
 $.jStorage.listenKeyChange("fluoride_mouthrinse_xerostomia_taken", function(){		
 	if ($.jStorage.get("fluoride_mouthrinse_xerostomia_taken")!=""){
@@ -330,8 +240,8 @@ $.jStorage.listenKeyChange("phgum_taken", function(){
 });
 
 
-		/* ====================================== achievements/warnings =======================================*/
-	
+
+		/* ====================================== achievements/warnings =======================================	*/
 	
 	function achwar (string, mark){
 	
@@ -350,4 +260,75 @@ $.jStorage.listenKeyChange("phgum_taken", function(){
 		$.jStorage.set("warnings", warnings);
 	}
 	
+
+	
+	/* ============================ RISK LEVEL DETERMINATION ================ */	
+	
+function riskLevel() {
+
+		diseaseIndicatorsArray = ["visible_cavities", "radiographic", "white_spots", "last_3_years"];
+		riskFactorsArray = ["ms_lb", "visible_plaque", "frequent_snack", "pits_and_fissures", "drug_use", "inadequate_saliva", "saliva_reducing_factors", "exposed_roots", "orthodontic_appliances"];
+		protectiveFactorsArray = ["fluoridated_community", "fluoride_paste_once", "fluoride_paste_twice", "fluoride_mouthrinse", "fluoride_5000", "fluoride_varnish", "topical_fluoride", "chlorhexidine", "xylitol", "tooth_mousse", "adequate_saliva"];
+
+
+		var risk_level = "";
+
+		
+		var disease_count = 0;
+		var risk_count = 0;
+		var protective_count = 0;
+		
+		 for (var a=0; a < diseaseIndicatorsArray.length; a++){
+			if ($.jStorage.get(diseaseIndicatorsArray[a]) == "true"){
+			disease_count = disease_count + 1;
+			}
+		 }
+		 
+		for (var b=0; b < riskFactorsArray.length; b++){
+			if ($.jStorage.get(riskFactorsArray[b]) == "true"){
+			risk_count = risk_count + 1;
+			}
+		} 
+		
+		for (var i=0; i < protectiveFactorsArray.length; i++){
+			if ($.jStorage.get(protectiveFactorsArray[i]) == "true"){
+			protective_count = protective_count + 1;
+			}
+		} 
+
+		if (disease_count != 0){
+			risk_level = "high";
+			achwar ("Caries risk level","war");
+		} else {
+			if (risk_count > protective_count){
+				risk_level = "high";
+				achwar ("Caries risk level","war");
+				
+			}else if (risk_count == protective_count){
+				risk_level = "moderate";
+			}else {
+				risk_level = "low";
+				achwar ("Caries risk level","ach");
+			}
+		}
+		
+
+		$.jStorage.set("disease_count", disease_count);
+		$.jStorage.set("risk_count", risk_count);
+		$.jStorage.set("protective_count", protective_count);	
+		$.jStorage.set("risk_level", risk_level);
+
+	}
+	
+	
+	function listOutput() {	
+		var output ="";
+		var index = $.jStorage.index();
+		var indexCounter;
+		for (indexCounter = 0; indexCounter < index.length; indexCounter++ ){
+		output = output + index[indexCounter] + ": "+ $.jStorage.get(index[indexCounter]) + "<br />";
+		}
+
+		$("#list_output").html(output);
+	}
 	
