@@ -47,6 +47,7 @@ $.jStorage.listenKeyChange("recallExam", function(){
 $.jStorage.listenKeyChange("xylitol_th", function(){
 		if ($.jStorage.get("xylitol_th") == "true"){
 			$(".xylitol_th").show();
+			$("home").trigger("create");
 		 } else {
 			$(".xylitol_th").hide();
 		 }
@@ -55,6 +56,7 @@ $.jStorage.listenKeyChange("xylitol_th", function(){
 $.jStorage.listenKeyChange("chlorhexidine_th", function(){
 		 if ($.jStorage.get("chlorhexidine_th") == "true"){
 			$(".chlorhexidine_th").show();
+			$("home").trigger("create");
 		 } else {
 			$(".chlorhexidine_th").hide();
 		 }
@@ -332,6 +334,7 @@ $.jStorage.listenKeyChange("achievements", function(){
 	}
 
 	$("#achievements_list").html(output);
+
 	$("#achievements_count").html(achievements.length);
 });	
 
@@ -344,6 +347,15 @@ $.jStorage.listenKeyChange("warnings", function(){
 	}
 
 	$("#warnings_list").html(output);
+
 	$("#warnings_count").html(warnings.length);
 });	
+
+$(document).on('pageshow','#warnings', function() {
+  $("#warnings_list").listview("refresh");
+});
+
+$(document).on('pageshow','#achievements', function() {
+  $("#achievements_list").listview("refresh");
+});
 
