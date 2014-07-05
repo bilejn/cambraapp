@@ -28,7 +28,111 @@ $.jStorage.listenKeyChange("submit_form", function(){
 
 
 
-/*================================ Date ====================================*/
+
+
+$(document).on('pageshow','#home', function() {
+
+		if ($.jStorage.get("recallExam") != null && $.jStorage.get("recallExam") != ""){
+			var deadline = new Date ($.jStorage.get("recallExam")) 
+			$("#time").html("next dental visit: " +$.jStorage.get("recallExam"));
+		 } else {
+			$("#time").html("You should schedule an appointment with your dentist!");
+		 }	
+
+		if ($.jStorage.get("xylitol_th") == "true"){
+			$(".xylitol_th_b").show();
+			$("home").trigger("create");
+		 } else {
+			$(".xylitol_th_b").hide();
+		 }
+
+
+
+		 if ($.jStorage.get("chlorhexidine_th") == "true"){
+			$(".chlorhexidine_th_b").show();
+			$("home").trigger("create");
+		 } else {
+			$(".chlorhexidine_th_b").hide();
+		 }
+
+
+
+
+	 if ($.jStorage.get("fluoride_paste_otc_th") == "true"){
+			$(".fluoride_paste_otc_th_b").show();
+		 } else {
+			$(".fluoride_paste_otc_th_b").hide();
+		 }
+
+
+		 
+		 if ($.jStorage.get("fluoride_paste_5000_th") == "true"){
+			$(".fluoride_paste_5000_th_b").show();
+		 } else {
+			$(".fluoride_paste_5000_th_b").hide();
+		 }
+
+
+		 
+		 if ($.jStorage.get("fluoride_mouthrinse_th") == "true"){
+			$(".fluoride_mouthrinse_th_b").show();
+		 } else {
+			$(".fluoride_mouthrinse_th_b").hide();
+		 }
+
+	 
+
+		if ($.jStorage.get("fluoride_mouthrinse_extra_th") == "true"){
+			$(".fluoride_mouthrinse_extra_th_b").show();
+		 } else {
+			$(".fluoride_mouthrinse_extra_th_b").hide();
+		 } 
+
+		 
+	 
+		if ($.jStorage.get("fluoride_mouthrinse_xerostomia_th") == "true"){
+			$(".fluoride_mouthrinse_xerostomia_th_b").show();
+		 } else {
+			$(".fluoride_mouthrinse_xerostomia_th_b").hide();
+		 } 
+	 
+		 
+	 
+		if ($.jStorage.get("ph_th") == "true"){
+			$(".ph_th_b").show();
+		 } else {
+			$(".ph_th_b").hide();
+		 } 
+
+		 
+		if ($.jStorage.get("phgum_th") == "true"){
+			$(".phgum_th_b").show();
+		 } else {
+			$(".phgum_th_b").hide();
+		 } 
+
+
+	 
+		if ($.jStorage.get("cap_th") == "true"){
+			$(".cap_th_b").show();
+		 } else {
+			$(".cap_th_b").hide();
+		 }
+		 
+
+
+		
+});
+
+
+
+
+
+
+
+
+
+/*================================ Date ====================================
 
 $.jStorage.listenKeyChange("recallExam", function(){
 		if ($.jStorage.get("recallExam") != null && $.jStorage.get("recallExam") != ""){
@@ -334,8 +438,8 @@ $.jStorage.listenKeyChange("achievements", function(){
 	}
 
 	$("#achievements_list").html(output);
-
 	$("#achievements_count").html(achievements.length);
+	
 });	
 
 
@@ -347,8 +451,8 @@ $.jStorage.listenKeyChange("warnings", function(){
 	}
 
 	$("#warnings_list").html(output);
-
 	$("#warnings_count").html(warnings.length);
+
 });	
 
 $(document).on('pageshow','#warnings', function() {
@@ -358,4 +462,5 @@ $(document).on('pageshow','#warnings', function() {
 $(document).on('pageshow','#achievements', function() {
   $("#achievements_list").listview("refresh");
 });
+
 
