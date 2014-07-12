@@ -295,7 +295,7 @@
 		}
 
 		if (document.fluoride_th.fluoride_mouthrinse_th.checked == true){
-			if ($.jStorage.get("fluoride_mouthrinse_th"))
+			if ($.jStorage.get("fluoride_mouthrinse_th")=="false")
 			$.jStorage.set("fluoride_mouthrinse_th", "true");
 		} else {
 			$.jStorage.set("fluoride_mouthrinse_th", "false");

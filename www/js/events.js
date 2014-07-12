@@ -26,7 +26,7 @@ $.jStorage.listenKeyChange("submit_form", function(){
 	}
 });
 
-
+/*================================================ Home page buttons =============================================*/
 
 
 
@@ -41,7 +41,6 @@ $(document).on('pageshow','#home', function() {
 
 		if ($.jStorage.get("xylitol_th") == "true"){
 			$(".xylitol_th_b").show();
-			$("home").trigger("create");
 		 } else {
 			$(".xylitol_th_b").hide();
 		 }
@@ -50,7 +49,6 @@ $(document).on('pageshow','#home', function() {
 
 		 if ($.jStorage.get("chlorhexidine_th") == "true"){
 			$(".chlorhexidine_th_b").show();
-			$("home").trigger("create");
 		 } else {
 			$(".chlorhexidine_th_b").hide();
 		 }
@@ -119,29 +117,10 @@ $(document).on('pageshow','#home', function() {
 			$(".cap_th_b").hide();
 		 }
 		 
-
-
-		
+	
 });
 
 
-
-
-
-
-
-
-
-/*================================ Date ====================================
-
-$.jStorage.listenKeyChange("recallExam", function(){
-		if ($.jStorage.get("recallExam") != null && $.jStorage.get("recallExam") != ""){
-			var deadline = new Date ($.jStorage.get("recallExam")) 
-			$("#time").html("next dental visit: " +$.jStorage.get("recallExam"));
-		 } else {
-			$("#time").html("You should schedule an appointment with your dentist!");
-		 }	
-});
 
 
 
@@ -151,7 +130,6 @@ $.jStorage.listenKeyChange("recallExam", function(){
 $.jStorage.listenKeyChange("xylitol_th", function(){
 		if ($.jStorage.get("xylitol_th") == "true"){
 			$(".xylitol_th").show();
-			$("home").trigger("create");
 		 } else {
 			$(".xylitol_th").hide();
 		 }
@@ -160,7 +138,6 @@ $.jStorage.listenKeyChange("xylitol_th", function(){
 $.jStorage.listenKeyChange("chlorhexidine_th", function(){
 		 if ($.jStorage.get("chlorhexidine_th") == "true"){
 			$(".chlorhexidine_th").show();
-			$("home").trigger("create");
 		 } else {
 			$(".chlorhexidine_th").hide();
 		 }

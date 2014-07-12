@@ -48,6 +48,32 @@ $(function (){
 	}
 
 	listOutput();
+	
+/*======================= Registration dates setup ======================*/	
+
+	activities = ["snack_taken", "teeth_brushing_done", "teeth_flossing_done", "xylitol_taken", "chlorhexidine_taken", "fluoride_mouthrinse_taken","fluoride_mouthrinse_extra_taken", "fluoride_mouthrinse_xerostomia_taken", "cap_taken", "ph_taken","phgum_taken",
+	];
+	
+	var today = Date.today();
+	
+	for (i = 0; i < activities.length; i++){
+		if ($.jStorage.get("last_"+activities[i]) != null && $.jStorage.get("last_"+activities[i]) != "" ){
+			var last = Date.parseExact($.jStorage.get("last_"+activities[i]),"dd.MM.yyyy");
+			last = last.add(1).days();
+
+			while(last.compareTo(today) == -1){
+				
+				registration_missed (activities[i], last.toString("dd.MM.yyyy"));
+				
+				$.jStorage.set("last_"+activities[i], last.toString("dd.MM.yyyy"));
+				
+				last = last.add(1).days();
+			}
+		}
+		
+	}
+	
+	
 });
 
 

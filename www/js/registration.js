@@ -1,38 +1,54 @@
 function registration (activity){
-	var datum = new Date ();
-	var day = datum.getDate(); if (day < 10) { day = "0" + day; }
-	var month = datum.getMonth() + 1; if (month < 10) { month = "0" + month; }
-
-	var date_of_registration = day + "." + month + "." + datum.getFullYear();
-
+	
+	var date_of_registration = Date.today().toString("dd.MM.yyyy");
+	
 	if ($.jStorage.get(activity) != "" ){	
 
 		var object = JSON.parse($.jStorage.get(activity));
-		
+		var found;
 		for ( var i = 0; i < object.dates.length; i++){
-			
-			if (object.dates[i][date_of_registration]){
-				
-				object.dates[i][date_of_registration] +=1;
-				
-			}else {
-				var object;
-				object.dates[i][date_of_registration] =1;
-			}			
-		}
 
-		/*$.jStorage.set(activity, JSON.stringify(json_object));*/
+			for (name in object.dates[i]){
+			
+				if (date_of_registration == name){
+					
+					object.dates[i][name] += 1;
+					found = true;
+				}			
+			}
+		}
+		
+		if (!found){
+			var new_obj = {};
+			new_obj[date_of_registration] = 1;
+			object.dates.push(new_obj);
+		}
+		
 		$.jStorage.set(activity,JSON.stringify(object));
 		
 	} else {
-	var object = {dates : [{}]};
-	object.dates[0][date_of_registration] =1;
+			var object = {dates : [{}]};
+			object.dates[0][date_of_registration] =1;
 
-	/*$.jStorage.set(activity, JSON.stringify(json_object));*/
-	$.jStorage.set(activity, JSON.stringify(object));
-}	
-	
+			$.jStorage.set(activity, JSON.stringify(object));
+	}	
+
+		last = "last_"+activity;
+		$.jStorage.set(last, date_of_registration);
+		
 		alert("Registered.");
 		return false;
 }
 
+function registration_missed (activity, date_of_registration){
+
+	var object = JSON.parse($.jStorage.get(activity));
+	var new_obj = {};
+	new_obj[date_of_registration] = 0;
+
+	object.dates.push(new_obj);
+	
+	$.jStorage.set(activity, JSON.stringify(object));
+
+	return 	false;
+}

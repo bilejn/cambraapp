@@ -4,6 +4,14 @@
 
 $.jStorage.listenKeyChange("snack_taken", function(){	 
 	if($.jStorage.get("snack_taken") != ""){
+	
+		var last = Date.parseExact($.jStorage.get("last_snack_taken"), "dd.MM.yyyy");
+		var today = Date.today();
+	/*	if(!last.equals(today)){
+			
+		
+		}*/
+		
 		var snack = JSON.parse($.jStorage.get("snack_taken"));
 		var sum = 0;
 		var days = snack.dates.length;
@@ -12,6 +20,7 @@ $.jStorage.listenKeyChange("snack_taken", function(){
 			sum += snack.dates[i][key];
 			}
 		}
+		
 		var result = sum / days;
 		var mark;
 		if (result > 3) {mark = "bad"; achwar ("Snack statistics","war");}

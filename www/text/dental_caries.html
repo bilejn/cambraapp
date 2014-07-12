@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ 
+	<head> 
+	<title>Page Title</title> 
+	
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"> 
+
+			<link rel="stylesheet" href="../css/jquery.mobile-1.4.2.css" />
+			<link rel="stylesheet" href="../css/mycss.css" />
+			<link rel="stylesheet" href="../css/myswatch.css" />
+			<script  type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+			
+			<script type"text/javascript">
+				$(document).bind("mobileinit", function() {
+				 $.mobile.defaultPageTransition = "none";
+				 $.mobile.defaultDialogTransition = "none";
+				$.mobile.listview.prototype.options.dividerTheme = "b";
+				});
+			</script>
+
+			<script type="text/javascript" src="../js/jquery.mobile-1.4.2.js"></script>
+			<script type="text/javascript" src="../js/jstorage.js"></script>
+			<script type="text/javascript" src="../js/date.js"></script>
+			<script type="text/javascript" src="../js/events.js"></script>	
+			<script type="text/javascript" src="../js/calculate.js"></script>
+			<script type="text/javascript" src="../js/submitForm.js"></script>
+			<script type="text/javascript" src="../js/registration.js"></script>	
+			<script type="text/javascript" src="../js/timer.js"></script>
+		
+
+
+</head>
+
+  	<body>
+  
+  	<section id="home" data-role="page" data-theme="a">
+  		<div data-role="header"  data-position="fixed">
+			<h4>Dental Caries</h4>
+			<a href="#home" data-icon="back">Back</a>
+		</div>
+		<div data-role="content">
+		
+					<h4>Dental Caries</h4>
+					<img src="img/homescr.png" width="100px" style="float : left;"/>
+
+					<p>Etiam magna metus, hendrerit non aliquam nec, vitae dictum nisl laoreet vel. Suspendisse urna metus, sodales eget sagittis sed, nec suscipit mi congue non.Etiam magna metus, hendrerit non aliquam nec, vitae dictum nisl laoreet vel. Etiam magna metus, hendrerit non aliquam nec, vitae dictum nisl laoreet vel. Suspendisse urna metus, sodales eget sagittis sed, nec suscipit mi congue non.</p>
+		</div>			
+		<div data-role="footer" data-position="fixed">
+              	<div data-role="navbar">
+					<ul>
+					  <li><a href="#home"  data-icon="home" >Home</a></li>
+					  <li><a href="#profile" data-icon="user">Profile</a></li>
+					  <li><a href="#info" data-icon="info">Info</a></li>
+					  <li><a href="#settings" data-icon="gear">Settings</a></li>
+					</ul>
+				</div>
+        </div>
+  	</section>
+
+	</body>
+</html>
+
