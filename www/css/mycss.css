@@ -85,9 +85,13 @@ a {
 }
 
 #timer {
-	background-color: orange;
-	height: 20px;
-	border: 1px solid blue;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 80px;
+	font-weight: bold;
+	width: 80%;
+	height: 100px;
+	color: #ff0000;
 }
 
 #time {
