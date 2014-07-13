@@ -1,4 +1,5 @@
 function timer (interval){
+	window.plugins.insomnia.keepAwake()
 	$("#timer-button").addClass('ui-disabled');
 	var secTrue= interval;
 	var sec;
@@ -18,6 +19,7 @@ function delayedLoop(){
 	registration("teeth_brushing_done");
 	$("#timer-button").removeClass('ui-disabled'); 
 	$("#timer").html("02:00");
+	window.plugins.insomnia.allowSleepAgain()
 	return; 
 	}
 	window.setTimeout(delayedLoop, 1000);
