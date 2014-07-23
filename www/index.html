@@ -44,8 +44,7 @@
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-				  <li><a href="#achievements" >Achievements:&nbsp &nbsp<span id="achievements_count"></span></a></li>
-				  <li><a href="#warnings" >Warnings:&nbsp &nbsp<span id="warnings_count"></span></a></li>
+				  <li><a href="#to_do" >To do list:&nbsp &nbsp <span id="to_do_count" >0</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -63,7 +62,12 @@
 
 		
 		<div id="registrationButtons">
-			<a href="#"  data-role="button" onclick="registration('snack_taken');">Snack</a>	
+		
+		<div class="ui-grid-a">
+			<div class="ui-block-a"><a href="#"  data-role="button" onclick="registration('snack_taken');">Snack</a></div>
+			<div class="ui-block-b"><p>&nbsp &nbsp &nbsp Today: <span id ="snack_count"></span></p></div>
+		</div>
+				
 							
 			<a href="#oral_hygiene" data-role="button" >Oral hygiene</a>	
 			
@@ -106,21 +110,21 @@
 	
 	
 	
-<!-- =============================== A C H I E V E M E N T S  ======================================= -->
+<!-- =============================== to do list  ======================================= -->
 
 	
-	<section id="achievements" data-role="page" data-theme="b">
+	<section id="to_do" data-role="page" data-theme="b">
 
 	
 		<div data-role="header"  data-position="fixed">
-			<h4>Achievements</h4>
+			<h4>To do list</h4>
 			<a href="#home" data-icon="back">Back</a>
 		</div>
 		
 		
 		<div data-role="content">
 		
-		<ul id="achievements_list" data-role="listview"></ul>
+		<ul id="to_do_list" data-role="listview"></ul>
 		
 		</div>
 		
@@ -138,38 +142,6 @@
         </div>	
 	</section>
 	
-	
-	
-<!-- =============================== W A R N I N G S   ======================================= -->
-
-	
-	<section id="warnings" data-role="page" data-theme="b">
-	
-		<div data-role="header"  data-position="fixed">
-			<h4>Warnings</h4>
-			<a href="#home" data-icon="back">Back</a>
-		</div>
-		
-		
-		<div data-role="content">
-		
-		<ul id="warnings_list" data-role="listview"></ul>
-		
-		</div>
-		
-		
-		
-		<div data-role="footer" data-position="fixed">
-              	<div data-role="navbar">
-					<ul>
-					  <li><a href="#home"  data-icon="home" >Home</a></li>
-					  <li><a href="#profile" data-icon="user">Profile</a></li>
-					  <li><a href="#info" data-icon="info">Info</a></li>
-					  <li><a href="#settings" data-icon="gear">Settings</a></li>
-					</ul>
-				</div>
-        </div>	
-	</section>	
 	
 	
 

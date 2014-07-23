@@ -61,20 +61,20 @@ a {
 	border:1px solid #ff0000;
 }
 
-#achievements_count {
+#completed_count {
 	color: #00ff00;
 	font-size:17px;
 }
 
-#achievements_list{
+#completed_list{
 	border: 1px solid #00ff00;
 }
-#warnings_count {
+#to_do_count {
 	color: #ff0000;
 	font-size:17px;
 }
 
-#warnings_list{
+#to_do_list{
 	border: 1px solid #ff0000;
 }
 

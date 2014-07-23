@@ -24,6 +24,7 @@ $.jStorage.listenKeyChange("submit_form", function(){
 			$("#"+entry[p]).prop('checked',false);
 		}	
 	}
+
 });
 
 /*================================================ Home page buttons =============================================*/
@@ -142,7 +143,6 @@ $.jStorage.listenKeyChange("chlorhexidine_th", function(){
 			$(".chlorhexidine_th").hide();
 		 }
 });
-
 
 $.jStorage.listenKeyChange("fluoride_paste_otc_th", function(){
 	 if ($.jStorage.get("fluoride_paste_otc_th") == "true"){
@@ -405,39 +405,179 @@ $.jStorage.listenKeyChange("phgum_th_statistics", function(){
 	}
 });
 
+
+$.jStorage.listenKeyChange("submit_form_th", function(){
+			var track = $.jStorage.get("track");
+			var to_do = [];
+			for (var i = 0; i < track.length; i++ ){
+			
+				if (track[i]=="teeth_brushing"){
+					to_do.push("teeth_brushing_done");
+					to_do.push("teeth_brushing_done");
+				}
+				if (track[i]=="teeth_flossing"){
+					to_do.push("teeth_flossing_done");
+				}
+				if (track[i]=="chlorhexidine_th"){
+					to_do.push("chlorhexidine_taken");
+				}	
+				if (track[i]=="xylitol_th"){
+					to_do.push("xylitol_taken");
+					to_do.push("xylitol_taken");
+					to_do.push("xylitol_taken");
+					to_do.push("xylitol_taken");
+				}
+				if (track[i]=="fluoride_mouthrinse_th"){
+					to_do.push("fluoride_mouthrinse_taken");
+				}
+				if (track[i]=="fluoride_mouthrinse_extra_th"){
+					to_do.push("fluoride_mouthrinse_extra_taken");
+				}
+				if (track[i]=="cap_th"){
+					to_do.push("cap_taken");
+					to_do.push("cap_taken");
+				}
+			}
+			$.jStorage.set("to_do", to_do);				
+
+
+});
+
+
+
 	/* achievements & warnings */
 
-$.jStorage.listenKeyChange("achievements", function(){
-	var achievements = $.jStorage.get("achievements");
-	var output = '';
-	for (var i =0; i < achievements.length; i++){
-		output = output + "<li>"+achievements[i]+"</li>";
+$.jStorage.listenKeyChange("track", function(){
+	var track = $.jStorage.get("track");
+	var as_needed = $.jStorage.get("as_needed");
+	var output = '<li data-role="list-divider">Every day:</li>';
+	for (var i =0; i < track.length; i++){
+		var string;
+		if (track[i] == "teeth_brushing") string = 'Brush your teeth: <span id="teeth_brushing_count"></span>';
+		if (track[i] == "teeth_flossing") string = 'Floss your teeth: <span id="teeth_flossing_count"></span>';
+		if (track[i] == "chlorhexidine_th") string = 'Use chlorhexidine solution: <span id="chlorhexidine_count"></span>';
+		if (track[i] == "xylitol_th") string = 'Eat xylitol candy: <span id="xylitol_count"></span>';
+		if (track[i] == "fluoride_mouthrinse_th") string = 'Use standard fluoride mouthrinse: <span id="fluoride_mouthrinse_count"></span>';
+		if (track[i] == "fluoride_mouthrinse_extra_th") string = 'Use 0,2% fluoride mouthrinse: <span id="fluoride_mouthrinse_extra_count"></span>';
+		if (track[i] == "cap_th") string = 'Use Calcium phopsphate paste: <span id="cap_count"></span>';
+		output = output + "<li>"+string+"</li>";
 	}
+	output = output + '<li data-role="list-divider">As needed:</li>';
+	if (as_needed != null){
+			for (var i =0; i < as_needed.length; i++){
+					if (as_needed[i] == "fluoride_mouthrinse_xerostomia_th") string = 'Rinse mouth with fluoride rinse when mouth feels dry';
+					if (as_needed[i] == "ph_th") string = 'Rinse mouth with baking soda solution when mouth feels dry';
+					if (as_needed[i] == "phgum_th") string = 'Chew baking soda gum when mouth feels dry';
+			output = output + "<li>"+string+"</li>";
+			}
+	} else {
+		output = output + "<li>empty</li>";
+	}		
+	$("#to_do_list").html(output);
+	
 
-	$("#achievements_list").html(output);
-	$("#achievements_count").html(achievements.length);
 	
 });	
 
-
-$.jStorage.listenKeyChange("warnings", function(){
-	var warnings = $.jStorage.get("warnings");
-	var output = '';
-	for (var i =0; i < warnings.length; i++){
-		output = output + "<li>"+warnings[i]+"</li>";
+$.jStorage.listenKeyChange("as_needed", function(){
+	var track = $.jStorage.get("track");
+	var as_needed = $.jStorage.get("as_needed");
+	var output = '<li data-role="list-divider">Every day:</li>';
+	for (var i =0; i < track.length; i++){
+		var string;
+		if (track[i] == "teeth_brushing") string = 'Brush your teeth: <span id="teeth_brushing_count"></span>';
+		if (track[i] == "teeth_flossing") string = 'Floss your teeth: <span id="teeth_flossing_count"></span>';
+		if (track[i] == "chlorhexidine_th") string = 'Use chlorhexidine solution: <span id="chlorhexidine_count"></span>';
+		if (track[i] == "xylitol_th") string = 'Eat xylitol candy: <span id="xylitol_count"></span>';
+		if (track[i] == "fluoride_mouthrinse_th") string = 'Use standard fluoride mouthrinse: <span id="fluoride_mouthrinse_count"></span>';
+		if (track[i] == "fluoride_mouthrinse_extra_th") string = 'Use 0,2% fluoride mouthrinse: <span id="fluoride_mouthrinse_extra_count"></span>';
+		if (track[i] == "cap_th") string = 'Use Calcium phopsphate paste: <span id="cap_count"></span>';
+		output = output + "<li>"+string+"</li>";
 	}
-
-	$("#warnings_list").html(output);
-	$("#warnings_count").html(warnings.length);
-
+	output = output + '<li data-role="list-divider">As needed:</li>';
+	if (as_needed != null){
+			for (var i =0; i < as_needed.length; i++){
+					if (as_needed[i] == "fluoride_mouthrinse_xerostomia_th") string = 'Rinse mouth with fluoride rinse when mouth feels dry';
+					if (as_needed[i] == "ph_th") string = 'Rinse mouth with baking soda solution when mouth feels dry';
+					if (as_needed[i] == "phgum_th") string = 'Chew baking soda gum when mouth feels dry';
+			output = output + "<li>"+string+"</li>";
+			}
+	} else {
+		output = output + "<li>empty</li>";
+	}		
+	$("#to_do_list").html(output);
+	$("#to_do_count").html(track.length);
+	
 });	
 
-$(document).on('pageshow','#warnings', function() {
-  $("#warnings_list").listview("refresh");
-});
-
-$(document).on('pageshow','#achievements', function() {
-  $("#achievements_list").listview("refresh");
+$(document).on('pageshow','#to_do', function() {
+  $("#to_do_list").listview("refresh");
 });
 
 
+$.jStorage.listenKeyChange("to_do", function(){
+	
+	var to_do = $.jStorage.get("to_do");
+	$("#to_do_count").html(to_do.length);
+	
+	function teeth_brushing (element) {
+		return element == "teeth_brushing_done";
+	}
+	
+	function teeth_flossing (element) {
+		return element == "teeth_flossing_done";
+	}
+	
+	function chlorhexidine (element) {
+		return element == "chlorhexidine_taken";
+	}
+	
+	function xylitol (element) {
+		return element == "xylitol_taken";
+	}
+	
+	function fluoride_standard (element) {
+		return element == "fluoride_mouthrinse_taken";
+	}
+	
+	function fluoride_extra (element) {
+		return element == "fluoride_mouthrinse_extra_taken";
+	}
+	
+	function cap (element) {
+		return element == "cap_taken";
+	}
+	
+
+	
+	var teeth_brushing_array = to_do.filter(teeth_brushing);
+	$("#teeth_brushing_count").html(teeth_brushing_array.length);
+	
+	var teeth_flossing_array = to_do.filter(teeth_flossing);
+	$("#teeth_flossing_count").html(teeth_flossing_array.length);	
+	
+	var xylitol_taken_array=to_do.filter(xylitol);
+	$("#xylitol_count").html(xylitol_taken_array.length);	
+	
+	var chlorhexidine_taken_array=to_do.filter(chlorhexidine);
+	$("#chlorhexidine_count").html(chlorhexidine_taken_array.length);	
+	
+	var fluoride_mouthrinse_taken_array=to_do.filter(fluoride_standard);
+	$("#fluoride_mouthrinse_count").html(fluoride_mouthrinse_taken_array.length);	
+	
+	var fluoride_mouthrinse_extra_taken_array=to_do.filter(fluoride_extra);
+	$("#fluoride_mouthrinse_extra_count").html(fluoride_mouthrinse_extra_taken_array.length);
+	
+	var cap_taken_array=to_do.filter(cap);
+	$("#cap_count").html(cap_taken_array.length);
+	
+});	
+	
+$.jStorage.listenKeyChange("snack_count", function(){	
+	var snack = $.jStorage.get("snack_count");
+	$("#snack_count").html(snack);
+});		
+	
+	
+	
+	

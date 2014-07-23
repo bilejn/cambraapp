@@ -32,9 +32,23 @@ function registration (activity){
 
 			$.jStorage.set(activity, JSON.stringify(object));
 	}	
+		
+		if(activity=="snack_taken"){
+		var snack = $.jStorage.get("snack_count");
+		snack = snack + 1;
+		$.jStorage.set("snack_count",snack);
+		}
+		
+		var to_do = $.jStorage.get("to_do");
+		var location = to_do.indexOf(activity);
+		if (location != -1)
+			to_do.splice(location,1);
+		$.jStorage.set("to_do", to_do);
 
 		last = "last_"+activity;
 		$.jStorage.set(last, date_of_registration);
+		
+
 		
 		alert("Registered.");
 		return false;
