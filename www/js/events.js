@@ -506,7 +506,8 @@ $.jStorage.listenKeyChange("as_needed", function(){
 		output = output + "<li>empty</li>";
 	}		
 	$("#to_do_list").html(output);
-	$("#to_do_count").html(track.length);
+
+
 	
 });	
 
@@ -519,6 +520,13 @@ $.jStorage.listenKeyChange("to_do", function(){
 	
 	var to_do = $.jStorage.get("to_do");
 	$("#to_do_count").html(to_do.length);
+	if (to_do.length == 0){
+	$("#to_do_list").css("border", "1px solid #00ff00");
+	$("#to_do_count").css("color","#00ff00");
+	}else {
+	$("#to_do_list").css("border", "1px solid #ff0000");
+	$("#to_do_count").css("color","#ff0000");	
+	}
 	
 	function teeth_brushing (element) {
 		return element == "teeth_brushing_done";
@@ -576,6 +584,11 @@ $.jStorage.listenKeyChange("to_do", function(){
 $.jStorage.listenKeyChange("snack_count", function(){	
 	var snack = $.jStorage.get("snack_count");
 	$("#snack_count").html(snack);
+	if (snack <= 3){
+	$("#snack_count").css("color","#00ff00");
+	} else {
+	$("#snack_count").css("color","#ff0000");	
+	}
 });		
 	
 	

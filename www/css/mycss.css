@@ -61,20 +61,23 @@ a {
 	border:1px solid #ff0000;
 }
 
-#completed_count {
+.completed_count {
 	color: #00ff00;
 	font-size:17px;
 }
 
-#completed_list{
+.completed_list{
 	border: 1px solid #00ff00;
 }
-#to_do_count {
+.to_do_count {
 	color: #ff0000;
+}
+
+#to_do_count{
 	font-size:17px;
 }
 
-#to_do_list{
+.to_do_list{
 	border: 1px solid #ff0000;
 }
 
